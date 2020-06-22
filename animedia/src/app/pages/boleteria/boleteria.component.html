@@ -1,1 +1,25 @@
-<p>boleteria works!</p>
+<div class="container">
+    <div class="pantalla">
+        <h1>Pantalla</h1>
+    </div>
+    <div class=" row " *ngFor="let silla of sillas">
+        <div class="col-2 row d-flex justify-content-betwen">
+            
+            <div class="sillas" *ngFor="let columna of columnas">
+                <div>{{silla}}{{columna}}</div>
+            </div>
+
+        </div>
+        <div class="col-8 row d-flex justify-content-around">
+            <div class="sillas " *ngFor="let columna of columnas2">
+                <div>{{silla}}{{columna}}</div>
+            </div>
+        </div>
+        <div class="col-2 row d-flex justify-content-around">
+            <div class="sillas " *ngFor="let columna of columnas3">
+                <div>{{silla}}{{columna}}</div>
+            </div>
+        </div>
+        <br>
+    </div>
+</div>
