@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private usuarioService: UsuarioService,
-    private _router: Router,
+    private _router: Router
     
   ) {
     this.login = new Usuario('', '', '',  0, new Date(), '', '', 'usuario', '')
