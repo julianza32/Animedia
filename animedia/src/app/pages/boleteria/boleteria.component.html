@@ -1,25 +1,73 @@
-<div class="container">
-    <div class="pantalla">
+<div class="boleteria">
+    <section class="seleccion">
+        <form class="row d-flex justify-content-around " action="">
+            <label for="puestos">Cantidad de sillas</label>
+            <input type="number" name="puestos">
+            <label for="sala">Sala</label>
+            <select name="sala" id="sala">
+                <option value="1"> 1 </option>
+                <option value="2"> 2 </option>
+                <option value="3"> 3 </option>
+                <option value="4"> 4 </option>
+                <option value="5"> 5 </option>
+                <option value="6"> 6 </option>
+                <option value="7"> 7 </option>
+                <option value="8"> 8 </option>
+            </select>
+            <label for="Colum">Columna</label>
+            <input type="number" name="Colum">
+            <label for="Fila">Fila</label>
+            <input type="text" name="Fila">
+
+            <span> Ocupadas</span>
+            <div class="sillasm ocupadas"></div>
+            <span> Disponibles</span>
+            <div class="sillasm disponibles"></div>
+            <span> Seleccionadas</span>
+            <div class="sillasm seleccionadas"></div>
+
+        </form>
+    </section>
+    <div class="pantalla text-center">
         <h1>Pantalla</h1>
     </div>
-    <div class=" row " *ngFor="let silla of sillas">
-        <div class="col-2 row d-flex justify-content-betwen">
-            
-            <div class="sillas" *ngFor="let columna of columnas">
-                <div>{{silla}}{{columna}}</div>
-            </div>
 
-        </div>
-        <div class="col-8 row d-flex justify-content-around">
-            <div class="sillas " *ngFor="let columna of columnas2">
-                <div>{{silla}}{{columna}}</div>
+    <!-- <div class="d-flex justify-content-around"> -->
+    <div class=" row " *ngFor="let silla of sillas">
+        <div class="col-12">
+            <div class="d-flex justify-content-between">
+                <div class="col-4 row d-flex justify-content-center">
+
+                    <div class="sillas rownded text-center " *ngFor="let columna of columnas">
+                        <div>{{silla}}{{columna}}</div>
+                    </div>
+
+                </div>
+                <div class="col-4 row d-flex justify-content-center ">
+                    <div class="sillas rownded text-center" *ngFor="let columna of columnas2">
+                        <div>{{silla}}{{columna}}</div>
+                    </div>
+                </div>
+                <div class="col-4 row d-flex justify-content-center ">
+                    <div class="sillas rownded text-center" *ngFor="let columna of columnas3">
+                        <div>{{silla}}{{columna}}</div>
+                    </div>
+                </div>
+                
             </div>
+            
         </div>
-        <div class="col-2 row d-flex justify-content-around">
-            <div class="sillas " *ngFor="let columna of columnas3">
-                <div>{{silla}}{{columna}}</div>
-            </div>
-        </div>
-        <br>
     </div>
+    <br>
+    <div class="row" *ngFor="let silla of sillas2">
+        <div class="col-12"> 
+            <div class="d-flex justify-content-center ">
+                <div class="sillas rownded text-center" *ngFor="let columna of columnas4">
+                    <div>{{silla}}{{columna}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- </div> -->
 </div>

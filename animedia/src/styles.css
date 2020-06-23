@@ -6,6 +6,7 @@ body{
 }
 *{
     scrollbar-color: #c72d28 #231e1e ;
+    font-family: 'Cairo', sans-serif;
 }
 ::-webkit-scrollbar {
     width: 20px;
