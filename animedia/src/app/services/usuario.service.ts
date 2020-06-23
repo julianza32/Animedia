@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class UsuarioService {
     url='http://localhost:3000/api/'
   constructor(
@@ -13,8 +11,9 @@ export class UsuarioService {
 // registrar cancion 
   registarUsuario(usuarioNuevo){
     let params = JSON.stringify(usuarioNuevo);
+    console.log(params);
     let options = {
-      headers: new HttpHeaders({' Content-Type ':'application/json'})
+      headers: new HttpHeaders({'Content-Type':'application/json'})
     };
     return this._http.post(
       this.url + 'registerUser',params,options).pipe(map(res=>res));
