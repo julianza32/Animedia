@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
     this.usuarioService.iniciarSesion(this.login).subscribe(
       (response: any)=>{
         console.log(response)
-        let usuario = response.usuario;
+        let usuario = response.user;
         this.login = usuario;
 
         if (this.login) {
