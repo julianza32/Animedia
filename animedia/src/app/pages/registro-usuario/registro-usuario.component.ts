@@ -40,7 +40,7 @@ export class RegistroUsuarioComponent implements OnInit {
         }else{
           alert(`Te registraste correctamente! inicia sesion con ${usuario.email}`);
           this.usuarioModel= new Usuario('','','',0,new Date,'','','','');
-          this._router.navigate(['/home']);
+          this._router.navigate(['/login']);
         }
       }else{
           alert(response.messaje);
