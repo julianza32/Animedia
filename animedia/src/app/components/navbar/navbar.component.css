@@ -1,11 +1,11 @@
 
 
 .fondoGradient{
-    background: rgba(199, 45, 40,0.8);
+    background: rgba(199, 45, 40, 0.8);
     /* background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 0%, rgba(234, 174, 173, 0) 15%, rgba(228, 152, 150, 0.36738445378151263) 28%, rgba(216, 106, 102, 0.4682247899159664) 40%, rgba(210, 83, 79, 0.6783088235294117) 51%, rgba(204, 62, 57, 0.8323704481792717) 63%, rgba(199, 45, 40, 1) 86%, rgba(199, 45, 40, 1) 100%); */
 }
 .fondoOscuro{
-     background-color: #C72D28;
+     background-color: rgb(199, 45, 40);
 }
 .buscador {
     border-radius: 40px;
