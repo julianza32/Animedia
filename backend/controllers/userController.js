@@ -22,21 +22,32 @@ function registerUser(req, res){
     user.image = null;
     user.affiliateCard = parameters.affiliateCard;
 
-    //Función save() para interactuar con la DB
-    user.save((err, userNew)=>{
-        if(err){
-            res.status(500).send({message: "Error en el servidor"});
+    //Buscar el usuario apra encontrar is tiene imagen de perfil y borrarla
+    User.findOne({email : parameters.email},(err,userFound)=>{
+        if(err)
+        {
+            res.status(500).send({message:"Error en el servidor"});
+        }if(!userFound){
+            //Función save() para interactuar con la DB
+            user.save((err, userNew)=>{
+                if(!userNew){
+                    res.status(200).send({message: "No fue posible realizar el registro"})
+                }else{
+                    res.status(200).send({
+                        message: "Usuario creado",
+                        user: userNew
+                    });
+                }
+            });            
         }else{
-            if(!userNew){
-                res.status(200).send({message: "No fue posible realizar el registro"})
-            }else{
-                res.status(200).send({
-                    message: "Usuario creado",
-                    user: userNew
-                });
-            }
+            res.status(200).send({
+                message: "El correo ya existe en nuestra plataforma"
+            });
         }
+        
     });
+
+    
 
 }
 

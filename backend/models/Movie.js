@@ -16,7 +16,7 @@ var movieSchema = new Schema({
     releaseDate: Date,
     classification: String,
     image: String,
-    
+    trailer: String,
 });
 
 //Exportar el modelo 
