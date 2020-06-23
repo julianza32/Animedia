@@ -9,12 +9,14 @@ const cors = require('cors');
 
 //variable de rutas a ejecutar
 const userRouter = require('./routes/userRouter');
+const movieRouter = require('./routes/movieRouter');
 
 // -- Middlewares -- (fragmento de codigo que se ejecuta entre la petición y la respuesta)
 app.use(express.json());
 app.use(cors());
 // Consumo de las rutas 
 app.use('/api',userRouter);
+app.use('/api',movieRouter);
 
 // -- Fin Middlewares --
 
