@@ -10,15 +10,14 @@
 .contenedorEstrenos {
     width: 100%;
     overflow-x: scroll;
-}
+    scrollbar-color: #c72d28 #231e1e ;
+  }
 
 .card-img {
     width: 280px;
     height: 350px;
 }
-.sinopsis{
-    overflow-y: scroll;
-}
+
 .card-img-overlay {
 background-color: rgba(0, 0, 0, 0.8);
 }
