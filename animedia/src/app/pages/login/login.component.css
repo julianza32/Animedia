@@ -27,7 +27,7 @@ color:  white;
 }
 
 .social_icon span:hover{
-color: rgb(199, 45, 40);
+color: rgba(255, 255, 255, 0.5);
 cursor: pointer;
 }
 
@@ -54,18 +54,6 @@ box-shadow: 0 0 0 0 !important;
 
 }
 
-.remember{
-color: white;
-}
-
-.remember input
-{
-width: 20px;
-height: 20px;
-margin-left: 15px;
-margin-right: 5px;
-}
-
 .login_btn{
 color: white;
 background-color:  rgb(199, 45, 40);
@@ -73,8 +61,8 @@ width: 100px;
 }
 
 .login_btn:hover{
-color: black;
-background-color: white;
+color: white;
+background-color: black;
 }
 
 .links{
@@ -83,4 +71,5 @@ color: white;
 
 .links a{
 margin-left: 4px;
+color:rgb(199, 45, 40) ;
 }
