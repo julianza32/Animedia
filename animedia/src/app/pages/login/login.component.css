@@ -27,7 +27,7 @@ color:  white;
 }
 
 .social_icon span:hover{
-color: rgb(199, 45, 40);
+color: rgba(255, 255, 255, 0.5);
 cursor: pointer;
 }
 
