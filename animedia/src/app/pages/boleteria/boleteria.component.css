@@ -1,9 +1,29 @@
 .sillas{
+    width: 8%;
+    max-width: 40px;
+    height: 40px;
+    background-color:  rgb(43, 136, 43,0.7);
+    margin: 2px;
+    text-align: center;
+    size: 1em;
+}
+.sillasm{
     width: 40px;
     height: 40px;
-    background-color: violet;
 }
 .pantalla{
     margin-top:10px;
-    background-color: turquoise;
+    background-color: rgba(128, 128, 128, 0.74);
+}
+.disponibles{
+    background-color: rgb(43, 136, 43);
+}
+.ocupadas{
+    background-color: #C72D28;
+}
+.seleccionadas{
+    background-color: rgba(128, 128, 128, 0.74);
+}
+section, .boleteria{
+    margin: 50px;
 }

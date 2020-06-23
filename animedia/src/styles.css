@@ -1,6 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 body{
     background-color: #231e1e;
-    font-family: 'Cairo', sans-serif;
+    
     color: white;
+}
+*{
+    font-family: 'Cairo', sans-serif;
+
 }
