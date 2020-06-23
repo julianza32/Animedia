@@ -1,5 +1,5 @@
 <div class="container pt-5">
-    <form #formularioRegistro="ngForm" (ngSubmit)="registrarUsuario()"
+    <form #formularioRegistro="ngForm" (ngSubmit)="validarFormulario()"
         class="w-100 d-flex flex-wrap justify-content-center">
         <div class="form-group col-xl-8 col-l-9 col-md-10 col-sm-11 col-12">
             <label class="text-white" for="nombre">Nombre</label>
@@ -31,6 +31,12 @@
             <input type="password" class="form-control" id="contrasena" placeholder="Tu contraseña aqui" name="contrasena"
             #contrasena="ngModel" [(ngModel)]="usuarioModel.pass">
         </div>
+        <div class="form-check">
+            <input #tyc class="form-check-input" type="checkbox" value="" id="terminosycondiciones">
+            <label class="form-check-label" for="terminosycondiciones">
+              Aceptos los terminos y condiciones del uso del portal animedia
+            </label>
+          </div>
         <div class="form-group col-xl-8 col-l-9 col-md-10 col-sm-11 col-12">
             <button type="submit" class="btn btn-primary">Registrarse</button>
         </div>

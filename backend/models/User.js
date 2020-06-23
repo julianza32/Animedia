@@ -13,7 +13,8 @@ var userSchema = new Schema({
     email: String,
     pass: String,
     rol: String,
-    image: String
+    image: String,
+    affiliateCard: String
     
 });
 
