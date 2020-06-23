@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
 
   public imagenLogo: string = "../../../assets/imagenes/logoAnimediabb.png"
- /* https://giphy.com/gifs/l6mBchxYZc7Sw/html5 */
-  // public imagenLogo: file = "../../../assets/imagenes/logoAnimediabb.png"
-
+ 
+/*   public imagenCinema: string = "../../../assets/imagenes/cinema.gif"
+ */
 
   constructor() { }
 
