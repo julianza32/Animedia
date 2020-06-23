@@ -191,8 +191,8 @@ function uploadImage(req, res){
                     }else{
                         res.status(200).send({
                             message: "Imagen anexada",
-                            imagen: nombreArchivo,
-                            usuario: usuarioConImg
+                            image: nombreArchivo,
+                            user: usuarioConImg
                         })
                     }
                 }
