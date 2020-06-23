@@ -12,7 +12,7 @@ export class UsuarioService {
     private _http: HttpClient
   ) { }
 // registrar cancion 
-  registarUsuario(usuarioNuevo){
+  registrarUsuario(usuarioNuevo){
     let params = JSON.stringify(usuarioNuevo);
     console.log(params);
     let options = {
