@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private usuarioService: UsuarioService,
     private _router: Router,
-    // private renderer: Renderer2;
+    
   ) {
     this.login = new Usuario('', '', '',  0, new Date(), '', '', 'usuario', '')
    }
@@ -67,9 +67,9 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('sesion',JSON.stringify(usuarioLogueado));
           // Consumir el servicio obtenerNombreUsuario
           this.identidad = this.usuarioService.obtenerNombreUsuario();
-          alert(`Hola ${this.identidad.nombre}. Empieza a disfurtar de nuestro contenido!`);
+          alert(`Hola ${this.identidad.names}. Empieza a disfurtar de nuestro contenido!`);
           // Redirección al perfil
-          // this._router.navigate(['/home'])
+          this._router.navigate(['/home'])
         } else{
           alert("Usuario no identificado")
         }
