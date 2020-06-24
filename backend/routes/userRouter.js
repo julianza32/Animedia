@@ -19,7 +19,7 @@ api.post('/registerUser', UserControl.registerUser);
 //Ruta Obtener todos los usuarios
 api.get('/getAllUsers', UserControl.getAllUsers);
 
-//Ruta Obtener todos los usuarios
+//Ruta Obtener un usuario en especÍfico por medio de su ID
 api.get('/getUser/:id', UserControl.getUser);
 
 //Ruta Actualizar usuario
@@ -32,7 +32,7 @@ api.delete('/deleteUser/:id', UserControl.deleteUser);
 api.post('/login', UserControl.login);
 
 //Ruta subir imagen usuario
-api.put('/uploadImage/:id', subirImgDirectorio, UserControl.uploadImage);
+api.put('/uploadUserImage/:id', subirImgDirectorio, UserControl.uploadUserImage);
 
 //Ruta para mostrar imagen usuario
 api.get('/getUserImage/:imageFile',UserControl.getUserImage);

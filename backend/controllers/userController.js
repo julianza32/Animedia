@@ -2,7 +2,7 @@
 
 const User = require('../models/user');
 
-// Importar modulo File System 
+// Importar módulo File System 
 const fs = require('fs');
 // Importar modulo path
 const path = require('path');
@@ -20,22 +20,34 @@ function registerUser(req, res){
     user.pass = parameters.pass;
     user.rol = 'usuario'; //Dato rol quemado - usuario por defecto
     user.image = null;
+    user.affiliateCard = parameters.affiliateCard;
 
-    //Función save() para interactuar con la DB
-    user.save((err, userNew)=>{
-        if(err){
-            res.status(500).send({message: "Error en el servidor"});
+    //Buscar el usuario apra encontrar is tiene imagen de perfil y borrarla
+    User.findOne({email : parameters.email},(err,userFound)=>{
+        if(err)
+        {
+            res.status(500).send({message:"Error en el servidor"});
+        }if(!userFound){
+            //Función save() para interactuar con la DB
+            user.save((err, userNew)=>{
+                if(!userNew){
+                    res.status(200).send({message: "No fue posible realizar el registro"})
+                }else{
+                    res.status(200).send({
+                        message: "Usuario creado",
+                        user: userNew
+                    });
+                }
+            });            
         }else{
-            if(!userNew){
-                res.status(200).send({message: "No fue posible realizar el registro"})
-            }else{
-                res.status(200).send({
-                    message: "Usuario creado",
-                    user: userNew
-                });
-            }
+            res.status(200).send({
+                message: "El correo ya existe en nuestra plataforma"
+            });
         }
+        
     });
+
+    
 
 }
 
@@ -102,7 +114,28 @@ function updateUser(req, res){
 //Función de eliminar usuario
 function deleteUser(req, res){
     var userId = req.params.id; 
-    
+    var ruta = './files/users/';
+
+    //Buscar el usuario apra encontrar is tiene imagen de perfil y borrarla
+    User.findOne({_id : userId},(err,userFound)=>{
+        if(err)
+        {
+            res.status(500).send({message:"Error en el servidor"});
+        }else if(!userFound){
+            res.status(200).send({message:"Usuario inexistente"});
+        }else if(userFound.imagen = !null)
+        {
+            //borrar archivo de imagen
+            fs.unlink(ruta+userFound.image,(error)=>{
+                if (err) {
+                    res.status(200).send({message:`Error ${err}` });
+                } 
+            });
+            //fin de borrar archivo
+        }
+    });
+
+
     User.findByIdAndDelete(userId, (err, deletedUser)=>{
         if(err){
             res.status(500).send({message: "Error en el servidor"});
@@ -147,9 +180,10 @@ function login(req, res){
 
 }
 
-function uploadImage(req, res){
+function uploadUserImage(req, res){
     var usuarioId = req.params.id;
     var nombreArchivo = "No has subido ninguna imagen...";
+    var ruta = './files/users/';
 
     //Validar si efectivamente se esta enviando un archivo
 
@@ -178,10 +212,42 @@ function uploadImage(req, res){
         console.log(`Extension archivo: ${extensionArchivo}`);
 
         // Validar si el formato del archivo es aceptable 
-
         if(extensionArchivo == 'png'||extensionArchivo=='jpg'||extensionArchivo=='jpeg'){
+            
+            //Buscar que hay en image si existe algún archivo lo elimina para dar paso al nuevo
+            User.findOne({_id: usuarioId},(err,userFound)=>{
+                if(err){
+                    
+                    res.status(500).send({message: "Error en el servidor"});
+                }
+                else if(userFound.image){
+                    console.log(ruta+userFound.image);
+                    fs.open(ruta+userFound.image,(err,data)=>{
+                        if(err)
+                        {
+                            console.log("no se encontro el archivo");
+                            //res.status(200).send({message:`Error crash ${err}` });
+                        }else if(!data)
+                        {
+                            console.log("error de lectura");
+                            //res.status(200).send({message:`Error lectura ${err}` });
+                        }else
+                        {
+                        //borrar archivo de imagen para actualizar
+                        fs.unlink(ruta+userFound.image, (error)=>{
+                        if(error){
+                            //res.status(200).send({message: });
+                            console.log(`Error ${error}`);
+                            
+                             }               
+                        }); 
+                        }
+                    });
+                    
+                }
+            });
+            
             //Actulizar del usuario el campo imagen
-
             User.findByIdAndUpdate(usuarioId,{image:nombreArchivo},(err,usuarioConImg)=>{
                 if(err){
                     res.status(500).send({message: "Error en el servidor"});
@@ -232,7 +298,7 @@ module.exports = {
     updateUser,
     deleteUser,
     login,
-    uploadImage,
+    uploadUserImage,
     getUserImage
 
 }

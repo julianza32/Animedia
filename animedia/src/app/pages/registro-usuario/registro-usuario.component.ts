@@ -43,7 +43,7 @@ export class RegistroUsuarioComponent implements OnInit {
           this._router.navigate(['/login']);
         }
       }else{
-          alert(response.messaje);
+          alert(response.message);
         }
       }, error=>{
         var errorMensaje = <any>error;
