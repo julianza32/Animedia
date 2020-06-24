@@ -12,12 +12,13 @@ import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.co
 import { AdminPeliculasComponent } from './admin-peliculas/admin-peliculas.component';
 import { from } from 'rxjs';
 import { UsuarioService } from '../services/usuario.service';
+import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 
 
 
 
 @NgModule({
-  declarations: [HomeComponent, CarteleraComponent, BoleteriaComponent, CineCasaComponent, ConfiteriaComponent, TarjetaComponent, LoginComponent, RegistroUsuarioComponent, AdminPeliculasComponent],
+  declarations: [HomeComponent, CarteleraComponent, BoleteriaComponent, CineCasaComponent, ConfiteriaComponent, TarjetaComponent, LoginComponent, RegistroUsuarioComponent, AdminPeliculasComponent, PerfilUsuarioComponent],
   imports: [
     CommonModule,FormsModule
   ],providers:[
