@@ -18,7 +18,7 @@ api.post('/registerMovie', MovieControl.registerMovie);
 api.get('/getAllMovies', MovieControl.getAllMovies);
 
 //Ruta Obtener una película en especÍfico por medio de su ID
-api.get('/getMovie/:id', MovieControl.getMovie);
+api.get('/getMovie/:movieFile', MovieControl.getMovie);
 
 //Ruta Actualizar película
 api.put('/updateMovie/:id', MovieControl.updateMovie);
