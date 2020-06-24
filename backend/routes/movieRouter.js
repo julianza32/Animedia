@@ -32,6 +32,12 @@ api.put('/uploadMovieImage/:id', subirImgDirectorio, MovieControl.uploadMovieIma
 //Ruta para mostrar imagen de película
 api.get('/getMovieImage/:imageFile',MovieControl.getMovieImage);
 
+//Ruta subir trailer de película
+api.put('/uploadMovieTrailer/:id', subirImgDirectorio, MovieControl.uploadMovieTrailer );
+
+//Ruta para mostrar trailer de película
+api.get('/getMovieTrailer/:imageFile',MovieControl.getMovieTrailer);
+
 
 //Exportar el modulo
 module.exports = api;

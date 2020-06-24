@@ -167,7 +167,7 @@ function uploadMovieImage(req, res){
                         res.status(200).send({
                             message: "Imagen anexada",
                             imagen: nombreArchivo,
-                            usuario: movieConImg
+                            movie: movieConImg
                         })
                     }
                 }
@@ -199,6 +199,82 @@ function getMovieImage(req, res){
 }
 
 
+function uploadMovieTrailer(req, res){
+    var movieId = req.params.id;
+    var nombreArchivo = "No has subido ninguna imagen...";
+
+    //Validar si efectivamente se esta enviando un archivo
+
+    if (req.files) {
+        // Vamos a ir analizando la ruta del archivo, el nombre y la extención
+        // C:\\usuarios\descargas\imagen.png
+        var rutaArchivo = req.files.image.path ;
+        console.log(`Ruta archivo: ${rutaArchivo}`);
+
+        // Haremos un split para separar elementos
+        // Esto nos generará un arreglo de datos
+        var partirArchivo = rutaArchivo.split('\\');
+        console.log(`partir archivo: ${partirArchivo}`);
+
+        //Acceder a la posicion que contiene el nombre del archivo
+        var nombreArchivo = partirArchivo[2];
+        console.log(`Posición dato: ${nombreArchivo}`);
+
+        //Haremos un split para separar el nombre del archivo de la extencion
+        //['imagen','png']
+        var extensionImg = nombreArchivo.split('\.');
+        console.log(`partir : ${extensionImg}`);
+
+        //Accedemos a la pocision de la extencion de l archivo
+        var extensionArchivo = extensionImg[1];
+        console.log(`Extension archivo: ${extensionArchivo}`);
+
+        // Validar si el formato del archivo es aceptable 
+
+        if(extensionArchivo == 'mp4'){
+            //Actulizar del usuario el campo imagen
+
+            Movie.findByIdAndUpdate(movieId,{trailer:nombreArchivo},(err,movieConTrailer)=>{
+                if(err){
+                    res.status(500).send({message: "Error en el servidor"});
+                }else{
+                    if(!movieConTrailer){
+                        res.status(200).send({message: "No fue posible subir la imagen"});
+                    }else{
+                        res.status(200).send({
+                            message: "Imagen anexada",
+                            imagen: nombreArchivo,
+                            movie: movieConTrailer
+                        })
+                    }
+                }
+            });
+        }else{
+            res.status(200).send({message:"Formato invalido! El archivo no es una video"})
+        }
+    } else {
+        res.status(200).send({ message: "No has subido video" });
+    }
+}
+
+function getMovieTrailer(req, res){
+    //pedir el archivo que queros mostrar
+    var archivo = req.params.trailerFile;
+    //ubicacion del archivo 
+    var ruta = './files/movies/'+archivo;
+
+    //validar si existe o no 
+    //fs.exists('la ruta del archivo a buscar, (existencia)=>{}')
+
+    fs.exists(ruta,(exists)=>{
+        if(exists){
+            res.sendFile(path.resolve(ruta));
+        }else{
+            res.status(200).send({message: "Trailer no encontrado"});
+        }
+    });
+}
+
 
 
 
@@ -209,7 +285,11 @@ module.exports = {
     updateMovie,
     deleteMovie,
     uploadMovieImage,
-    getMovieImage
+    getMovieImage,
+    uploadMovieTrailer,
+    getMovieTrailer
+
+
 }
 
 
