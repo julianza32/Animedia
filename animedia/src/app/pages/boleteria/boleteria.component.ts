@@ -11,9 +11,6 @@ export class BoleteriaComponent implements OnInit {
   public puestos=0;
   public puestosE=0;
 
-  @ViewChild('puestosS',{read:ElementRef}) puestosS:ElementRef;
-  
-
   constructor() { 
    
   }
@@ -27,10 +24,9 @@ export class BoleteriaComponent implements OnInit {
   ngOnInit(): void {
     
   }
-  ngDoCheck(){
-    /* this.puestosE=this.puestosS.nativeElement.value;  */
-    console.log(this.puestosS.nativeElement.value);
-  }
+ /*  ngDoCheck(){
+    
+  } */
 puestosSeleccionados(){
   if (this.puestos<this.puestosE){
     this.puestos++;
