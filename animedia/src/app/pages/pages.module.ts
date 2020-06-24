@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule }from '@angular/forms'
+import { FormsModule, ReactiveFormsModule }from '@angular/forms'
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { CarteleraComponent } from './cartelera/cartelera.component';
@@ -19,7 +19,7 @@ import { UsuarioService } from '../services/usuario.service';
 @NgModule({
   declarations: [HomeComponent, CarteleraComponent, BoleteriaComponent, CineCasaComponent, ConfiteriaComponent, TarjetaComponent, LoginComponent, RegistroUsuarioComponent, AdminPeliculasComponent],
   imports: [
-    CommonModule,FormsModule
+    CommonModule,FormsModule,ReactiveFormsModule
   ],providers:[
     UsuarioService
   ]
