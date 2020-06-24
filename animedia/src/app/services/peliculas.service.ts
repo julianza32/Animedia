@@ -48,7 +48,7 @@ export class PeliculasService {
       options
     ).pipe(map(res => res));
   }
-  // servicio eliminar canción
+  // servicio eliminar peli
   eliminarPeli(id) {
 
     let options = {
@@ -59,7 +59,7 @@ export class PeliculasService {
       options
     ).pipe(map(res => res));
   }
-  //servicio cargar imagen del albúm
+  //servicio cargar imagen de la  peli
   cargarImagenPeli(file: File, id) {
     let formData = new FormData();
     formData.append('image', file);
@@ -69,37 +69,36 @@ export class PeliculasService {
     ).pipe(map(res => res));
   }
 
-
+// Servicio cargar imagen peli
 
   obtenerImagenPeli(file)
   {
     return this._http.get(this.url+'getMovieImage/'+file).pipe(map(res => res));
   }
 
-  //servicio cargar Peli
-  cargarPeli(file: File, id) {
+  //servicio cargar Trailer
+  cargarTrailer(file: File, id) {
     let formData = new FormData();
     formData.append('trailer', file);
     return this._http.put(
-      this.url + 'updateMovie/' + id,
+      this.url + 'uploadMovieTrailer/' + id,
       formData
     ).pipe(map(res => res));
   }
 
-  //servicio traer todas las canciones orden asc
-  listarCanciones()
-  {
-    return this._http.get(this.url+'listarCanciones').pipe(map(res=>res));
-  }
-  listarGeneros()
-  {
-    return this._http.get(this.url+'obtenerCancionesGenero').pipe(map(res=>res));
+
+  //servicio mostrar Pelis disponibles
+  obtenerTrailer(){
+    return this._http.get(this.url+'getMovieTrailer').pipe(map(res=>res));
   }
 
-  buscarCancion(id)
+  //servicio traer todas las canciones orden asc
+  listarPelis()
   {
-    return this._http.get(this.url+'buscarCancion/'+id).pipe(map(res=>res));
-  } 
+    return this._http.get(this.url+'getAllMovies').pipe(map(res=>res));
+  }
+  
+  // +++++++++++++++++++++De aqui para abajo falta terminar con lo que se traiga de busqueda
 
   filtrarCancion(busqueda)
   {
@@ -109,10 +108,7 @@ export class PeliculasService {
     };
     return this._http.post(this.url+'buscarCancionEsp',params,options).pipe(map(res=>res));
   }
-   //servicio mostrar canciones disponibles
-   obtenerCanciones(){
-    return this._http.get(this.url+'obtenerCanciones').pipe(map(res=>res));
-  }
+   
 
  
 }

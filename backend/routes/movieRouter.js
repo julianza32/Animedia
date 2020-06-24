@@ -18,7 +18,7 @@ api.post('/registerMovie', MovieControl.registerMovie);
 api.get('/getAllMovies', MovieControl.getAllMovies);
 
 //Ruta Obtener una película en especÍfico por medio de su ID
-api.get('/getMovie/:movieFile', MovieControl.getMovie);
+api.get('/getMovie/:id', MovieControl.getMovie);
 
 //Ruta Actualizar película
 api.put('/updateMovie/:id', MovieControl.updateMovie);
@@ -36,7 +36,7 @@ api.get('/getMovieImage/:imageFile',MovieControl.getMovieImage);
 api.put('/uploadMovieTrailer/:id', subirImgDirectorio, MovieControl.uploadMovieTrailer );
 
 //Ruta para mostrar trailer de película
-api.get('/getMovieTrailer/:imageFile',MovieControl.getMovieTrailer);
+api.get('/getMovieTrailer/:trailerFile',MovieControl.getMovieTrailer);
 
 
 //Exportar el modulo
