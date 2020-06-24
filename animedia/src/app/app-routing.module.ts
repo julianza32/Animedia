@@ -9,6 +9,7 @@ import { TarjetaComponent } from './pages/tarjeta/tarjeta.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegistroUsuarioComponent } from './pages/registro-usuario/registro-usuario.component';
 import { AdminPeliculasComponent } from './pages/admin-peliculas/admin-peliculas.component';
+import { PerfilUsuarioComponent } from './pages/perfil-usuario/perfil-usuario.component';
 
 
 const routes: Routes = [{path:'home', component:HomeComponent}, 
@@ -20,7 +21,9 @@ const routes: Routes = [{path:'home', component:HomeComponent},
                         {path:'login',component:LoginComponent},
                         {path:'registroUsuario',component:RegistroUsuarioComponent},
                         {path:'adminPelis',component:AdminPeliculasComponent},
-                        {path:'**', pathMatch:'full', redirectTo:'home'}];
+                        {path:'perfil',component:PerfilUsuarioComponent},
+                        {path:'**', pathMatch:'full', redirectTo:'home'}
+                        ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

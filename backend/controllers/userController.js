@@ -126,9 +126,9 @@ function deleteUser(req, res){
         }else if(userFound.imagen = !null)
         {
             //borrar archivo de imagen
-            fs.unlink(ruta+userFound.image,(error)=>{
-                if (err) {
-                    res.status(200).send({message:`Error ${err}` });
+            fs.unlinkSync(ruta+userFound.image,(error)=>{
+                if (error) {
+                    res.status(200).send({message:`Error ${error}` });
                 } 
             });
             //fin de borrar archivo
@@ -257,8 +257,8 @@ function uploadUserImage(req, res){
                     }else{
                         res.status(200).send({
                             message: "Imagen anexada",
-                            imagen: nombreArchivo,
-                            usuario: usuarioConImg
+                            image: nombreArchivo,
+                            user: usuarioConImg
                         })
                     }
                 }
