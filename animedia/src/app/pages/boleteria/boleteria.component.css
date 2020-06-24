@@ -2,7 +2,7 @@
     width: 8%;
     max-width: 40px;
     height: 40px;
-    background-color:  rgb(43, 136, 43,0.7);
+    background-color:  rgba(128, 128, 128, 0.74);
     margin: 2px;
     text-align: center;
     size: 1em;
@@ -16,14 +16,18 @@
     background-color: rgba(128, 128, 128, 0.74);
 }
 .disponibles{
-    background-color: rgb(43, 136, 43);
+    background-color: rgba(128, 128, 128, 0.74);
 }
 .ocupadas{
     background-color: #C72D28;
 }
 .seleccionadas{
-    background-color: rgba(128, 128, 128, 0.74);
+    background-color: rgb(43, 136, 43);
 }
 section, .boleteria{
     margin: 50px;
+}
+
+.sillas:hover{
+    background-color: rgb(43, 136, 43);
 }
