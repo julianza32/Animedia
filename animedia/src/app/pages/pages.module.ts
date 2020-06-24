@@ -12,6 +12,8 @@ import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.co
 import { AdminPeliculasComponent } from './admin-peliculas/admin-peliculas.component';
 import { from } from 'rxjs';
 import { UsuarioService } from '../services/usuario.service';
+// Sujeto al cambio por posibles errores
+import { PeliculasService } from '../services/peliculas.service';
 
 
 
@@ -21,7 +23,8 @@ import { UsuarioService } from '../services/usuario.service';
   imports: [
     CommonModule,FormsModule
   ],providers:[
-    UsuarioService
+    UsuarioService,
+    PeliculasService //Sujeto a cambio
   ]
 })
 export class PagesModule { }
