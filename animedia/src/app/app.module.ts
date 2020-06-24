@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { ComponentsModule } from './components/components.module';
 import { PagesModule } from './pages/pages.module';
 import { UsuarioService } from './services/usuario.service';
+import{PeliculasService} from './services/peliculas.service';
 
 import {HttpClientModule} from '@angular/common/http'
 
@@ -16,9 +17,13 @@ import {HttpClientModule} from '@angular/common/http'
     BrowserModule,
     AppRoutingModule,
     ComponentsModule,
-    PagesModule,HttpClientModule
+    PagesModule,
+    HttpClientModule
     ],
-  providers: [UsuarioService],
+  providers: [
+    UsuarioService, 
+    PeliculasService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

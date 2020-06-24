@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild,ElementRef} from '@angular/core';
 
 
 @Component({
@@ -8,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoleteriaComponent implements OnInit {
 
-    public puestos=0;
+  public puestos=0;
+  public puestosE=0;
 
-  constructor() { }
+  @ViewChild('puestosS',{read:ElementRef}) puestosS:ElementRef;
+  
+
+  constructor() { 
+   
+  }
   columnas=[1,2,3,4,];
   columnas2=[5,6,7,8,9,10,11,12,13,14];
   columnas3=[15,16,17,18];
@@ -21,7 +27,16 @@ export class BoleteriaComponent implements OnInit {
   ngOnInit(): void {
     
   }
+  ngDoCheck(){
+    /* this.puestosE=this.puestosS.nativeElement.value;  */
+    console.log(this.puestosS.nativeElement.value);
+  }
 puestosSeleccionados(){
-  this.puestos++;
+  if (this.puestos<this.puestosE){
+    this.puestos++;
+  }else{
+    alert(`Ya escogiste tus puestos, puedes dirigirte a pagos ${this.puestosE}`);
+  }
+  
 }
 }
