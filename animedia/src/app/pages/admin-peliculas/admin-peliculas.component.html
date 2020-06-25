@@ -20,7 +20,7 @@
                     [(ngModel)]="peliculaTrabajada.sinopsis"> </textarea>
                 <input type="text" class="" gitplaceholder="Url pelicula" name="pelicula" #pelicula="ngModel"
                     [(ngModel)]="peliculaTrabajada.pelicula">
-                <input type="hidden" value="{{cancionTrabajada._id}}" #_id="ngModel"
+                <input type="hidden" value="{{peliculaTrabajada._id}}" #_id="ngModel"
                     [(ngModel)]="peliculaTrabajada._id">
                 <span>Subir imagen</span>
                 <input type="file" multiple (change)="subirArchivoImg($event)">
@@ -33,7 +33,7 @@
 
             <div>
                 <h3>Previsualización</h3>
-                <img *ngIf="peliculaTrabajada.image" [src]=rutaImagenP>
+                <img *ngIf="peliculaTrabajada.imagen" [src]=rutaImagenP>
                 <video>
                     <source [src]=rutaTrailer>
                 </video>
@@ -50,7 +50,7 @@
                     <th>Eliminar Película</th>
                 </tr>
                 <tr *ngFor="let pelicula of listaPeliculas.peliculas" class="">
-                    <td> <span>{{peliculas.nombre}}</span> </td>
+                    <td> <span>{{pelicula.nombre}}</span> </td>
                     <td><button (click)="modPelicula(pelicula._id)">Modificar</button></td>
                     <td> <button (click)="delPelicula(pelicula._id)">Eliminar<!-- <i class="material-icons">delete</i> --></button></td>
 
