@@ -67,9 +67,9 @@ export class UsuarioService {
     // instanciamos el objeto FormData que nos permitira enviar la img
 
     let formData = new FormData();
-    formData.append('imagen',file);
+    formData.append('image',file);
     return this._http.put(
-      this.url+'uploadImage/'+id,
+      this.url+'uploadUserImage/'+id,
       formData
     ).pipe(map(res=>res));
   }

@@ -1,8 +1,7 @@
 <div #informacion>
-    <div>{{identidad.image}}</div>
+    <div><img #imgP src=""></div>
     <div>{{identidad.names}}</div>
     <div>{{identidad.lastNames}}</div>
-    
     <div>{{identidad.birthdate}}</div>
     <div>{{identidad.email}}</div>
     <div>{{identidad.cellphone}}</div>
@@ -11,8 +10,10 @@
     </div>
 </div>
 <div #formulario>
+    <form #formularioRegistro="ngForm" (ngSubmit)="actualizarUsuario()"
+        class="w-100 d-flex flex-wrap justify-content-center">
     <div class="form-group col-xl-8 col-l-9 col-md-10 col-sm-11 col-12">
-        <label class="text-white" for="nombre">Nombre</label>
+        <label class="text-white" for="no           mbre">Nombre</label>
         <input type="text" class="form-control" id="nombre" placeholder="Tu nombre aqui" name="nombre"
             #nombre="ngModel" [(ngModel)]="usuarioModel.names">
     </div>
@@ -41,8 +42,15 @@
         <input type="password" class="form-control" id="contrasena" placeholder="Tu contraseña aqui" name="contrasena"
         #contrasena="ngModel" [(ngModel)]="usuarioModel.pass">
     </div>
-    
+    <div class="form-group">
+        <label for="imagefile">cambiar imagen</label>
+        <input id="imagefile" type="file" class="form-control-file" (change)='subirImagen($event)'>
+    </div>
     <div class="form-group col-xl-8 col-l-9 col-md-10 col-sm-11 col-12">
         <button type="submit" class="btn btn-primary">Actualizar informacion</button>
+        
     </div>
+    
+    </form>
+    <button (click)="hideForm()" class="btn btn-danger">Cancelar</button>
 </div>

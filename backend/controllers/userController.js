@@ -1,6 +1,6 @@
 /* Contiene las funciones o métodos para la manipulación de users */
 
-const User = require('../models/user');
+const User = require('../models/User');
 
 // Importar módulo File System 
 const fs = require('fs');
@@ -181,10 +181,12 @@ function login(req, res){
 }
 
 function uploadUserImage(req, res){
+    
     var usuarioId = req.params.id;
     var nombreArchivo = "No has subido ninguna imagen...";
     var ruta = './files/users/';
-
+    console.log("intentando subir imagen"+req.files.image.name);
+   
     //Validar si efectivamente se esta enviando un archivo
 
     if (req.files) {

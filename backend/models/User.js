@@ -9,7 +9,7 @@ var userSchema = new Schema({
     names: String,
     lastNames: String,
     cellphone: Number,
-    birthdate: Date,
+    birthdate: String,
     email: String,
     pass: String,
     rol: String,
