@@ -20,7 +20,7 @@ export class AdminPeliculasComponent implements OnInit {
   public rutaImagenP;
   public rutaTrailer;
   public listaPeliculas:any;
-  
+
 
   constructor(private peliculaService:PeliculasService, private _router: Router)
    {
@@ -34,6 +34,10 @@ export class AdminPeliculasComponent implements OnInit {
   //procesar formulario
   ProcesarFormulario(){
 
+  }
+  //agregar actor
+  agregarActor(){
+    
   }
 // función dubir archivo de imagen de la película
   subirArchivoImg(){
