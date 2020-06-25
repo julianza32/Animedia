@@ -2,7 +2,6 @@
     <div><img #imgP src=""></div>
     <div>{{identidad.names}}</div>
     <div>{{identidad.lastNames}}</div>
-    
     <div>{{identidad.birthdate}}</div>
     <div>{{identidad.email}}</div>
     <div>{{identidad.cellphone}}</div>
@@ -14,7 +13,7 @@
     <form #formularioRegistro="ngForm" (ngSubmit)="actualizarUsuario()"
         class="w-100 d-flex flex-wrap justify-content-center">
     <div class="form-group col-xl-8 col-l-9 col-md-10 col-sm-11 col-12">
-        <label class="text-white" for="nombre">Nombre</label>
+        <label class="text-white" for="no           mbre">Nombre</label>
         <input type="text" class="form-control" id="nombre" placeholder="Tu nombre aqui" name="nombre"
             #nombre="ngModel" [(ngModel)]="usuarioModel.names">
     </div>

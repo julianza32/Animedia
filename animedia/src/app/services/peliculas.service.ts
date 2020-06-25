@@ -100,16 +100,14 @@ export class PeliculasService {
   
   // +++++++++++++++++++++De aqui para abajo falta terminar con lo que se traiga de busqueda
 
-  filtrarCancion(busqueda)
+  filtrarPeli(busqueda)
   {
-    let params = JSON.stringify(busqueda);
-    let options = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-    };
-    return this._http.post(this.url+'buscarCancionEsp',params,options).pipe(map(res=>res));
+    // let params = JSON.stringify(busqueda);
+    // let options = {
+    //   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    // };
+    return this._http.get(this.url+'searchMovies').pipe(map(res=>res));
   }
    
-
- 
 }
 

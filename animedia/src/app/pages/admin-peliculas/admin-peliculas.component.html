@@ -1,1 +1,62 @@
-<p>admin-peliculas works!</p>
+<div class="container">
+    <h2>Administrador de películas</h2>
+    <div class="row">
+        <div class="col-md-6 col-12">
+            <form #ActualizarPelicula="ngForm" (ngSubmit)="ProcesarFormulario()">
+                <input type="text" class="" placeholder="Nombre" name="nombre" #nombre="ngModel"
+                    [(ngModel)]="peliculaTrabajada.nombre">
+                <input type="text" class="" placeholder="Genero" name="genero" #genero="ngModel"
+                    [(ngModel)]="peliculaTrabajada.genero">
+                <input type="text" class="" placeholder="Director" name="director" #director="ngModel"
+                    [(ngModel)]="peliculaTrabajada.director">
+                <input type="text" class="" placeholder="Actores" name="actores" #actores="ngModel"
+                    [(ngModel)]="peliculaTrabajada.actores">
+                <button>+</button>
+                <input type="number" class="" placeholder="Año de estreno" name="anio" #anio="ngModel"
+                    [(ngModel)]="peliculaTrabajada.anio">
+                <input type="text" class="" placeholder="Duración" name="duracion" #duracion="ngModel"
+                    [(ngModel)]="peliculaTrabajada.duracion">
+                <textarea class="" placeholder="Sinopsis" name="sinopsis" #sinopsis="ngModel"
+                    [(ngModel)]="peliculaTrabajada.sinopsis"> </textarea>
+                <input type="text" class="" gitplaceholder="Url pelicula" name="pelicula" #pelicula="ngModel"
+                    [(ngModel)]="peliculaTrabajada.pelicula">
+                <input type="hidden" value="{{cancionTrabajada._id}}" #_id="ngModel"
+                    [(ngModel)]="peliculaTrabajada._id">
+                <span>Subir imagen</span>
+                <input type="file" multiple (change)="subirArchivoImg($event)">
+                <span>Subir trailer</span>
+                <input type="file" multiple (change)="subirArchivoTrailer($event)" required>
+                <button type="submit" class="">Guardar</button>
+                <button type="reset" (click)="deleteId()">Nuevo documento</button>
+
+            </form>
+
+            <div>
+                <h3>Previsualización</h3>
+                <img *ngIf="peliculaTrabajada.image" [src]=rutaImagenP>
+                <video>
+                    <source [src]=rutaTrailer>
+                </video>
+            </div>
+        </div>
+        <!-- SEGUNDA COLUMNA -->
+
+        <div class="col-md-6 col-12">
+            <h3>Lista de canciones</h3>
+            <table>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Actualizar Película</th>
+                    <th>Eliminar Película</th>
+                </tr>
+                <tr *ngFor="let pelicula of listaPeliculas.peliculas" class="">
+                    <td> <span>{{peliculas.nombre}}</span> </td>
+                    <td><button (click)="modPelicula(pelicula._id)">Modificar</button></td>
+                    <td> <button (click)="delPelicula(pelicula._id)">Eliminar<!-- <i class="material-icons">delete</i> --></button></td>
+
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</div>
