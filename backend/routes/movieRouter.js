@@ -39,7 +39,7 @@ api.put('/uploadMovieTrailer/:id', subirTrailerDirectorio, MovieControl.uploadMo
 //Ruta para mostrar trailer de película
 api.get('/getMovieTrailer/:trailerFile',MovieControl.getMovieTrailer);
 
-//ruta para obtener una canción en especifico
+//ruta para obtener una película en especifico
 api.get('/searchMovies/', MovieControl.searchMovies);
 
 
