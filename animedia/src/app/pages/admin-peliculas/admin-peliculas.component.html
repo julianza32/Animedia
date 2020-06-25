@@ -1,1 +1,26 @@
-<p>admin-peliculas works!</p>
+<div class="container">
+    <h2>Administrador de películas</h2>
+<div class="row">
+<div class="col-md-6 col-6">
+    <form #ActualizarPelicula="ngForm" (ngSubmit)="ProcesarFormulario()">
+        <input type="text" class="" placeholder="Nombre" name="nombre" #nombre="ngModel" [(ngModel)]="peliculaTrabajada.nombre">
+        <input type="text" class="" placeholder="Genero" name="genero" #genero="ngModel" [(ngModel)]="peliculaTrabajada.genero">
+        <input type="text" class="" placeholder="Director" name="director" #director="ngModel" [(ngModel)]="peliculaTrabajada.director">
+        <input type="text" class="" placeholder="Actores" name="actores" #actores="ngModel" [(ngModel)]="peliculaTrabajada.actores">
+        <button>+</button>
+        <input type="number" class="" placeholder="Año de estreno" name="anio" #anio="ngModel" [(ngModel)]="peliculaTrabajada.anio">
+        <input type="text" class="" placeholder="Duración" name="duracion" #duracion="ngModel" [(ngModel)]="peliculaTrabajada.duracion">
+        <textarea class=""  placeholder="Sinopsis" name="sinopsis" #sinopsis="ngModel" [(ngModel)]="cancionTrabajada.sinopsis"> </textarea>
+        <input type="text" class="" placeholder="Url pelicula" name="pelicula" #pelicula="ngModel" [(ngModel)]="peliculaTrabajada.pelicula">
+
+
+
+
+
+    </form>
+</div>
+<div class="col-md-6 col-6">
+    
+</div>
+</div>
+</div>
