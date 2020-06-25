@@ -201,14 +201,14 @@ function getMovieImage(req, res){
 
 function uploadMovieTrailer(req, res){
     var movieId = req.params.id;
-    var nombreArchivo = "No has subido ninguna imagen...";
+    var nombreArchivo = "No has subido ningún trailer...";
 
     //Validar si efectivamente se esta enviando un archivo
 
     if (req.files) {
         // Vamos a ir analizando la ruta del archivo, el nombre y la extención
-        // C:\\usuarios\descargas\imagen.png
-        var rutaArchivo = req.files.image.path ;
+        // C:\\usuarios\descargas\video.mp4
+        var rutaArchivo = req.files.trailer.path ;
         console.log(`Ruta archivo: ${rutaArchivo}`);
 
         // Haremos un split para separar elementos
@@ -221,28 +221,28 @@ function uploadMovieTrailer(req, res){
         console.log(`Posición dato: ${nombreArchivo}`);
 
         //Haremos un split para separar el nombre del archivo de la extencion
-        //['imagen','png']
+        //['video','mp4']
         var extensionImg = nombreArchivo.split('\.');
         console.log(`partir : ${extensionImg}`);
 
-        //Accedemos a la pocision de la extencion de l archivo
+        //Accedemos a la pocision de la extencion del archivo
         var extensionArchivo = extensionImg[1];
         console.log(`Extension archivo: ${extensionArchivo}`);
 
         // Validar si el formato del archivo es aceptable 
 
         if(extensionArchivo == 'mp4'){
-            //Actulizar del usuario el campo imagen
+            //Actulizar la película el campo trailer
 
             Movie.findByIdAndUpdate(movieId,{trailer:nombreArchivo},(err,movieConTrailer)=>{
                 if(err){
                     res.status(500).send({message: "Error en el servidor"});
                 }else{
                     if(!movieConTrailer){
-                        res.status(200).send({message: "No fue posible subir la imagen"});
+                        res.status(200).send({message: "No fue posible subir el video"});
                     }else{
                         res.status(200).send({
-                            message: "Imagen anexada",
+                            message: "Trailer anexado",
                             imagen: nombreArchivo,
                             movie: movieConTrailer
                         })
