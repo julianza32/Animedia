@@ -8,6 +8,7 @@ const MovieControl = require('../controllers/movieController');
 const multiparty = require('connect-multiparty');
 //A través de connect-multiparty, apuntamos a la carpeta que deseemos en que se guarden los archivos
 const  subirImgDirectorio = multiparty({uploadDir: './files/movies'});
+const  subirTrailerDirectorio = multiparty({uploadDir: './files/movies'});
 
 var api = express.Router();
 
@@ -33,10 +34,13 @@ api.put('/uploadMovieImage/:id', subirImgDirectorio, MovieControl.uploadMovieIma
 api.get('/getMovieImage/:imageFile',MovieControl.getMovieImage);
 
 //Ruta subir trailer de película
-api.put('/uploadMovieTrailer/:id', subirImgDirectorio, MovieControl.uploadMovieTrailer );
+api.put('/uploadMovieTrailer/:id', subirTrailerDirectorio, MovieControl.uploadMovieTrailer );
 
 //Ruta para mostrar trailer de película
 api.get('/getMovieTrailer/:trailerFile',MovieControl.getMovieTrailer);
+
+//ruta para obtener una película en especifico
+api.get('/searchMovies/', MovieControl.searchMovies);
 
 
 //Exportar el modulo
