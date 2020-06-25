@@ -4,7 +4,7 @@ export class Usuario{
         public names: String,
         public lastNames: String,
         public cellphone: Number,
-        public birthdate: Date,
+        public birthdate: String,
         public email: String,
         public pass: String,
         public rol: String,

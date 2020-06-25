@@ -16,7 +16,7 @@ export class RegistroUsuarioComponent implements OnInit {
   @ViewChild('tyc') tyc: ElementRef;
 
   constructor(private usuarioService: UsuarioService,private _router:Router) {
-    this.usuarioModel= new Usuario('','','',0,new Date,'','','','');
+    this.usuarioModel= new Usuario('','','',0,'','','','','');
    }
 
   ngOnInit(): void {
@@ -39,7 +39,7 @@ export class RegistroUsuarioComponent implements OnInit {
           alert("Error al registrate");
         }else{
           alert(`Te registraste correctamente! inicia sesion con ${usuario.email}`);
-          this.usuarioModel= new Usuario('','','',0,new Date,'','','','');
+          this.usuarioModel= new Usuario('','','',0,'','','','','');
           this._router.navigate(['/login']);
         }
       }else{

@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
     private _router: Router
     
   ) {
-    this.login = new Usuario('', '', '',  0, new Date(), '', '', 'usuario', '')
+    this.login = new Usuario('', '', '',  0, '', '', '', 'usuario', '')
    }
 
    public sesion = JSON.parse(localStorage.getItem('sesion'));
