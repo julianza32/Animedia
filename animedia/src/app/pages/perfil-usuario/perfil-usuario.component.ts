@@ -113,7 +113,7 @@ export class PerfilUsuarioComponent implements OnInit {
 
   cerrarCuenta(id)
   {
-
+    
   }
 
   showForm()
