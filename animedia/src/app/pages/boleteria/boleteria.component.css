@@ -1,11 +1,11 @@
 .sillas{
     width: 8%;
     max-width: 40px;
-    height: 40px;
-    background-color:  rgba(128, 128, 128, 0.74);
-    margin: 2px;
-    text-align: center;
-    size: 1em;
+    max-height: 40px;
+    
+    margin: 2px; 
+    
+    
 }
 .sillasm{
     width: 40px;

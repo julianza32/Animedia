@@ -1,13 +1,24 @@
 <div class="boleteria">
+<<<<<<< HEAD
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- <script>
         $(document).ready(function () {
+=======
+    
+    <script>
+      /*   $(document).ready(function () {
+>>>>>>> 6408728a104f39b18e30bd2a35cd2c18a9c87aad
             $("button").click(function () {
                 $(this).toggleClass("disponibles seleccionadas");
             });
         });
+<<<<<<< HEAD
 
     </script> -->
+=======
+ */
+    </script>
+>>>>>>> 6408728a104f39b18e30bd2a35cd2c18a9c87aad
     <section class="seleccion">
         <form class="row d-flex justify-content-around " #boleteriaForm="ngForm">
             <label for="puestosE">Cantidad de sillas</label>
@@ -47,13 +58,13 @@
         <div class="col-12">
             <div class="d-flex justify-content-between">
                 <div class="col-4 row d-flex justify-content-center">
-                    <button id="{{silla}}{{columna}}" class="btn disponibles sillas" (click)="puestosSeleccionados(this.silla+this.columna)"
-                        *ngFor="let columna of columnas">{{silla}}{{columna}}</button>
+                    <button id="{{silla}}{{columna}}" class="btn btn-secondary sillas" (click)="puestosSeleccionados(this.silla+this.columna)"
+                      *ngFor="let columna of columnas">{{silla}}{{columna}}</button>
 
                 </div>
                 <div class="col-4 row d-flex justify-content-center ">
-                        <button id="{{silla}}{{columna}}" class="btn disponibles sillas" (click)="puestosSeleccionados(this.silla+this.columna)"
-                        *ngFor="let columna of columnas2">{{silla}}{{columna}}</button>
+                        <button id="{{silla}}{{columna}}" class="btn btn-secondary " 
+                        *ngFor="let columna of columnas2" (click)="puestosSeleccionados(this.silla+this.columna)">{{silla}}{{columna}}</button>
                 </div>
                 <div class="col-4 row d-flex justify-content-center ">
                    
@@ -71,7 +82,7 @@
         <div class="col-12">
             <div class="d-flex justify-content-center ">
                
-                    <button id="mi-boton" class="btn btn-danger sillas" (click)="puestosSeleccionados(this.silla+this.columna)"
+                    <button id="{{silla}}{{columna}}" class="btn btn-danger sillas" (click)="puestosSeleccionados(this.silla+this.columna)"
                     *ngFor="let columna of columnas4">{{silla}}{{columna}}</button>
                
             </div>
