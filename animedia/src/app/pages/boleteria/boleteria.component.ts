@@ -27,9 +27,11 @@ export class BoleteriaComponent implements OnInit {
  /*  ngDoCheck(){
     
   } */
-puestosSeleccionados(){
+puestosSeleccionados(silla){
+  let sillaCol = document.getElementById(silla);
   if (this.puestos<this.puestosE){
     this.puestos++;
+    
   }else{
     alert(`Ya escogiste tus puestos, puedes dirigirte a pagos ${this.puestosE}`);
   }
