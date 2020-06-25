@@ -275,7 +275,26 @@ function getMovieTrailer(req, res){
     });
 }
 
-
+function searchMovies(req, res){
+    var parametros = req.body;
+    var busqueda = parametros.busqueda;//busqueda = {busqueda:value}
+    console.log(busqueda);
+    
+    Movie.find({$or: [
+            { title: {$regex: busqueda, $options: 'i'} } ,{ genre: {$regex: busqueda, $options: 'i'} },{ director: {$regex: busqueda, $options: 'i'} } 
+    ]}, (err, movieEncontrada)=>{
+        //console.log(movieEncontrada);
+        if(err){
+            res.status(500).send({message: "Error en el servidor"});
+        }else{
+            res.status(200).send({
+                message:"El resultado de tu busqueda es:",
+                cancion: movieEncontrada
+            });
+         }
+        
+    });
+}
 
 
 module.exports = {
@@ -287,7 +306,8 @@ module.exports = {
     uploadMovieImage,
     getMovieImage,
     uploadMovieTrailer,
-    getMovieTrailer
+    getMovieTrailer,
+    searchMovies
 
 
 }
