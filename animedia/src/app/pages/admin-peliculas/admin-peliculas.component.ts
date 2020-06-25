@@ -40,12 +40,12 @@ export class AdminPeliculasComponent implements OnInit {
     
   }
 // función dubir archivo de imagen de la película
-  subirArchivoImg(){
+  subirArchivoImg(file:File){
 
   }
 
   //funcion subir archivo del trailer de la película
-  subirArchivoTrailer(){
+  subirArchivoTrailer(file:File){
     
   }
 
