@@ -9,9 +9,10 @@
 
     </script>
     <section class="seleccion">
-        <form class="row d-flex justify-content-around " action="">
-            <label for="puestos">Cantidad de sillas</label>
-            <input type="number" name="puestos">
+        <form class="row d-flex justify-content-around " #boleteriaForm="ngForm">
+            <label for="puestosE">Cantidad de sillas</label>
+            <input name="puestosE" type="number" [(ngModel)]="puestosE">
+            
             <label for="sala">Sala</label>
             <select name="sala" id="sala">
                 <option value="1"> 1 </option>

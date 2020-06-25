@@ -1,0 +1,48 @@
+<div #informacion>
+    <div>{{identidad.image}}</div>
+    <div>{{identidad.names}}</div>
+    <div>{{identidad.lastNames}}</div>
+    
+    <div>{{identidad.birthdate}}</div>
+    <div>{{identidad.email}}</div>
+    <div>{{identidad.cellphone}}</div>
+    <div class="form-group col-xl-8 col-l-9 col-md-10 col-sm-11 col-12">
+        <button (click)="showForm()" class="btn btn-primary">Modificar Datos</button>
+    </div>
+</div>
+<div #formulario>
+    <div class="form-group col-xl-8 col-l-9 col-md-10 col-sm-11 col-12">
+        <label class="text-white" for="nombre">Nombre</label>
+        <input type="text" class="form-control" id="nombre" placeholder="Tu nombre aqui" name="nombre"
+            #nombre="ngModel" [(ngModel)]="usuarioModel.names">
+    </div>
+    <div class="form-group col-xl-8 col-l-9 col-md-10 col-sm-11 col-12">
+        <label class="text-white" for="apellido">Apellido</label>
+        <input type="text" class="form-control" id="apellido" placeholder="Tu apellido aqui" name="apellido"
+         #apellido="ngModel" [(ngModel)]="usuarioModel.lastNames">
+    </div>
+    <div class="form-group col-xl-8 col-l-9 col-md-10 col-sm-11 col-12">
+        <label class="text-white" for="telefono">Telefono</label>
+        <input type="text" class="form-control" id="telefono" placeholder="Tu telefono aqui" name="telefono"
+        #telefono="ngModel" [(ngModel)]="usuarioModel.cellphone">
+    </div>
+    <div class="form-group col-xl-8 col-l-9 col-md-10 col-sm-11 col-12">
+        <label class="text-white" for="fechaNa">Fecha de nacimiento</label>
+        <input type="date" class="form-control" id="fechaNa" placeholder="Tu fecha de nacimiento aqui" name="fechaNa"
+        #fechaNa="ngModel" [(ngModel)]="usuarioModel.birthdate">
+    </div>
+    <div class="form-group col-xl-8 col-l-9 col-md-10 col-sm-11 col-12">
+        <label class="text-white" for="email">Correo</label>
+        <input type="email" class="form-control" id="email" placeholder="Tu correo aqui" name="email"
+        #email="ngModel" [(ngModel)]="usuarioModel.email">
+    </div>
+    <div class="form-group col-xl-8 col-l-9 col-md-10 col-sm-11 col-12">
+        <label class="text-white" for="contrasena">Contraseña</label>
+        <input type="password" class="form-control" id="contrasena" placeholder="Tu contraseña aqui" name="contrasena"
+        #contrasena="ngModel" [(ngModel)]="usuarioModel.pass">
+    </div>
+    
+    <div class="form-group col-xl-8 col-l-9 col-md-10 col-sm-11 col-12">
+        <button type="submit" class="btn btn-primary">Actualizar informacion</button>
+    </div>
+</div>

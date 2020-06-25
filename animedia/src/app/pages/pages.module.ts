@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule }from '@angular/forms'
+import { FormsModule, ReactiveFormsModule }from '@angular/forms'
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { CarteleraComponent } from './cartelera/cartelera.component';
@@ -12,16 +12,20 @@ import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.co
 import { AdminPeliculasComponent } from './admin-peliculas/admin-peliculas.component';
 import { from } from 'rxjs';
 import { UsuarioService } from '../services/usuario.service';
+import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
+// Sujeto al cambio por posibles errores
+import { PeliculasService } from '../services/peliculas.service';
 
 
 
 
 @NgModule({
-  declarations: [HomeComponent, CarteleraComponent, BoleteriaComponent, CineCasaComponent, ConfiteriaComponent, TarjetaComponent, LoginComponent, RegistroUsuarioComponent, AdminPeliculasComponent],
+  declarations: [HomeComponent, CarteleraComponent, BoleteriaComponent, CineCasaComponent, ConfiteriaComponent, TarjetaComponent, LoginComponent, RegistroUsuarioComponent, AdminPeliculasComponent, PerfilUsuarioComponent],
   imports: [
-    CommonModule,FormsModule
+    CommonModule,FormsModule,ReactiveFormsModule
   ],providers:[
-    UsuarioService
+    UsuarioService,
+    PeliculasService //Sujeto a cambio
   ]
 })
 export class PagesModule { }
