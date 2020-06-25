@@ -40,7 +40,7 @@ api.put('/uploadMovieTrailer/:id', subirTrailerDirectorio, MovieControl.uploadMo
 api.get('/getMovieTrailer/:trailerFile',MovieControl.getMovieTrailer);
 
 //ruta para obtener una canción en especifico
-api.post('/searchMovies/', MovieControl.searchMovies);
+api.get('/searchMovies/', MovieControl.searchMovies);
 
 
 //Exportar el modulo

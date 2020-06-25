@@ -289,7 +289,7 @@ function searchMovies(req, res){
         }else{
             res.status(200).send({
                 message:"El resultado de tu busqueda es:",
-                cancion: movieEncontrada
+                movie: movieEncontrada
             });
          }
         
