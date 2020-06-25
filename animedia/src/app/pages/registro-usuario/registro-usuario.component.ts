@@ -18,18 +18,15 @@ export class RegistroUsuarioComponent implements OnInit {
   public nombre: String;
   public apellido: String;
   public telefono: String;
-  public cumpleanos: Date;
+  public cumpleanos: String;
   public email: String;
   public contrasena: String;
 
+  constructor(private usuarioService: UsuarioService,private _router:Router) {
+    this.usuarioModel= new Usuario('','','',0,'','','','','');
+   }
 
   // @ViewChild('apellido') apellido: ElementRef;
-
-
-  constructor(private usuarioService: UsuarioService, private _router: Router) {
-    this.usuarioModel = new Usuario('', '', '', 0, new Date, '', '', '', '');
-  }
-
 
   ngDoCheck() {
     this.nombre = this.usuarioModel.names;
@@ -75,6 +72,7 @@ export class RegistroUsuarioComponent implements OnInit {
       }
     }
   }
+
   registrarUsuario() {
     this.usuarioService.registrarUsuario(this.usuarioModel).subscribe(
       (response: any) => {
@@ -85,7 +83,7 @@ export class RegistroUsuarioComponent implements OnInit {
             alert("Error al registrate");
           } else {
             alert(`Te registraste correctamente! inicia sesion con ${usuario.email}`);
-            this.usuarioModel = new Usuario('', '', '', 0, new Date, '', '', '', '');
+            this.usuarioModel = new Usuario('', '', '', 0,'', '', '', '', '');
             this._router.navigate(['/login']);
           }
         } else {
