@@ -3,29 +3,26 @@
     <div class="row">
         <div class="col-md-6 col-12">
             <form #ActualizarPelicula="ngForm" (ngSubmit)="ProcesarFormulario()">
-                <input type="text" class="" placeholder="Nombre" name="nombre" #nombre="ngModel"
-                    [(ngModel)]="peliculaTrabajada.nombre">
-                <input type="text" class="" placeholder="Genero" name="genero" #genero="ngModel"
-                    [(ngModel)]="peliculaTrabajada.genero">
-                <input type="text" class="" placeholder="Director" name="director" #director="ngModel"
-                    [(ngModel)]="peliculaTrabajada.director">
-                <input type="text" class="" placeholder="Actores" name="actores" #actores="ngModel"
-                    [(ngModel)]="peliculaTrabajada.actores">
-                <button>+</button>
-                <input type="number" class="" placeholder="Año de estreno" name="anio" #anio="ngModel"
-                    [(ngModel)]="peliculaTrabajada.anio">
-                <input type="text" class="" placeholder="Duración" name="duracion" #duracion="ngModel"
-                    [(ngModel)]="peliculaTrabajada.duracion">
-                <textarea class="" placeholder="Sinopsis" name="sinopsis" #sinopsis="ngModel"
-                    [(ngModel)]="peliculaTrabajada.sinopsis"> </textarea>
-                <input type="text" class="" gitplaceholder="Url pelicula" name="pelicula" #pelicula="ngModel"
-                    [(ngModel)]="peliculaTrabajada.pelicula">
-                <input type="hidden" value="{{peliculaTrabajada._id}}" #_id="ngModel"
-                    [(ngModel)]="peliculaTrabajada._id">
-                <span>Subir imagen</span>
-                <input type="file" multiple (change)="subirArchivoImg($event)">
-                <span>Subir trailer</span>
-                <input type="file" multiple (change)="subirArchivoTrailer($event)" required>
+                <input type="text" class="" placeholder="Nombre" name="title" #title="ngModel" [(ngModel)]="peliculaTrabajada.title">
+                <input type="text" class="" placeholder="Genero" name="genre" #genre="ngModel" [(ngModel)]="peliculaTrabajada.genre">
+                <input type="text" class="" placeholder="Director" name="director" #director="ngModel" [(ngModel)]="peliculaTrabajada.director">
+                <input type="text" class="" placeholder="Actores" name="actors" #actors="ngModel" [(ngModel)]="peliculaTrabajada.actors">
+                <button type="button">+</button>
+                <input type="number" class="" placeholder="Año de estreno" name="year" #year="ngModel" [(ngModel)]="peliculaTrabajada.year">
+                <input type="text" class="" placeholder="Duración" name="duration" #duration="ngModel" [(ngModel)]="peliculaTrabajada.duration">
+                <textarea class="" placeholder="Sinopsis" name="sinopsis" #synopsis="ngModel" [(ngModel)]="peliculaTrabajada.synopsis"> </textarea>
+                <input type="text" class="" gitplaceholder="Url pelicula" name="movie" #movie="ngModel" [(ngModel)]="peliculaTrabajada.movie">
+                <input type="hidden" value="{{ peliculaTrabajada._id}}" name="_id" #_id="ngModel" [(ngModel)]="peliculaTrabajada._id">
+                
+                <div>
+                    <input type="file" id="imagen"  (change)="subirArchivoImg($event)">
+                    <label for="imagen">Subir imagen</label>
+                 </div>
+                 <div>
+                    <input type="file" id="video"  (change)="subirArchivoTrailer($event)">
+                    <label for="video">Subir trailer</label>
+                 </div>
+                
                 <button type="submit" class="">Guardar</button>
                 <button type="reset" (click)="deleteId()">Nuevo documento</button>
 
@@ -33,24 +30,24 @@
 
             <div>
                 <h3>Previsualización</h3>
-                <img *ngIf="peliculaTrabajada.imagen" [src]=rutaImagenP>
+                <img  #imgPeli src="">
                 <video>
-                    <source [src]=rutaTrailer>
+                    <source #vidPeli src="">
                 </video>
             </div>
         </div>
         <!-- SEGUNDA COLUMNA -->
 
         <div class="col-md-6 col-12">
-            <h3>Lista de canciones</h3>
+            <h3>Lista de Peliculas</h3>
             <table>
                 <tr>
                     <th>Nombre</th>
                     <th>Actualizar Película</th>
                     <th>Eliminar Película</th>
                 </tr>
-                <tr *ngFor="let pelicula of listaPeliculas.peliculas" class="">
-                    <td> <span>{{pelicula.nombre}}</span> </td>
+                <tr *ngFor="let pelicula of listaPeliculas" >
+                    <td> <span>{{pelicula.title}}</span> </td>
                     <td><button (click)="modPelicula(pelicula._id)">Modificar</button></td>
                     <td> <button (click)="delPelicula(pelicula._id)">Eliminar<!-- <i class="material-icons">delete</i> --></button></td>
 
