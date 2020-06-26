@@ -1,26 +1,40 @@
-<p>confiteria works!</p>
-<div class="switch-version d-none d-md-block">
-    <div class="switch-web active">
-     <a class="d-block text-center">
-        <i class="fas fa-desktop"></i>
-        <span class="switch-title">web</span>
-      </a>
+<div class="container">
+    <img src="https://image.shutterstock.com/image-vector/cinema-movie-theater-object-on-260nw-454299568.jpg" alt="banner">
+</div>
+
+<div class="container pt-5">
+    <h2 class="w-100 text-white">LISTA DE CONFITERÍA</h2>
+
+    <div class="contenedorEstrenos d-flex flex-nowrap text-white">
+        <!-- col-xl-5 col-lg-5 col-md-8 col-sm-10 col-12 -->
+        <div *ngFor="let confit of confiteriaInfo">
+            <div class="card bg-dark text-white ">
+                <img class="card-img" src={{confit.imagenL}} alt="">
+                <div class="">
+                    <h5 class="card-title">{{confit.nombre}}</h5>
+                    <p class="card-text">{{confit.precio}}</p>
+                    <p class="card-text">{{confit.Descuentos}}</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="switch-web-products ">
-      <a class="switch-to-mdb-jquery" href="/docs/jquery/"><span class="switch-to mdb-jquery " id="jQuery"></span></a>
-      <a class="switch-to-mdb-angular" href="/docs/angular/"><span class="switch-to mdb-angular active" id="Angular"></span></a>
-      <a class="switch-to-mdb-react" href="/docs/react/"><span class="switch-to mdb-react " id="React"></span></a>
-      <a class="switch-to-mdb-vue" href="/docs/vue/"><span class="switch-to mdb-vue " id="Vue"></span></a>
+</div>
+
+<div class="container pt-5">
+    <h2 class="w-100 text-white">NUESTROS COMBOS</h2>
+
+    <div class="contenedorEstrenos d-flex flex-nowrap text-white">
+        <!-- col-xl-5 col-lg-5 col-md-8 col-sm-10 col-12 -->
+        <div *ngFor="let confitC of confiteriaCombo">
+            <div class="card bg-dark text-white ">
+                <img class="card-img" src={{confitC.imagenC}} alt="">
+                <div class="">
+                    <h5 class="card-title">{{confitC.nombre}}</h5>
+                    <p class="card-text">{{confitC.precio}}</p>
+                    <p class="card-text">{{confitC.contenido}}</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="switch-mobile-products switch-off">
-      <a href="/docs/angular/mobile/"><span class="switch-to switch-to-mobile mdb-angular-mobile " id="Angular-Mobile"></span></a>
-      <a href="/docs/react/mobile/"><span class="switch-to switch-to-mobile mdb-react-mobile " id="React-Mobile"></span></a>
-      <a href="/docs/vue/mobile/"><span class="switch-to switch-to-mobile mdb-vue-mobile " id="Vue-Mobile"></span></a>
-    </div>
-    <div class="switch-mobile ">
-      <a class="d-block text-center">
-        <i class="fas fa-mobile-alt"></i>
-        <span class="switch-title">mobile</span>
-      </a>
-    </div>
-  </div>
+</div>
+<P>** Tamaño de bebida(32 oz) y crispetas (140g) mediana</P>

@@ -1,29 +1,67 @@
-.switch-version {
-    z-index: 1000;
-}
-
-.switch-version {
-    position: fixed;
-    top: 300px;
-    right: 0;
-    width: 40px;
-    background: #fff;
-    border-radius: 4px 0 0 4px;
-    -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
-}
-
-@media (min-width: 768px){
-    .d-md-block {
-        display: block !important;
-    }
-}
+/*
+Prueba en proceso
 
 
-.d-none {
-    display: none !important;
-}
+.heading {
+    font-weight: 700;
+    color: #5d4267;
+  }
+  .card.colorful-card .testimonial-card .card-up {
+    height: 95px;
+  }
+  .card.colorful-card .testimonial-card .avatar {
+    border: 3px solid #fff !important;
+  }
+  .card.booking-card {
+    background-color: #c7f2e3;
+  }
+  .card.booking-card .fa {
+    color: #f7aa00;
+  }
+  .card.booking-card .card-body .card-text {
+    color: #db2d43;
+  }
+  .card.card.booking-card .chip {
+    background-color: #87e5da;
+  }
+  .card.booking-card .card-body hr {
+    border-top: 1px solid #f7aa00;
+  }
+  .mimosa {
+    background-color: #F0C05A;
+  }
+  .fuchsia-rose-text {
+    color: #db0075;
+  }
+  .aqua-sky-text {
+    color: #5cc6c3;
+  }
+  .mimosa-text {
+    color: #F0C05A;
+  }
+  .list-inline-item .fas, .list-inline-item .far {
+    font-size: .8rem;
+  }
+  .chili-pepper-text {
+    color: #9B1B30;
+  }
+  .collapse-content .fa.fa-heart:hover {
+    color: #f44336 !important;
+  }
+  .collapse-content .fa.fa-share-alt:hover {
+    color: #0d47a1 !important;
+  }
+  .card-wrapper.card-action {
+    min-height: 400px;
+  } */
 
-*, *::before, *::after {
-    box-sizing: border-box;
+  .contenedorEstrenos {
+    width: 100%;
+    overflow-x: scroll;
+    scrollbar-color: #c72d28 #231e1e ;
+  }
+
+.card-img {
+    width: 280px;
+    height: 350px;
 }
