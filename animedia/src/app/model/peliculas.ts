@@ -1,15 +1,17 @@
 export class Pelicula{
     constructor(
         public _id: String,
-        public nombre: String,
-        public genero: String,
+        public title: String,
+        public genre: String,
+        public year: String,
+        public duration: String,
+        public synopsis: String,
+        public actors: [],
         public director: String,
-        public actores: [],
-        public anio: String,
-        public duracion: String,
-        public sinopsis: String,
-        public imagen: String,
-        public trailer: File,
-        public pelicula: String
+        public releaseDate:String,
+        public classification,
+        public image: String,
+        public trailer: String,
+        public movie: String
     ){}
 }

@@ -43,7 +43,7 @@ export class PeliculasService {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
     return this._http.put(
-      this.url + 'updateMusic/updateMovie/' + id,
+      this.url + 'updateMovie/' + id,
       params,
       options
     ).pipe(map(res => res));
@@ -86,6 +86,10 @@ export class PeliculasService {
     ).pipe(map(res => res));
   }
 
+  obtenerPelicula(id)
+  {
+    return this._http.get(this.url+'getMovie/'+id).pipe(map(res=>res))
+  }
 
   //servicio mostrar Pelis disponibles
   obtenerTrailer(){
@@ -102,10 +106,10 @@ export class PeliculasService {
 
   filtrarPeli(busqueda)
   {
-    // let params = JSON.stringify(busqueda);
-    // let options = {
-    //   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-    // };
+     /* let params = JSON.stringify(busqueda);
+     let options = {
+       headers: new HttpHeaders({ 'Content-Type': 'application/json' })  
+     }; */
     return this._http.get(this.url+'searchMovies').pipe(map(res=>res));
   }
    

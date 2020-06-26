@@ -43,7 +43,7 @@ function registerMovie(req, res){
 
 //Función de mostrar todos las películas
 function getAllMovies(req, res){
-    Movie.find((err, moviesFound)=>{
+    Movie.find({},{title:1},{sort:{title:1}},(err, moviesFound)=>{
         if(err){
             res.status(500).send({message: "Error en el servidor"});
         }else{
@@ -114,7 +114,7 @@ function deleteMovie(req, res){
             }else{
                 res.status(200).send({
                     message:"Película eliminada",
-                    user: deletedMovie
+                    movie: deletedMovie
                 });
             }
         }
@@ -243,7 +243,7 @@ function uploadMovieTrailer(req, res){
                     }else{
                         res.status(200).send({
                             message: "Trailer anexado",
-                            imagen: nombreArchivo,
+                            video: nombreArchivo,
                             movie: movieConTrailer
                         })
                     }
