@@ -13,8 +13,10 @@ import { AdminPeliculasComponent } from './admin-peliculas/admin-peliculas.compo
 import { from } from 'rxjs';
 import { UsuarioService } from '../services/usuario.service';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
+
 // Sujeto al cambio por posibles errores
 import { PeliculasService } from '../services/peliculas.service';
+
 
 
 
@@ -26,6 +28,7 @@ import { PeliculasService } from '../services/peliculas.service';
   ],providers:[
     UsuarioService,
     PeliculasService //Sujeto a cambio
+    
   ]
 })
 export class PagesModule { }
