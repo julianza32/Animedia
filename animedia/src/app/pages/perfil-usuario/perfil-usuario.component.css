@@ -1,0 +1,115 @@
+.contenedor {
+    height: calc(100vh - 102px);
+    overflow-y: scroll;
+    margin-top: 20px;
+}
+
+.contenedorC {
+    width: 100%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+}
+
+.contenedorLder {
+    width: 55%;
+    display: flex;
+    flex-direction: wrap;
+}
+
+.contenedorDisplay {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menuL {
+    background-color: #000;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    height: auto;
+    /* width: 15%; */
+}
+
+.imgCaro {
+    width: 100%;
+}
+
+.contenedorInfo {
+    background-color: rgba(0,0, 0, 0.5);
+}
+
+.info {
+    width: 100%;
+    text-align: center;
+}
+
+.myButton {
+    width: auto;
+    margin: 10px auto;
+    color: white;
+    border: 0px;
+}
+
+.myButton:hover {
+    background-color: #000;
+    color: rgb(199, 45, 40);
+    border: 0px solid #000;
+}
+.myButton:focus{
+    outline: none;
+}
+
+.formulario {
+    background-color: rgba(0,0, 0, 0.5);
+}
+
+/* 992 */
+
+@media only screen and (max-width: 992px) {
+    .contenedorC {
+        margin: 12px auto;
+        width: 50%;
+    }
+    .contenedorDisplay {
+        margin: 12px auto;
+        padding: 10px;
+    }
+    .contenedorLder {
+        margin: auto;
+    }
+    .menuL {
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+    .formulario {
+        padding-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    .contenedorC {
+        margin: 12px auto;
+        width: 70%;
+    }
+    .contenedorDisplay {
+        width: 70%;
+        margin: 12px auto;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .contenedorC {
+        margin: 12px auto;
+        width: 95%;
+    }
+    .contenedorDisplay {
+        width: 95%;
+        margin: 12px auto;
+    }
+}
