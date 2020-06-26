@@ -54,8 +54,12 @@ Prueba en proceso
   .card-wrapper.card-action {
     min-height: 400px;
   } */
+.imagen1{
+  
+  text-align: center;
+}
 
-  .contenedorEstrenos {
+  .contenedorConfi {
     width: 100%;
     overflow-x: scroll;
     scrollbar-color: #c72d28 #231e1e ;

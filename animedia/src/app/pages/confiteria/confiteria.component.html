@@ -1,12 +1,12 @@
-<div class="container">
+<div class="container pt-5 imagen1">
     <img src="https://image.shutterstock.com/image-vector/cinema-movie-theater-object-on-260nw-454299568.jpg" alt="banner">
 </div>
 
 <div class="container pt-5">
     <h2 class="w-100 text-white">LISTA DE CONFITERÍA</h2>
 
-    <div class="contenedorEstrenos d-flex flex-nowrap text-white">
-        <!-- col-xl-5 col-lg-5 col-md-8 col-sm-10 col-12 -->
+    <div class="contenedorConfi d-flex flex-nowrap text-white">
+    
         <div *ngFor="let confit of confiteriaInfo">
             <div class="card bg-dark text-white ">
                 <img class="card-img" src={{confit.imagenL}} alt="">
@@ -23,7 +23,7 @@
 <div class="container pt-5">
     <h2 class="w-100 text-white">NUESTROS COMBOS</h2>
 
-    <div class="contenedorEstrenos d-flex flex-nowrap text-white">
+    <div class="contenedorConfi d-flex flex-nowrap text-white">
         <!-- col-xl-5 col-lg-5 col-md-8 col-sm-10 col-12 -->
         <div *ngFor="let confitC of confiteriaCombo">
             <div class="card bg-dark text-white ">
