@@ -97,7 +97,7 @@ export class AdminPeliculasComponent implements OnInit {
               {
                   this.peliculaService.cargarImagenPeli(this.archivoSubirImg,this.peliculaTrabajada._id).subscribe(
                     (resImg:any)=>{
-                      this.peliculaTrabajada.image = resImg.image;
+                      this.peliculaTrabajada.image = resImg.imagen;
                       this.img.nativeElement.src = this.url+'getMovieImage/'+this.peliculaTrabajada.image;
                   });
               }
