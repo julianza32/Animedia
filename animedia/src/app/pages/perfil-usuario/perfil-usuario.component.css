@@ -1,7 +1,6 @@
 .contenedor {
-    height: calc(100vh - 102px);
-    overflow-y: scroll;
     margin-top: 20px;
+    /* height: calc(100vh - 108px); */
 }
 
 .contenedorC {
@@ -41,6 +40,7 @@
 
 .contenedorInfo {
     background-color: rgba(0,0, 0, 0.5);
+    padding: 20px;
 }
 
 .info {
@@ -52,13 +52,14 @@
     width: auto;
     margin: 10px auto;
     color: white;
-    border: 0px;
+    border: 1px solid #c0c0c0;  
+    background-color: #231e1e;
 }
 
 .myButton:hover {
-    background-color: #000;
-    color: rgb(199, 45, 40);
-    border: 0px solid #000;
+    background-color: #c0c0c0;
+    color: #231e1e;
+    border: 1px solid #c0c0c0;
 }
 .myButton:focus{
     outline: none;
@@ -66,11 +67,18 @@
 
 .formulario {
     background-color: rgba(0,0, 0, 0.5);
+    padding: 20px;
+    /* height: 584px;
+    overflow-y: scroll; */
 }
 
 /* 992 */
 
 @media only screen and (max-width: 992px) {
+    .contenedor {
+        height: auto;
+        margin-top: 20px;
+    }
     .contenedorC {
         margin: 12px auto;
         width: 50%;
@@ -89,6 +97,7 @@
     }
     .formulario {
         padding-top: 20px;
+        width: 80%;
     }
 }
 

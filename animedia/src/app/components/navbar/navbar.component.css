@@ -18,9 +18,15 @@
 .btnIzq {
     border-top-left-radius: 40px;
     border-bottom-left-radius: 40px;
+    border-top: 1px solid #c0c0c0;
+    border-left: 1px solid #c0c0c0;
+    border-bottom: 1px solid #c0c0c0;
 }
 
 .btnDer {
     border-bottom-right-radius: 40px;
     border-top-right-radius: 40px;
+    border-top: 1px solid #c0c0c0;
+    border-right: 1px solid #c0c0c0;
+    border-bottom: 1px solid #c0c0c0;
 }
