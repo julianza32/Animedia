@@ -57,8 +57,15 @@ export class AdminPeliculasComponent implements OnInit {
 
   }
   //función de buscar películas
-  buscarPelicula(){
-
+  buscarPelicula(find){
+    let parametro = {busqueda:find};
+    this.peliculaService.filtrarPeli(parametro).subscribe(
+      (respuesta:any)=>
+      {
+        console.log(respuesta);
+        this.listaPeliculas = respuesta.movie;
+      }
+    );
   }
 //actualizar la pelicula
   modPelicula(id){
