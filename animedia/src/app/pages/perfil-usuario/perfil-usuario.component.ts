@@ -13,6 +13,9 @@ export class PerfilUsuarioComponent implements OnInit {
   @ViewChild('informacion') display:ElementRef;
   @ViewChild('formulario') form:ElementRef;
   @ViewChild('imgP') imagenPerfil:ElementRef;
+  @ViewChild('controlC') carousel:ElementRef;
+  
+  
 
   public identidad:Usuario;
   public usuarioModel:Usuario;
@@ -123,7 +126,7 @@ export class PerfilUsuarioComponent implements OnInit {
   }
   hideForm()
   {
-    this.display.nativeElement.style = 'display:block';
+    this.display.nativeElement.style = 'display:flex';
     this.form.nativeElement.style = 'display:none';
   }
 }
