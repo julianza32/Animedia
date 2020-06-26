@@ -25,3 +25,9 @@
  .subc{
    background-color: rgba(0, 0, 0, 0.5); 
    } 
+   video {
+     max-width: 300px;
+   }
+   img{
+     max-width: 100px;
+   }
