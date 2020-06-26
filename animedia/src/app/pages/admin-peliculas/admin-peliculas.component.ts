@@ -48,7 +48,7 @@ export class AdminPeliculasComponent implements OnInit {
     }
     if(this.peliculaTrabajada.trailer)
     {
-      this.vid.nativeElement.src = this.url+'uploadMovieTrailer/'+this.peliculaTrabajada.trailer;
+      this.vid.nativeElement.src = this.url+'getMovieTrailer/'+this.peliculaTrabajada.trailer;
     }
     
   }
@@ -108,7 +108,7 @@ export class AdminPeliculasComponent implements OnInit {
                   (resVid:any)=>{
                     this.peliculaTrabajada.trailer = resVid.video;
 
-                    this.vid.nativeElement.src = this.url+'uploadMovieTrailer/'+this.peliculaTrabajada.trailer;
+                    this.vid.nativeElement.src = this.url+'getMovieTrailer/'+this.peliculaTrabajada.trailer;
                 });
               }
               
@@ -146,8 +146,15 @@ export class AdminPeliculasComponent implements OnInit {
     );
   }
   //función de buscar películas
-  buscarPelicula(){
-
+  buscarPelicula(find){
+    let parametro = {busqueda:find};
+    this.peliculaService.filtrarPeli(parametro).subscribe(
+      (respuesta:any)=>
+      {
+        console.log(respuesta);
+        this.listaPeliculas = respuesta.movie;
+      }
+    );
   }
 //actualizar la pelicula
   modPelicula(id){
