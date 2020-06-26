@@ -47,7 +47,7 @@
                                 <input type="text" class="form-control form-control-sm" placeholder="Actor" id="actores"
                                     name="actores" #actores="ngModel" [(ngModel)]="peliculaTrabajada.actors">
                             </div>
-                            <button class="col-sm-1 btn-sm btn-danger " style="max-height: 35px;"><i class="material-icons">add</i></button>
+                            <button class="col-sm-1 btn-sm btn-secondary" style="max-height: 35px;"><i class="material-icons">add</i></button>
                         </div>
         
         
@@ -96,14 +96,14 @@
                         </div>
         
                         <div class="d-flex justify-content-around m-2">
-                            <button class="btn btn-sm btn-danger m-2" type="submit">Guardar</button>
-                            <button class="btn btn-sm btn-danger m-2" type="reset" (click)="deleteId()">Nuevo documento</button>
+                            <button class="btn btn-sm btn-secondary m-2" type="submit">Guardar</button>
+                            <button class="btn btn-sm btn-secondary m-2" type="reset" (click)="deleteId()">Nuevo documento</button>
                         </div>
                     </form>
                 </div>
                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                    <img #imgPeli src="">
-                <video #vidPeli controls>
+                    <img  class= "d-flex justify-content-center" #imgPeli src="">
+                <video class= "d-flex justify-content-center" #vidPeli controls>
                     
                 </video>
 
@@ -226,17 +226,17 @@
                     class="form-control my-0 py-1" placeholder="Buscar" aria-label="Search">
             </div>
 
-            <table class="table table-sm table-hover table-dark">
-                <tr>
+            <table class="table table-sm table-hover table-dark ">
+                <tr >
                     <th scope="col">Nombre</th>
                     <th scope="col">Actualizar Película</th>
                     <th scope="col">Eliminar Película </th>
                 </tr>
                 <tr *ngFor="let pelicula of listaPeliculas" class="">
                     <td> <span>{{pelicula.title}}</span> </td>
-                    <td><button (click)="modPelicula(pelicula._id)">Modificar <i class="material-icons">update
+                    <td><button  class= "btn btn-sm btn-secondary"(click)="modPelicula(pelicula._id)">Modificar <i class="material-icons">update
                             </i></button></td>
-                    <td> <button (click)="delPelicula(pelicula._id)">Eliminar <i class="material-icons">delete</i>
+                    <td> <button class= "btn btn-sm btn-secondary" (click)="delPelicula(pelicula._id)">Eliminar <i class="material-icons">delete</i>
                         </button></td>
 
                 </tr>
