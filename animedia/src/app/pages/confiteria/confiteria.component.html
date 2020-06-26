@@ -1,1 +1,40 @@
-<p>confiteria works!</p>
+<div class="container">
+    <img src="https://image.shutterstock.com/image-vector/cinema-movie-theater-object-on-260nw-454299568.jpg" alt="banner">
+</div>
+
+<div class="container pt-5">
+    <h2 class="w-100 text-white">LISTA DE CONFITERÍA</h2>
+
+    <div class="contenedorEstrenos d-flex flex-nowrap text-white">
+        <!-- col-xl-5 col-lg-5 col-md-8 col-sm-10 col-12 -->
+        <div *ngFor="let confit of confiteriaInfo">
+            <div class="card bg-dark text-white ">
+                <img class="card-img" src={{confit.imagenL}} alt="">
+                <div class="">
+                    <h5 class="card-title">{{confit.nombre}}</h5>
+                    <p class="card-text">{{confit.precio}}</p>
+                    <p class="card-text">{{confit.Descuentos}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container pt-5">
+    <h2 class="w-100 text-white">NUESTROS COMBOS</h2>
+
+    <div class="contenedorEstrenos d-flex flex-nowrap text-white">
+        <!-- col-xl-5 col-lg-5 col-md-8 col-sm-10 col-12 -->
+        <div *ngFor="let confitC of confiteriaCombo">
+            <div class="card bg-dark text-white ">
+                <img class="card-img" src={{confitC.imagenC}} alt="">
+                <div class="">
+                    <h5 class="card-title">{{confitC.nombre}}</h5>
+                    <p class="card-text">{{confitC.precio}}</p>
+                    <p class="card-text">{{confitC.contenido}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<P>** Tamaño de bebida(32 oz) y crispetas (140g) mediana</P>

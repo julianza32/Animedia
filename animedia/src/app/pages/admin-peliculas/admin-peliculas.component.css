@@ -1,0 +1,27 @@
+ .info{
+    background-color:rgba(199, 45, 40, 0.5) !important;
+    border-radius: 5%;
+}
+  
+.input-group.md-form.form-sm.form-1 input{
+    border: 1px solid rgba(29, 18, 18, 0.5) !important;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    
+  }
+  h3{
+    font-size:x-large;
+   
+    font-weight: bolder;
+  } 
+  .nav-link{
+    color:rgba(199, 45, 40) !important; 
+    color: grey; 
+  }
+ .contenedorAP{
+   background-image: url(https://oracionesydevocionescatolicas.com/cinema.gif);
+   background-size: cover;
+ }
+ .subc{
+   background-color: rgba(0, 0, 0, 0.5); 
+   } 
