@@ -122,7 +122,7 @@ export class PerfilUsuarioComponent implements OnInit {
   showForm()
   {
     this.display.nativeElement.style = 'display:none';
-    this.form.nativeElement.style = 'display:block';
+    this.form.nativeElement.style = 'display:flex';
   }
   hideForm()
   {
