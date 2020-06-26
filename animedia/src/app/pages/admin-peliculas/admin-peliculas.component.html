@@ -1,5 +1,6 @@
-<div class="contenedorAP  m-3 mx-5">
-
+<div class="contenedorAP  m-n3 mx-n5">
+    <div class="m-3 mx-5">
+    <div class="subc m-3 mx-5">
     <div class="row m-2">
         <div class="col-md-6 col-12 info py-3 px-5 my-3">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -15,7 +16,7 @@
             </ul>
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    <form class="my-4 mr-4" #ActualizarPelicula="ngForm" (ngSubmit)="ProcesarFormulario()">
+                    <form class="my-4 mr-4 px-4" #ActualizarPelicula="ngForm" (ngSubmit)="ProcesarFormulario()">
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label " for="nombre">Título</label>
                             <div class="col-sm-10">
@@ -111,14 +112,15 @@
 
            
 
-        </div>
+        </div> 
 
         <!--  -->
-  <!--       <div class="col-md-6 col-12 info py-3 my-3">
+  <!--  <div class="col-md-6 col-12 info py-3 my-3">
             <h3 class="text-center mb-3">Administrador de películas</h3>
-            <form  class="mr-4"#ActualizarPelicula="ngForm" (ngSubmit)="ProcesarFormulario()">
+
+            <form class="my-4 mr-4 px-4" #ActualizarPelicula="ngForm" (ngSubmit)="ProcesarFormulario()">
                 <div class="form-group row">
-                    <label class="col-sm-2 col-form-label col-form-label-sm" for="nombre">Título</label>
+                    <label class="col-sm-2 col-form-label " for="nombre">Título</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control form-control-sm " placeholder="Nombre" id="nombre"
                             name="nombre" #nombre="ngModel" [(ngModel)]="peliculaTrabajada.nombre">
@@ -126,7 +128,7 @@
                 </div>
 
                 <div class="form-group row">
-                    <label class="col-sm-2 col-form-label col-form-label-sm" for="genero">Género</label>
+                    <label class="col-sm-2 col-form-label " for="genero">Género</label>
                     <div class="col-sm-10">
                         <input type="text" class=" form-control form-control-sm " placeholder="Género" id="genero"
                             name="genero" #genero="ngModel" [(ngModel)]="peliculaTrabajada.genero">
@@ -134,7 +136,7 @@
                 </div>
 
                 <div class="form-group row">
-                    <label class="col-sm-2 col-form-label col-form-label-sm" for="director">Director</label>
+                    <label class="col-sm-2 col-form-label " for="director">Director</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control form-control-sm" placeholder="Director" id="director"
                             name="director" #director="ngModel" [(ngModel)]="peliculaTrabajada.director">
@@ -142,44 +144,44 @@
                 </div>
 
                 <div class="form-group row">
-                    <label class="col-sm-2 col-form-label col-form-label-sm" for="actores">Actores</label>
+                    <label class="col-sm-2 col-form-label " for="actores">Actores</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control form-control-sm" placeholder="Actor" id="actores"
                             name="actores" #actores="ngModel" [(ngModel)]="peliculaTrabajada.actores">
                     </div>
-                    <button class="col-sm-1 btn-sm btn-secondary">+</button>
+                    <button class="col-sm-1 btn-sm btn-danger " style="max-height: 35px;"><i class="material-icons">add</i></button>
                 </div>
 
 
                 <div class="form-group row">
-                    <label class="col-sm-2 col-form-label col-form-label-sm" for="anio">Año</label>
+                    <label class="col-sm-2 col-form-label" for="anio">Año</label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control form-control-sm" placeholder="Año de estreno"
-                            id="anio" name="anio" #anio="ngModel" [(ngModel)]="peliculaTrabajada.anio">
+                        <input type="number" class="form-control form-control-sm" placeholder="Año de estreno" id="anio"
+                            name="anio" #anio="ngModel" [(ngModel)]="peliculaTrabajada.anio">
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <label class="col-sm-2 col-form-label col-form-label-sm" for="duracion">Duración</label>
+                    <label class="col-sm-2 col-form-label" for="duracion">Duración</label>
                     <div class="col-sm-10">
-                    <input type="text" class="form-control form-control-sm" placeholder="Duración"
-                        id="duracion" name="duracion" #duracion="ngModel" [(ngModel)]="peliculaTrabajada.duracion">
-                    </div>  
-                </div>
-
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label col-form-label-sm" for="sinopsis">Sinopsis</label>
-                    <div class="col-sm-10">
-                    <textarea class="form-control form-control-sm" placeholder="Sinopsis" id="sinopsis"
-                        name="sinopsis" #sinopsis="ngModel" [(ngModel)]="peliculaTrabajada.sinopsis"> </textarea>
+                        <input type="text" class="form-control form-control-sm" placeholder="Duración" id="duracion"
+                            name="duracion" #duracion="ngModel" [(ngModel)]="peliculaTrabajada.duracion">
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <label class="col-sm-2 col-form-label col-form-label-sm" for="pelicula">Película</label>
+                    <label class="col-sm-2 col-form-label " for="sinopsis">Sinopsis</label>
                     <div class="col-sm-10">
-                    <input type="text" class="form-control form-control-sm" placeholder="Url pelicula"
-                        id="pelicula" name="pelicula" #pelicula="ngModel" [(ngModel)]="peliculaTrabajada.pelicula">
+                        <textarea class="form-control form-control-sm" placeholder="Sinopsis" id="sinopsis"
+                            name="sinopsis" #sinopsis="ngModel" [(ngModel)]="peliculaTrabajada.sinopsis"> </textarea>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label " for="pelicula">Película</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control form-control-sm" placeholder="Url pelicula" id="pelicula"
+                            name="pelicula" #pelicula="ngModel" [(ngModel)]="peliculaTrabajada.pelicula">
                     </div>
                 </div>
 
@@ -187,17 +189,17 @@
                     [(ngModel)]="peliculaTrabajada._id">
 
                 <div class="row my-2">
-                <label  class="col-sm-3 col-form-label col-form-label-sm"   for="subImag">Subir Imágen</label>
-                <input  type="file" id="subImag" multiple (change)="subirArchivoImg($event)">
+                    <label class="col-sm-3 col-form-label " for="subImag">Subir Imágen</label>
+                    <input type="file" id="subImag" multiple (change)="subirArchivoImg($event)">
                 </div>
                 <div class="row my-2">
-                <label class="col-sm-3 col-form-label col-form-label-sm" for="subTrailer">Subir trailer</label>
-                <input  type="file" id="subTrailer" multiple (change)="subirArchivoTrailer($event)" required>
+                    <label class="col-sm-3 col-form-label " for="subTrailer">Subir trailer</label>
+                    <input type="file" id="subTrailer" multiple (change)="subirArchivoTrailer($event)" required>
                 </div>
 
                 <div class="d-flex justify-content-around m-2">
-                <button class="btn btn-secondary m-2" type="submit" >Guardar</button>
-                <button class="btn btn-secondary m-2" type="reset" (click)="deleteId()">Nuevo documento</button>
+                    <button class="btn btn-sm btn-danger m-2" type="submit">Guardar</button>
+                    <button class="btn btn-sm btn-danger m-2" type="reset" (click)="deleteId()">Nuevo documento</button>
                 </div>
             </form>
 
@@ -208,11 +210,11 @@
                     <source [src]=rutaTrailer>
                 </video>
             </div>
-        </div> -->
+        </div>  -->
         <!-- SEGUNDA COLUMNA -->
 
-        <div class="col-md-6 col-12 py-3 my-3">
-            <h3 class="text-center mb-3">Lista de Películas</h3>
+        <div class="col-md-6 col-12 px-5 my-3">
+            <h3 class="text-center mt-4 mb-3">Lista de Películas</h3>
 
             <div class="input-group md-form form-sm form-1 pl-0 mb-2">
                 <div class="input-group-prepend">
@@ -242,5 +244,6 @@
 
         </div>
     </div>
-
+</div>
+</div>
 </div>
