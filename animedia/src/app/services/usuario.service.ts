@@ -4,6 +4,11 @@ import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 @Injectable()
 export class UsuarioService {
+
+    sesion: boolean = false;
+    nombreUs: string;
+
+
     url='http://localhost:3000/api/'
 
     public identidad; //variable de sesion
