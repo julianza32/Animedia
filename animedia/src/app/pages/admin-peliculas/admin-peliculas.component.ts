@@ -70,6 +70,7 @@ export class AdminPeliculasComponent implements OnInit {
           }else{
             //reasignacion de pelicula despues de ser grabada
           this.peliculaTrabajada = newPelicula;
+          this.subirarchivos(newPelicula._id);
           alert(`se ha creado correctamente ${newPelicula.title}`);
           }
         });
@@ -85,36 +86,38 @@ export class AdminPeliculasComponent implements OnInit {
 
           }else{
           this.peliculaTrabajada = modPelicula;
+          this.subirarchivos(modPelicula._id);
           alert(`se ha modificado correctamente ${modPelicula.title}`);
           }
         });
 
     }
       
-    if(this.peliculaTrabajada._id)
-        {
-          if(this.archivoSubirImg)
-              {
-                  this.peliculaService.cargarImagenPeli(this.archivoSubirImg,this.peliculaTrabajada._id).subscribe(
-                    (resImg:any)=>{
-                      this.peliculaTrabajada.image = resImg.imagen;
-                      this.img.nativeElement.src = this.url+'getMovieImage/'+this.peliculaTrabajada.image;
-                  });
-              }
-
-              if(this.archivoSubirTrailer)
-              {
-                this.peliculaService.cargarTrailer(this.archivoSubirTrailer,this.peliculaTrabajada._id).subscribe(
-                  (resVid:any)=>{
-                    this.peliculaTrabajada.trailer = resVid.video;
-
-                    this.vid.nativeElement.src = this.url+'getMovieTrailer/'+this.peliculaTrabajada.trailer;
-                });
-              }
-              
-        }
         this.ListarPeliculas();
       
+  }
+
+  subirarchivos(id)
+  {
+      if(this.archivoSubirImg)
+          {
+              this.peliculaService.cargarImagenPeli(this.archivoSubirImg,id).subscribe(
+                (resImg:any)=>{
+                  this.peliculaTrabajada.image = resImg.imagen;
+                  this.img.nativeElement.src = this.url+'getMovieImage/'+this.peliculaTrabajada.image;
+              });
+          }
+
+          if(this.archivoSubirTrailer)
+          {
+            this.peliculaService.cargarTrailer(this.archivoSubirTrailer,id).subscribe(
+              (resVid:any)=>{
+                this.peliculaTrabajada.trailer = resVid.video;
+
+                this.vid.nativeElement.src = this.url+'getMovieTrailer/'+this.peliculaTrabajada.trailer;
+            });
+          }
+          
   }
   //agregar actor
   agregarActor(){
@@ -172,6 +175,7 @@ export class AdminPeliculasComponent implements OnInit {
         alert(response.message);
       }
       );
+      this.deleteId();
       this.ListarPeliculas();
   }
 

@@ -1,5 +1,6 @@
  .info{
-    background-color:rgba(199, 45, 40, 0.5) !important;
+    /* background-color:rgba(199, 45, 40, 0.5) !important; */
+    background-color: #231e1e8f;;
     border-radius: 5%;
 }
   
@@ -19,9 +20,15 @@
     color: grey; 
   }
  .contenedorAP{
-   background-image: url(https://oracionesydevocionescatolicas.com/cinema.gif);
+   background-image: url(https://lh3.googleusercontent.com/proxy/a-xO2sIIYeQGPdHm5L_Mu5oG6iMoa-bQELLHzL0HF--ahrGc84BGIcUINb1Y8opx_p4cJ5amy9zQzzELj7m5TpAOa_G2EJtXhrcgUjMW4WyQdvaHp7nOxkPEIYJzf1592_z-2SKpA3z7sedEwPI);
    background-size: cover;
  }
  .subc{
-   background-color: rgba(0, 0, 0, 0.5); 
+   background-color: rgba(0, 0, 0, 0.582);
    } 
+   video {
+     max-width: 300px;
+   }
+   img{
+     max-width: 100px;
+   }

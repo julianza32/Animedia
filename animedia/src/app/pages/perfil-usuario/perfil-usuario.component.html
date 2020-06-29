@@ -21,13 +21,13 @@
         </div>
     </div>
     <div
-        class="contenedorLder d-flex flex-xl-row xl-flex-wrap justify-content-xl-around flex-lg-row lg-flex-wrap justify-content-lg-around flex-md-column flex-sm-column flex-column">
+        class="contenedorLder d-flex flex-xl-row xl-flex-wrap justify-content-xl-around flex-lg-row lg-flex-wrap justify-content-lg-around flex-md-column-reverse flex-column-reverse">
 
         <div #informacion class="contenedorDisplay">
             <div class="contenedorInfo d-flex flex-wrap justify-content-center">
                 <h1 class="info">Tus datos</h1>
-                <div><img #imgP src="Imagen de perfil" width="200px" height="200px"></div>
-                <span class="info">Nombre: {{identidad.names}}</span>
+                <div class="mt-5"><img #imgP src="Imagen de perfil " width="200px" height="200px"></div>
+                <span class="info mt-5">Nombre: {{identidad.names}}</span>
                 <span class="info">Apellido: {{identidad.lastNames}}</span>
                 <span class="info">Fecha de nacimiento: {{identidad.birthdate}}</span>
                 <span class="info">Correo: {{identidad.email}}</span>
@@ -35,59 +35,73 @@
 
             </div>
         </div>
-        <div #formulario class="">
-            <form #formularioRegistro="ngForm" (ngSubmit)="actualizarUsuario()"
-                class="w-100 formulario d-flex flex-wrap justify-content-center">
-                <div class="row ">
-                    <div class="form-group  col-xl-6 col-l-6 col-md-12 col-sm-12 col-12">
+        <div #formulario class="w-100 contenedorForm">
+            <form #formularioRegistro="ngForm" (ngSubmit)="actualizarUsuario()" class="formulario">
+                <h1 class="mb-4">Tus datos</h1>
+                <div class="row w-100">
+                    <div class="form-group col-xl-6 col-lg-6 col-12">
                         <label class="text-white" for="nombre">Nombre</label>
                         <input type="text" class="form-control" id="nombre" placeholder="Tu nombre aqui" name="nombre"
                             #nombre="ngModel" [(ngModel)]="usuarioModel.names">
                     </div>
-                    <div class="form-group col-xl-6 col-l-6 col-md-12 col-sm-12 col-12">
+                    <div class="form-group col-xl-6 col-lg-6 col-12">
                         <label class="text-white" for="apellido">Apellido</label>
                         <input type="text" class="form-control" id="apellido" placeholder="Tu apellido aqui"
                             name="apellido" #apellido="ngModel" [(ngModel)]="usuarioModel.lastNames">
                     </div>
                 </div>
-                <div class="form-group col-xl-8 col-l-9 col-md-10 col-sm-11 col-12">
-                    <label class="text-white" for="telefono">Telefono</label>
-                    <input type="text" class="form-control form-control-sm" id="telefono" placeholder="Tu telefono aqui"
-                        name="telefono" #telefono="ngModel" [(ngModel)]="usuarioModel.cellphone">
+                <div class="row w-100">
+                    <div class="form-group col-12">
+                        <label class="text-white" for="telefono">Telefono</label>
+                        <input type="text" class="form-control form-control-sm" id="telefono"
+                            placeholder="Tu telefono aqui" name="telefono" #telefono="ngModel"
+                            [(ngModel)]="usuarioModel.cellphone">
+                    </div>
                 </div>
-                <div class="form-group col-xl-8 col-l-9 col-md-10 col-sm-11 col-12">
-                    <label class="text-white" for="fechaNa">Fecha de nacimiento</label>
-                    <input type="date" class="form-control" id="fechaNa" placeholder="Tu fecha de nacimiento aqui"
-                        name="fechaNa" #fechaNa="ngModel" [(ngModel)]="usuarioModel.birthdate">
+                <div class="row w-100">
+                    <div class="form-group col-12">
+                        <label class="text-white" for="fechaNa">Fecha de nacimiento</label>
+                        <input type="date" class="form-control" id="fechaNa" placeholder="Tu fecha de nacimiento aqui"
+                            name="fechaNa" #fechaNa="ngModel" [(ngModel)]="usuarioModel.birthdate">
+                    </div>
                 </div>
-                <div class="form-group col-xl-8 col-l-9 col-md-10 col-sm-11 col-12">
-                    <label class="text-white" for="email">Correo</label>
-                    <input type="email" class="form-control" id="email" placeholder="Tu correo aqui" name="email"
-                        #email="ngModel" [(ngModel)]="usuarioModel.email">
+                <div class="row w-100">
+                    <div class="form-group col-xl-6 col-lg-6 col-12">
+                        <label class="text-white" for="email">Correo</label>
+                        <input type="email" class="form-control" id="email" placeholder="Tu correo aqui" name="email"
+                            #email="ngModel" [(ngModel)]="usuarioModel.email">
+                    </div>
+                    <div class="form-group col-xl-6 col-lg-6 col-12">
+                        <label class="text-white" for="contrasena">Contraseña</label>
+                        <input type="password" class="form-control" id="contrasena" placeholder="Tu contraseña aqui"
+                            name="contrasena" #contrasena="ngModel" [(ngModel)]="usuarioModel.pass">
+                    </div>
                 </div>
-                <div class="form-group col-xl-8 col-l-9 col-md-10 col-sm-11 col-12">
-                    <label class="text-white" for="contrasena">Contraseña</label>
-                    <input type="password" class="form-control" id="contrasena" placeholder="Tu contraseña aqui"
-                        name="contrasena" #contrasena="ngModel" [(ngModel)]="usuarioModel.pass">
+                <div class="archivo w-100">
+                    <div class="form-group">
+                        <label class="text-white">Cambiar imagen</label>
+                        <input id="imagefile" type="file" class="form-control fArchivo" (change)='subirImagen($event)'>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="imagefile">cambiar imagen</label>
-                    <input id="imagefile" type="file" class="form-control-file" (change)='subirImagen($event)'>
-                </div>
-                <div class="form-group col-xl-8 col-l-9 col-md-10 col-sm-11 col-12">
-                    <button type="submit" class="btn myButton btn-primary">Actualizar informacion</button>
+                <div class="row justify-content-center">
+                    <div class="form-group">
+                        <button type="submit" class="btn myButton">Actualizar informacion</button>
+                    </div>
                 </div>
             </form>
         </div>
         <div class="menuL">
             <div class="form-group">
-                <button (click)="showForm()" class="btn myButton d-flex align-items-center justify-content-around">
+                <button (click)="showForm()" class="btn myButton d-flex align-items-center justify-content-around" title="Actualizar Datos">
                     <span class="material-icons mr-1">create</span>
                 </button>
                 <button (click)="hideForm()" class="btn myButton d-flex align-items-center justify-content-around"><span
-                        class="material-icons mr-1">
+                        class="material-icons mr-1" title="Cancelar actualización">
                         cancel
                     </span></button>
+                <button (click)="cerrarCuenta(identidad._id)" class="btn myButton d-flex align-items-center justify-content-around" title="Borrar cuenta"><span class="material-icons">
+                    delete
+                    </span></button>    
             </div>
         </div>
     </div>

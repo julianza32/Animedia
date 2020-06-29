@@ -1,0 +1,19 @@
+.contenedor{
+    width: 100%;
+}
+.subContenedor{
+    height: 30px;
+    width: 230px;
+    margin-right: 150px;
+    /* background-color: rgba(199, 45, 40,0.5); */
+    background-color: rgba(0,0, 0,0.7);
+
+}
+.cabecera{
+    height: 30px;
+    background-color: #c72d28;
+}
+.cabecera, .subContenedor{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}

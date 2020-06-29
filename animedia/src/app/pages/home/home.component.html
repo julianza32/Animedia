@@ -25,13 +25,13 @@
         </a>
     </div>
 </div>
-<div class="container pt-5">
+<div class="container contenedor pt-5">
     <h2 class="w-100 text-white">Estrenos</h2>
 
     <div class="contenedorEstrenos d-flex flex-nowrap text-white">
         <!-- col-xl-5 col-lg-5 col-md-8 col-sm-10 col-12 -->
         <div *ngFor="let peli of peliculasEstreno">
-            <div class="card bg-dark text-white ">
+            <div class="card contenedorPeliEs text-white ">
                 <img class="card-img" src={{peli.imagenC}} alt="">
                 <div class="card-img-overlay">
                     <h5 class="card-title">{{peli.nombre}}</h5>

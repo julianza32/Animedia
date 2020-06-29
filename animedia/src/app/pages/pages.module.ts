@@ -16,13 +16,14 @@ import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.componen
 
 // Sujeto al cambio por posibles errores
 import { PeliculasService } from '../services/peliculas.service';
+import { PagosComponent } from './pagos/pagos.component';
 
 
 
 
 
 @NgModule({
-  declarations: [HomeComponent, CarteleraComponent, BoleteriaComponent, CineCasaComponent, ConfiteriaComponent, TarjetaComponent, LoginComponent, RegistroUsuarioComponent, AdminPeliculasComponent, PerfilUsuarioComponent],
+  declarations: [HomeComponent, CarteleraComponent, BoleteriaComponent, CineCasaComponent, ConfiteriaComponent, TarjetaComponent, LoginComponent, RegistroUsuarioComponent, AdminPeliculasComponent, PerfilUsuarioComponent, PagosComponent],
   imports: [
     CommonModule,FormsModule,ReactiveFormsModule
   ],providers:[

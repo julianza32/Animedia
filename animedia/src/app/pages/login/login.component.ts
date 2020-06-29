@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input, Output, EventEmitter } from '@angular/core';
 
 // Importar el modelo
 import { Usuario } from '../../model/usuario'
@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
 
     this.usuarioService.iniciarSesion(this.login).subscribe(
       (response: any)=>{
-        console.log(response)
+        // console.log(response)
         let usuario = response.user;
         this.login = usuario;
 
@@ -68,8 +68,12 @@ export class LoginComponent implements OnInit {
           // Consumir el servicio obtenerNombreUsuario
           this.identidad = this.usuarioService.obtenerNombreUsuario();
           alert(`Hola ${this.identidad.names}. Empieza a disfurtar de nuestro contenido!`);
+          this.usuarioService.sesion = true;
+          this.usuarioService.nombreUs = this.identidad.names;
+          console.log(this.usuarioService.nombreUs)
           // Redirección al perfil
-          this._router.navigate(['/home'])
+          // alert(this.usuarioService.sesion);
+          this._router.navigate(['/home']);
         } else{
           alert("Usuario no identificado")
         }

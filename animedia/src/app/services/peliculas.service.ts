@@ -106,11 +106,11 @@ export class PeliculasService {
 
   filtrarPeli(busqueda)
   {
-     /* let params = JSON.stringify(busqueda);
+     let params = JSON.stringify(busqueda);
      let options = {
        headers: new HttpHeaders({ 'Content-Type': 'application/json' })  
-     }; */
-    return this._http.get(this.url+'searchMovies').pipe(map(res=>res));
+     }; 
+    return this._http.post(this.url+'searchMovies',params,options).pipe(map(res=>res));
   }
    
 }

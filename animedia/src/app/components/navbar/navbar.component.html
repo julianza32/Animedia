@@ -36,17 +36,32 @@
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li> -->
         </ul>
+        <ul [style.display]="usuarioService.sesion == false ? 'none': 'flex'" class="navbar-nav">
+            <li class="nav-item dropdown">
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="perfil">Perfil</a>
+                    <a class="dropdown-item" (click)="cerrarSesion()">Cerrar Sesion</a>
+                </div>
+                <a #nUsua [style.display]="usuarioService.sesion == true ? 'block': 'none'" class="nav-link text-white dropdown-toggle" href="" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <!-- nombre de la persona logueada :V --> {{this.usuarioService.nombreUs}}
+                </a>
+            </li>
+        </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2 buscador" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline my-2 my-sm-0 text-white" type="submit"><i class="material-icons">search</i></button>
+            <button class="btn btn-outline my-2 my-sm-0 text-white" type="submit"><i
+                    class="material-icons">search</i></button>
         </form>
-        <ul class="navbar-nav ">
+        <ul #botones [style.display]="usuarioService.sesion == true ? 'none': 'flex'" class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link text-white linkLateral btnIzq" href="/registroUsuario">Registro<span class="sr-only"></span></a>
+                <a class="nav-link text-white linkLateral btnIzq" href="/registroUsuario">Registro<span
+                        class="sr-only"></span></a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link text-white linkLateral btnDer" href="/login">Login<span class="sr-only"></span></a>
             </li>
         </ul>
+        
     </div>
 </nav>

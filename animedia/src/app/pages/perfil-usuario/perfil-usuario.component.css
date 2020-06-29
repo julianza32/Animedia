@@ -1,11 +1,9 @@
 .contenedor {
-    height: calc(100vh - 102px);
-    overflow-y: scroll;
     margin-top: 20px;
+    height: calc(100vh - 108px);
 }
 
 .contenedorC {
-    width: 100%;
     width: 40%;
     display: flex;
     align-items: center;
@@ -41,6 +39,11 @@
 
 .contenedorInfo {
     background-color: rgba(0,0, 0, 0.5);
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
 }
 
 .info {
@@ -49,16 +52,16 @@
 }
 
 .myButton {
-    width: auto;
-    margin: 10px auto;
+    margin: 10px;
     color: white;
-    border: 0px;
+    border: 1px solid #c0c0c0;  
+    background-color: #231e1e;
 }
 
 .myButton:hover {
-    background-color: #000;
-    color: rgb(199, 45, 40);
-    border: 0px solid #000;
+    background-color: #c0c0c0;
+    color: #231e1e;
+    border: 1px solid #c0c0c0;
 }
 .myButton:focus{
     outline: none;
@@ -66,21 +69,45 @@
 
 .formulario {
     background-color: rgba(0,0, 0, 0.5);
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center; 
+    
+}
+
+.fArchivo{
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
 }
 
 /* 992 */
 
 @media only screen and (max-width: 992px) {
+    .contenedor {
+        height: auto;
+        margin-top: 20px;
+    }
     .contenedorC {
         margin: 12px auto;
-        width: 50%;
+        width: 70%;
     }
     .contenedorDisplay {
-        margin: 12px auto;
-        padding: 10px;
+        margin: auto;
+        width: 100%;
     }
     .contenedorLder {
         margin: auto;
+        width: 70%;
+    }
+    .contenedorForm{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
     }
     .menuL {
         justify-content: center;
@@ -89,17 +116,21 @@
     }
     .formulario {
         padding-top: 20px;
+        width: 100%;
     }
+    .contenedorInfo{
+        width: 100%;
+    }
+    
 }
 
 @media only screen and (max-width: 760px) {
     .contenedorC {
         margin: 12px auto;
-        width: 70%;
+        width: 80%;
     }
-    .contenedorDisplay {
-        width: 70%;
-        margin: 12px auto;
+    .contenedorLder{
+    width: 80%;
     }
 }
 
@@ -108,8 +139,7 @@
         margin: 12px auto;
         width: 95%;
     }
-    .contenedorDisplay {
-        width: 95%;
-        margin: 12px auto;
+    .contenedorLder {
+    width: 95%;
     }
 }
