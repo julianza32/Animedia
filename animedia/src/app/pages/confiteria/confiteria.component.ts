@@ -9,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfiteriaComponent implements OnInit {
 
+  public sesion = JSON.parse(localStorage.getItem('sesion'));
+
   public confiteriaInfo = [
     {
       "nombre": "Nuggets con salsa Szechuan",
@@ -101,6 +103,7 @@ export class ConfiteriaComponent implements OnInit {
         "gold": "7500 COP"
         }];
   constructor() {
+    this.sesion
    }
 
   ngOnInit(): void {
