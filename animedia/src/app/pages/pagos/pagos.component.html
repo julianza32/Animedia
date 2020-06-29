@@ -1,0 +1,227 @@
+<div class="mx-md-5 my-2">
+
+    <h2 class="m-4">Anishopping</h2>
+    <div class="row ">
+        <div class="col-md-6 col-12 ">
+            <div class=" ml-4 px-4">
+                <table class="table table-hover table-dark table-responsive ">
+                    <tr>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Costo Unitario </th>
+                        <th scope="col">Cantidad </th>
+                        <th scope="col">Subtotal </th>
+                    </tr>
+                    <tr *ngFor="let producto of listaProductos" class="">
+                        <td> <span>{{producto.nombre}}</span> <br>
+                            <img class="card-img" src={{producto.imagenP}}>
+                        </td>
+                        <td> <span>{{producto.descripcion}}</span> </td>
+                        <td><span>{{producto.costoU}}</span></td>
+                        <td> <input class="form-control form-control-sm" type="number" [(ngModel)]="producto.cantidad"
+                                name="cantidad">
+                        </td>
+                        <td><span>{{producto.subtotal}}</span> </td>
+
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6 col-12">
+            <div>
+                <form class=" mr-4 px-4" #ActualizarPelicula="ngForm" (ngSubmit)="envioDatos()">
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-12 col-form-label " for="direccion">Dirección de entrega</label>
+                        <div class="col-sm-8 col-12">
+                            <input type="text" class="form-control form-control-sm " placeholder="Dirección"
+                                id="direccion" name="nombre" #nombre="ngModel" [(ngModel)]="datos.direccion">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-12 col-form-label " for="celular">Celular</label>
+                        <div class="col-sm-8 col-12">
+                            <input type="text" class="form-control form-control-sm " placeholder="Celular" id="celular"
+                                name="nombre" #nombre="ngModel" [(ngModel)]="datos.celular">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-12 col-form-label " for="observaciones">Observaciones</label>
+                        <div class="col-sm-8 col-12">
+                            <textarea class="form-control form-control-sm" placeholder="Observaciones"
+                                id="observaciones" name="sinopsis" #sinopsis="ngModel"
+                                [(ngModel)]="datos.observaciones"> </textarea>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-12 col-form-label" for="metodo">Método de pago</label>
+                            <div class="col-sm-8 col-12">
+                                <select [(ngModel)]="opcionSeleccionada" name="metodo" class="custom-select custom-select-sm" id="metodo" (change)="mostrar()">
+                                    <option selected> Seleccionar</option>
+                                    <option value="1">Tarjeta de crédito</option>
+                                    <option value="2">Débito Pse</option>
+                                    <option value="3" disabled>Ejectivo</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!------------- Metodo PSE -------------->
+                    <div id="pse" class="oculto">
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-12 col-form-label" for="banco">Banco</label>
+                            <div class="col-sm-8 col-12">
+                                <select class="custom-select custom-select-sm" id="banco" [(ngModel)]="datos.banco">
+                                    <option selected> Seleccionar</option>
+                                    <option value="1">Anibanco</option>
+                                    <option value="2">Simpsons Bank</option>
+                                    <option value="3">Skellington</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-12 col-form-label " for="titular">Nombre del Titular</label>
+                            <div class="col-sm-8 col-12">
+                                <input type="text" class=" form-control form-control-sm " placeholder="Nombre"
+                                    id="titular" name="titular" #titular="ngModel" [(ngModel)]="datos.titular">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-12 col-form-label" for="tipoD">Tipo de documento</label>
+                            <div class="col-sm-8 col-12">
+                                <select class="custom-select custom-select-sm" id="tipoD" [(ngModel)]="datos.tipoI">
+                                    <option selected> Seleccionar</option>
+                                    <option value="1">C.C. (Cédula de Ciudadania)</option>
+                                    <option value="2">C.E. (Cédula de Extranjería)</option>
+                                    <option value="3">NIT (Número Identificación Tributaria)</option>
+                                    <option value="4">D.E. (Documento de Identificación Extranjero)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-12 col-form-label " for="identificacion">Número de
+                                Identificación</label>
+                            <div class="col-sm-8 col-12">
+                                <input type="text" class=" form-control form-control-sm "
+                                    placeholder="Número de Identificación" id="identificacion" name="identificacion"
+                                    #identificacion="ngModel" [(ngModel)]="datos.identificacion">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-12 col-form-label " for="correo">Correo</label>
+                            <div class="col-sm-8 col-12">
+                                <input type="text" class=" form-control form-control-sm " placeholder="Correo"
+                                    id="correo" name="correo" #identificacion="ngModel" [(ngModel)]="datos.correo">
+                            </div>
+                        </div>
+
+                        <button class="btn btn-sm btn-secondary">Enviar</button>
+
+
+                    </div>
+
+                    <!------------- Metodo Credito -------------->
+                    <div id="credito" class="oculto">
+
+                        <a><i class='fab fa-cc-visa' style='font-size:24px; color:blue; background-color: white;'></i></a>
+                        <a ><i class='fab fa-cc-mastercard' style='font-size:24px; background: linear-gradient(90deg, rgba(253,29,29,1) 2%, rgba(253,123,29,1) 50%, rgba(224,236,24,1) 100%);'></i></a>
+                        
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-12 col-form-label " for="numTarjeta">Número de la tarjeta</label>
+                            <div class="col-sm-8 col-12">
+                                <input type="text" class=" form-control form-control-sm " placeholder="xxxx xxxx xxxx xxxx"
+                                    id="numTarjeta" name="numTarjeta"  >
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-12 col-form-label" for="fechaV">Fecha de vencimiento</label>
+                            <div class="col-sm-4 col-12">
+                                <select class="custom-select custom-select-sm" id="fechaV" >
+                                    <option selected> MM</option>
+                                    <option value="1">Enero</option>
+                                    <option value="2">Febrero</option>
+                                    <option value="3">Marzo</option>
+                                    <option value="2">Abril</option>
+                                    <option value="3">Mayo</option>
+                                    <option value="1">Junio</option>
+                                    <option value="2">Julio</option>
+                                    <option value="3">Agosto</option>
+                                    <option value="2">Septiembre</option>
+                                    <option value="3">Octubre</option>
+                                    <option value="2">Noviembre</option>
+                                    <option value="3">Diciembre</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-4 col-12">
+                                <select class="custom-select custom-select-sm">
+                                    <option selected> AA</option>
+                                    <option value="1">2020</option>
+                                    <option value="2">2021</option>
+                                    <option value="3">2022</option>
+                                    <option value="2">2023</option>
+                                    <option value="3">2024</option>
+                                    <option value="1">2025</option>
+                                    <option value="2">2026</option>
+                                    <option value="3">2027</option>
+                                    <option value="2">2028</option>
+                                    <option value="3">2029</option>
+                                    <option value="2">2030</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-12 col-form-label " for="titular">Nombre del titular</label>
+                            <div class="col-sm-8 col-12">
+                                <input type="text" class=" form-control form-control-sm " placeholder="Nombre impreso en tarjeta"
+                                    id="titular" name="titular" #titular="ngModel" [(ngModel)]="datos.nombre">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-12 col-form-label" for="tipoD">Tipo de documento</label>
+                            <div class="col-sm-8 col-12">
+                                <select class="custom-select custom-select-sm" id="tipoD" [(ngModel)]="datos.tipoI">
+                                    <option selected> Seleccionar</option>
+                                    <option value="1">C.C. (Cédula de Ciudadania)</option>
+                                    <option value="2">C.E. (Cédula de Extranjería)</option>
+                                    <option value="3">NIT (Número Identificación Tributaria)</option>
+                                    <option value="4">D.E. (Documento de Identificación Extranjero)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-12 col-form-label " for="identificacion">Número de
+                                Identificación</label>
+                            <div class="col-sm-8 col-12">
+                                <input type="text" class=" form-control form-control-sm "
+                                    placeholder="Número de Identificación" id="identificacion" name="identificacion"
+                                    #identificacion="ngModel" [(ngModel)]="datos.identificacion">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-12 col-form-label " for="correo">Correo</label>
+                            <div class="col-sm-8 col-12">
+                                <input type="text" class=" form-control form-control-sm " placeholder="Correo"
+                                    id="correo" name="correo" #identificacion="ngModel" [(ngModel)]="datos.correo">
+                            </div>
+                        </div>
+
+                        <button class="btn btn-sm btn-secondary">Enviar</button>
+
+                    </div>
+                  
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
