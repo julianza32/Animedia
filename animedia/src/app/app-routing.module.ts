@@ -10,6 +10,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegistroUsuarioComponent } from './pages/registro-usuario/registro-usuario.component';
 import { AdminPeliculasComponent } from './pages/admin-peliculas/admin-peliculas.component';
 import { PerfilUsuarioComponent } from './pages/perfil-usuario/perfil-usuario.component';
+import {PagosComponent} from './pages/pagos/pagos.component';
 
 
 const routes: Routes = [{path:'home', component:HomeComponent}, 
@@ -22,6 +23,7 @@ const routes: Routes = [{path:'home', component:HomeComponent},
                         {path:'registroUsuario',component:RegistroUsuarioComponent},
                         {path:'adminPelis',component:AdminPeliculasComponent},
                         {path:'perfil',component:PerfilUsuarioComponent},
+                        {path:'pagos', component: PagosComponent},
                         {path:'**', pathMatch:'full', redirectTo:'home'}
                         ];
 
