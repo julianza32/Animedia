@@ -15,38 +15,33 @@ export class NavbarComponent implements OnInit {
 
 
   public imagenLogo: string = "../../../assets/imagenes/logoAnimediabb.png"
-
   public Lsesion = JSON.parse(localStorage.getItem('sesion'));
-
   public admin:any; 
   
-
   constructor(public usuarioService: UsuarioService,private _router:Router) {
     this.imagenLogo
   }
 
-
-
-
   ngOnInit(): void {
+   
   }
   ngAfterViewInit() {
     if (this.Lsesion) {
       this.usuarioService.sesion = true;
-      this.botones.nativeElement.display = 'flex';
-      this.nUsua.nativeElement.innerText = this.Lsesion.names; 
-       if(this.Lsesion.rol == 'administrador'||this.Lsesion.rol == 'Administrador')
-      {
-        this.usuarioService.admin = true;
-      }else{
-        this.usuarioService.admin = false;
-      }
+      this.botones.nativeElement.display = 'none';
+      this.nUsua.nativeElement.innerText = this.Lsesion.names;
+      //No BORRAR !!!!!! 
+    //    if(this.Lsesion.rol == 'administrador'||this.Lsesion.rol == 'Administrador')
+    //   {
+    //     this.usuarioService.admin = true;
+    //   }else{
+    //     this.usuarioService.admin = false;
+    //   }
 
-    } else {
-      this.usuarioService.sesion = false;
+    // } else {
+    //   this.usuarioService.sesion = false;
       
     }
-   
   }
 
   cerrarSesion() {
@@ -55,7 +50,4 @@ export class NavbarComponent implements OnInit {
     this.usuarioService.sesion = false;
     this._router.navigate(['/home'])
   }
-  // ngDoCheck(){
-  //   // alert("ca")
-  // }
 }
