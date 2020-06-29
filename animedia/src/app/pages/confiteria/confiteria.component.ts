@@ -100,7 +100,8 @@ export class ConfiteriaComponent implements OnInit {
         "platino": "5.000 COP",
         "gold": "7500 COP"
         }];
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit(): void {
   }

@@ -7,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TarjetaComponent implements OnInit {
 
-  constructor() { }
+  public cardRick: String = "../../../assets/imagenes/cardRick.png"
+  public cardMorty : String = "../../../assets/imagenes/mortyCard.jpg";
+  constructor() { 
+    this.cardMorty;
+    this.cardRick;
+  }
 
   ngOnInit(): void {
   }
