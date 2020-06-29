@@ -29,3 +29,14 @@ body{
   ::-webkit-scrollbar-thumb:hover {
     background: rgb(199, 45, 40); 
   }
+  .myButton {
+    margin: 10px;
+    color: white;
+    border: 1px solid #c0c0c0;  
+    background-color: #231e1e;
+}
+.myButton:hover {
+    background-color: #c0c0c0;
+    color: #231e1e;
+    border: 1px solid #c0c0c0;
+}
