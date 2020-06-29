@@ -56,6 +56,10 @@ export class PerfilUsuarioComponent implements OnInit {
   ngDoCheck() {
     console.log(this.usuarioModel.birthdate);
     console.log(this.Upfile);
+    if(!localStorage.getItem('sesion'))
+    {
+      this._router.navigate(['/home']);
+    }
   }
 
   subirImagen(FileIn: any) {

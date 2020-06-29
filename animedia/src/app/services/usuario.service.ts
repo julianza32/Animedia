@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 export class UsuarioService {
 
     sesion: boolean = false;
+    admin:boolean = false;
     nombreUs: string;
 
 
