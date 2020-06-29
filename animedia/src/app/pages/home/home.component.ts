@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
       "nombre": "Godzilla vs Kong",
       "fechaDeEstreno": "20 Noviembre",
       "imagenC": "https://i.pinimg.com/originals/0e/bf/8d/0ebf8d713b883e18d07fad91b0ef095b.jpg",
-      "sinopsis": "DescripciónGodzilla y Kong, dos de las fuerzas más poderosas de un planeta habitado por aterradoras criaturas, se enfrentan en un espectacular combate que sacude los cimientos de la humanidad. Monarch se embarca en una misión."
+      "sinopsis": "Descripción Godzilla y Kong, dos de las fuerzas más poderosas de un planeta habitado por aterradoras criaturas, se enfrentan en un espectacular combate que sacude los cimientos de la humanidad. Monarch se embarca en una misión."
     },
     {
       "nombre": "Los Croods 2",
@@ -24,9 +24,9 @@ export class HomeComponent implements OnInit {
 
     },
     {
-      "nombre": "Oswald",
+      "nombre": "Onward",
       "fechaDeEstreno": "06 Marzo",
-      "imagenC": "https://pics.filmaffinity.com/Onward-251117542-large.jpg",
+      "imagenC": "https://i.pinimg.com/originals/b7/a7/38/b7a73844e65436dc2419e2587327607d.jpg",
       "sinopsis": "Ambientado en un mundo de fantasía suburbana, dos hermanos elfos adolescentes, Ian y Barley Lightfood, se embarcan en una aventura en la que se proponen descubrir si existe aún algo de magia en el mundo que les permita pasar un último día con su padre."
     },
     {

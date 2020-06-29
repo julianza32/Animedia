@@ -6,7 +6,9 @@
 .imgCarousel {
     height: 100vh;
 }
-
+.contenedorPeliEs{
+  background-color: #231e1e;
+}
 .contenedorEstrenos {
     width: 100%;
     overflow-x: scroll;
@@ -20,10 +22,15 @@
 
 .card-img-overlay {
 background-color: rgba(0, 0, 0, 0.8);
+opacity: 0;
 }
-.card-img-overlay:hover {
-    background-color: rgba(0, 0, 0, 0);
+/* .contenedorPeliEs:hover>.card-img-overlay{
+    display: none;
+} */
+.contenedorPeliEs:hover>.card-img-overlay{
+  opacity: 1;
 }
+
 /* width */
 ::-webkit-scrollbar {
     width: 20px;
@@ -45,4 +52,14 @@ background-color: rgba(0, 0, 0, 0.8);
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: rgb(199, 45, 40); 
+  }
+
+  @media only screen and (max-width: 576px ){
+    .contenedorCarousel {
+      height: 50vh;
+    }
+    .imgCarousel {
+      height: 50vh;
+  }
+  
   }

@@ -1,0 +1,15 @@
+<div class="contenedor fixed-bottom d-flex justify-content-end ">
+    <div #chat class="subContenedor">
+        <div class="cabecera d-flex flex-wrap flex-row justify-content-end align-content-center">
+            <div #max>
+                <span (click)="maximizar()" class="material-icons">crop_din</span>
+            </div>
+            <div #min [style.display]="'none'">
+                <span (click)="minimizar()" class="material-icons">remove</span>
+            </div>
+            <div (click)="cerrar()">
+                <span class="material-icons">close</span>
+            </div>
+        </div>
+    </div>
+</div>
