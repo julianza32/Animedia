@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class PedidoService {
 
-  public producto : number; 
+  public producto : any; 
 
   constructor() { }
 }

@@ -42,8 +42,13 @@ export class BoleteriaComponent implements OnInit {
   }
 
   pagos() {
-    this.pedido.producto = this.puestosE;
-    if (this.pedido.producto != this.puestos) {
+    this.pedido.producto = {
+      "producto": "Boleta",
+      "descripcion": "",
+      "valor": 12000,
+      "cantidad": this.puestos
+    }
+    if (this.pedido.producto.cantidad != this.puestos) {
       alert("Por favor escoje tus sillas");
     } else {
       alert(this.pedido.producto);

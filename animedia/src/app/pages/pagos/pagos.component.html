@@ -1,7 +1,11 @@
 <div class="mx-md-5 my-2">
 
     <h2 class="m-4">Anishopping</h2>
-    <h2>{{this.pedido.producto}}</h2>
+    <h2>{{this.pedido.producto.producto}}</h2>
+    <h2>{{this.pedido.producto.cantidad}}</h2>
+    <h2>{{this.pedido.producto.descripcion}}</h2>
+    <h2>{{this.pedido.producto.valor}}</h2>
+
     <div class="row ">
         <div class="col-md-6 col-12 ">
             <div class=" ml-4 px-4">
@@ -14,7 +18,7 @@
                         <th scope="col">Subtotal </th>
                     </tr>
                     <tr *ngFor="let producto of listaProductos" class="">
-                        <td> <span>{{producto.nombre}}</span> <br>
+                        <td> <span>{{this.pedido.producto.producto}}</span> <br>
                             <img class="card-img" src={{producto.imagenP}}>
                         </td>
                         <td> <span>{{producto.descripcion}}</span> </td>
