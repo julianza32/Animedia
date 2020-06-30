@@ -37,6 +37,9 @@ export class CarteleraComponent implements OnInit {
     "image": "http://es.web.img2.acsta.net/c_216_288/pictures/15/02/20/10/21/222923.jpg"
   }
   ];
+  public actual= this.peliculas[4];
+ 
+
   constructor(private peliculaService: PeliculasService, private _router: Router) {
     this.peliculas;
    }

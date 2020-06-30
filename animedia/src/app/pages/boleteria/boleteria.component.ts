@@ -48,7 +48,7 @@ export class BoleteriaComponent implements OnInit {
   pagos() {
      this.boleteria = {
       "nombre": "Boleta",
-      "imagen":"src/assets/boletas.jpg",
+      "imagen":"src/assets/imagenes/cinema.gif",
       "descripcion": `${this.puestosE} boletas para la película ${this.peliculaC} \n  ${this.sillasS} `,
       "valor": 12000,
       "cantidad": this.puestos
