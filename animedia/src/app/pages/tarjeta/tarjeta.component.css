@@ -1,0 +1,11 @@
+.contenedor{
+    width: 100%;
+}
+.contenedorCard{
+    width: 80%;
+    border-radius: 15px;
+}
+.contenedorCard img {
+    width: 80%;
+    border-radius: 15px;
+}

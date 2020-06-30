@@ -1,40 +1,50 @@
-<div class="container pt-5 imagen1">
-    <img src="https://image.shutterstock.com/image-vector/cinema-movie-theater-object-on-260nw-454299568.jpg" alt="banner">
-</div>
 
-<div class="container pt-5">
-    <h2 class="w-100 text-white">LISTA DE CONFITERÍA</h2>
+  <!-- Avance 2 en pruebas -->
 
-    <div class="contenedorConfi d-flex flex-nowrap text-white">
-    
+  <div class=" container pt-5">
+    <div class="card-deck contenedorConfi d-flex flex-nowrap text-white">
+
         <div *ngFor="let confit of confiteriaInfo">
-            <div class="card bg-dark text-white ">
-                <img class="card-img" src={{confit.imagenL}} alt="">
-                <div class="">
-                    <h5 class="card-title">{{confit.nombre}}</h5>
-                    <p class="card-text">{{confit.precio}}</p>
-                    <p class="card-text">{{confit.Descuentos}}</p>
-                </div>
+
+            <div class="card text-white gradientbg">
+                <div class="inner" >
+                    <img src={{confit.imagenL}} class="card-img-top card-imagen" alt="producto">     
+                 </div>
+              <div class="card-body">
+                <h5 class="card-title ">{{confit.nombre}}</h5>
+                <p class="card-text" [style.display]= "!sesion.membresia ? 'block':'none'">{{confit.precio}}</p>
+              </div>
+              <div class="card-footer row">
+                <p [style.display]="sesion.membresia === 'platino' ? 'block':'none'" class="fondoP text-dark col-xl-6 col-lg-6 col-md-6 col-sm-10">{{confit.platino}}</p>
+                <p [style.display]="sesion.membresia === 'gold' ? 'block':'none'" class="fondoG col-xl-6 col-lg-6 col-md-6 col-sm-10">{{confit.gold}}</p>
+              </div>
             </div>
         </div>
     </div>
-</div>
+  </div>
 
-<div class="container pt-5">
-    <h2 class="w-100 text-white">NUESTROS COMBOS</h2>
+  <!-- Cards combos -->
 
-    <div class="contenedorConfi d-flex flex-nowrap text-white">
-        <!-- col-xl-5 col-lg-5 col-md-8 col-sm-10 col-12 -->
-        <div *ngFor="let confitC of confiteriaCombo">
-            <div class="card bg-dark text-white ">
-                <img class="card-img" src={{confitC.imagenC}} alt="">
-                <div class="">
-                    <h5 class="card-title">{{confitC.nombre}}</h5>
-                    <p class="card-text">{{confitC.precio}}</p>
-                    <p class="card-text">{{confitC.contenido}}</p>
-                </div>
+  <div class="container pt-5">
+    <div class="card-deck contenedorConfi d-flex flex-nowrap text-white ">
+
+        <div *ngFor="let confitC of confiteriaCombo" class="anchoCombo">
+          <div class="card text-white gradientbg">
+
+          <div class="inner">
+            <img src={{confitC.imagenC}} class="card-img-top card-imagenCombo" alt="combo">
+          </div>            
+              <div class="card-body">
+                <h5 class="card-title">{{confitC.nombre}}</h5>
+                <p class="card-text">{{confitC.contenido}}</p>
+                <p class="card-text">{{confitC.precio}}</p>
+              </div>
+              <div class="card-footer row">
+        
+                <small class="fondoP text-dark col-xl-6 col-lg-6 col-md-6 col-sm-10">{{confitC.platino}}</small>
+                <small class="fondoG col-xl-6 col-lg-6 col-md-6 col-sm-10">{{confitC.gold}}</small>
+              </div>
             </div>
         </div>
     </div>
-</div>
-<P>** Tamaño de bebida(32 oz) y crispetas (140g) mediana</P>
+  </div>

@@ -70,12 +70,21 @@ export class LoginComponent implements OnInit {
           alert(`Hola ${this.identidad.names}. Empieza a disfurtar de nuestro contenido!`);
           this.usuarioService.sesion = true;
           this.usuarioService.nombreUs = this.identidad.names;
-          console.log(this.usuarioService.nombreUs)
+
+          if(this.identidad.rol == 'administrador'||this.identidad.rol == 'Administrador')
+          {
+            this.usuarioService.admin = true;
+          }else{
+            this.usuarioService.admin = false;
+          }
+          
+
           // Redirección al perfil
           // alert(this.usuarioService.sesion);
           this._router.navigate(['/home']);
         } else{
           alert("Usuario no identificado")
+          this.login = new Usuario('', '', '',  0, '', '','', 'usuario', '');
         }
         // Cierre validación
       },error =>{

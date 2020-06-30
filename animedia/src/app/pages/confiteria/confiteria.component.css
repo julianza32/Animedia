@@ -1,71 +1,67 @@
-/*
-Prueba en proceso
 
 
-.heading {
-    font-weight: 700;
-    color: #5d4267;
+  .container{
+    margin-top: 8%;
   }
-  .card.colorful-card .testimonial-card .card-up {
-    height: 95px;
+  .inner{
+    overflow: hidden;  /* para wue la imagen no se salga del card cuando seaumente */
   }
-  .card.colorful-card .testimonial-card .avatar {
-    border: 3px solid #fff !important;
-  }
-  .card.booking-card {
-    background-color: #c7f2e3;
-  }
-  .card.booking-card .fa {
-    color: #f7aa00;
-  }
-  .card.booking-card .card-body .card-text {
-    color: #db2d43;
-  }
-  .card.card.booking-card .chip {
-    background-color: #87e5da;
-  }
-  .card.booking-card .card-body hr {
-    border-top: 1px solid #f7aa00;
-  }
-  .mimosa {
-    background-color: #F0C05A;
-  }
-  .fuchsia-rose-text {
-    color: #db0075;
-  }
-  .aqua-sky-text {
-    color: #5cc6c3;
-  }
-  .mimosa-text {
-    color: #F0C05A;
-  }
-  .list-inline-item .fas, .list-inline-item .far {
-    font-size: .8rem;
-  }
-  .chili-pepper-text {
-    color: #9B1B30;
-  }
-  .collapse-content .fa.fa-heart:hover {
-    color: #f44336 !important;
-  }
-  .collapse-content .fa.fa-share-alt:hover {
-    color: #0d47a1 !important;
-  }
-  .card-wrapper.card-action {
-    min-height: 400px;
-  } */
-.imagen1{
-  
-  text-align: center;
-}
 
+  .inner img{
+    transition: all 1.5s ease;
+  }
+
+  .inner:hover img {
+    transform: scale(1.5);
+  }
   .contenedorConfi {
     width: 100%;
     overflow-x: scroll;
     scrollbar-color: #c72d28 #231e1e ;
+    
   }
 
-.card-img {
+.card-imagen {
     width: 280px;
-    height: 350px;
+    height: 310px;
+  
+  }
+ .card-imagenCombo{
+ /*  width: 300px; */
+  height: 300px;
+ }
+
+  .gradientbg{
+    background: rgb(35,30,30);
+    background: radial-gradient(circle, rgba(35,30,30,1) 0%, rgba(199,45,40,1) 100%);
+  }
+
+ /*  .fondoP{
+    background: rgb(159,154,156);
+    background: radial-gradient(circle, rgba(159,154,156,1) 0%, rgba(245,247,250,1) 100%);
+  }
+
+  .fondoG{
+    background: rgb(35,30,30);
+    background: linear-gradient(90deg, rgba(35,30,30,1) 0%, rgba(199,173,40,1) 100%);
+  } */
+
+  .fondoP{
+    background-color: #c0c0c0;
+    height: 100%;
+  }
+  .fondoG{
+    background-color: #d89600;
+    height: 100%;
+  }
+  
+.anchoCombo{
+  width: 34%;
 }
+
+@media only screen and (max-width: 760px){
+  .anchoCombo{ width: 90%;}
+}
+
+/*   #545454
+  #dddddd */

@@ -1,6 +1,8 @@
 import { Component, OnInit,ElementRef,ViewChild } from '@angular/core';
 import {Pelicula} from '../../model/peliculas';
 import {PeliculasService} from  '../../services/peliculas.service';
+import { Router } from '@angular/router';
+import { Usuario } from 'src/app/model/usuario';
 //import { Route } from '@angular/compiler/src/core';
 
 @Component({
@@ -13,6 +15,8 @@ export class AdminPeliculasComponent implements OnInit {
   @ViewChild('imgPeli') img:ElementRef;
   @ViewChild('vidPeli') vid:ElementRef;
 
+  public identidad:Usuario;
+
   public peliculaTrabajada: Pelicula;
   public url: String;
 
@@ -24,7 +28,7 @@ export class AdminPeliculasComponent implements OnInit {
   public listaPeliculas:any;
 
 
-  constructor(private peliculaService:PeliculasService)
+  constructor(private peliculaService:PeliculasService,private _router:Router)
   {
     this.peliculaTrabajada = new Pelicula('','','','','','',[],'','','','','','');
     this.url = peliculaService.url;
@@ -37,7 +41,19 @@ export class AdminPeliculasComponent implements OnInit {
 
   ngAfterViewInit()
   {
-    
+    if(localStorage.getItem('sesion'))
+    {
+      this.identidad = JSON.parse(localStorage.getItem('sesion'));
+      console.log(this.identidad.rol);
+      if(this.identidad.rol == 'administrador' || this.identidad.rol == 'Administrador')
+      {
+        
+      }else{
+        this._router.navigate(['/home']);
+      }
+    }else{
+      this._router.navigate(['/home']);
+    }
   }
 
   ngDoCheck()

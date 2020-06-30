@@ -36,10 +36,12 @@
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li> -->
         </ul>
-        <ul [style.display]="usuarioService.sesion == false ? 'none': 'flex'" class="navbar-nav">
+        <!-- [style.display]="usuarioService.sesion == true ? 'flex': 'none'" si falla incluirlo en la linea 40 NO BORRAR!! --> 
+        <ul class="navbar-nav usuSesion">
             <li class="nav-item dropdown">
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="perfil">Perfil</a>
+                    <a [style.display]="usuarioService.admin == true ? 'block':'none'" class="dropdown-item" href="adminPelis">Administracion</a>
                     <a class="dropdown-item" (click)="cerrarSesion()">Cerrar Sesion</a>
                 </div>
                 <a #nUsua [style.display]="usuarioService.sesion == true ? 'block': 'none'" class="nav-link text-white dropdown-toggle" href="" id="navbarDropdown" role="button"

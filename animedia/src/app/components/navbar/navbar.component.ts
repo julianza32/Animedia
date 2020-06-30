@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,30 +15,32 @@ export class NavbarComponent implements OnInit {
 
 
   public imagenLogo: string = "../../../assets/imagenes/logoAnimediabb.png"
-
   public Lsesion = JSON.parse(localStorage.getItem('sesion'));
-
-
-  constructor(public usuarioService: UsuarioService) {
+  public admin:any; 
+  
+  constructor(public usuarioService: UsuarioService,private _router:Router) {
     this.imagenLogo
   }
 
-
-
-
   ngOnInit(): void {
+   
   }
   ngAfterViewInit() {
     if (this.Lsesion) {
       this.usuarioService.sesion = true;
-    } else {
-      this.usuarioService.sesion = false;
-    }
-    if (this.usuarioService.sesion === true) {
       this.botones.nativeElement.display = 'none';
       this.nUsua.nativeElement.innerText = this.Lsesion.names;
-    } else {
-      this.botones.nativeElement.display = 'flex';
+      //No BORRAR !!!!!! 
+    //    if(this.Lsesion.rol == 'administrador'||this.Lsesion.rol == 'Administrador')
+    //   {
+    //     this.usuarioService.admin = true;
+    //   }else{
+    //     this.usuarioService.admin = false;
+    //   }
+
+    // } else {
+    //   this.usuarioService.sesion = false;
+      
     }
   }
 
@@ -45,8 +48,6 @@ export class NavbarComponent implements OnInit {
     localStorage.removeItem('sesion');
     this.usuarioService.identidad = '';
     this.usuarioService.sesion = false;
+    this._router.navigate(['/home'])
   }
-  // ngDoCheck(){
-  //   // alert("ca")
-  // }
 }
