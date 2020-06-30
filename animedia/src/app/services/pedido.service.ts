@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class PedidoService {
 
-  public producto= new Array(); 
+  public producto = new Array(); 
   public tituloP:String = 'No seleccionada aún';
 
   constructor() { }
