@@ -42,17 +42,18 @@ export class BoleteriaComponent implements OnInit {
   }
 
   pagos() {
-    this.pedido.producto = {
+     let boleteria = {
       "producto": "Boleta",
       "descripcion": "",
       "valor": 12000,
       "cantidad": this.puestos
     }
-    if (this.pedido.producto.cantidad != this.puestos) {
+    if (boleteria.cantidad != this.puestos) {
       alert("Por favor escoje tus sillas");
     } else {
       alert(this.pedido.producto);
       this._router.navigate(['/pagos']);
+
     }
   }
 }
