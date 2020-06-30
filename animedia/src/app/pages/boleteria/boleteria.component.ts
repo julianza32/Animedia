@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { PedidoService } from 'src/app/services/pedido.service';
+import { Router } from '@angular/router';
 
 
 
@@ -13,7 +14,7 @@ export class BoleteriaComponent implements OnInit {
   public puestos = 0;
   public puestosE = 0;
 
-  constructor(public pedido: PedidoService) {
+  constructor(public pedido: PedidoService, private _router: Router) {
 
   }
   columnas = [1, 2, 3, 4,];
@@ -24,7 +25,7 @@ export class BoleteriaComponent implements OnInit {
   sillas2 = ['I', 'J', 'K']
 
   ngOnInit(): void {
-    
+
   }
   /*  ngDoCheck(){
      
@@ -40,9 +41,13 @@ export class BoleteriaComponent implements OnInit {
     }
   }
 
-  pagos(){
+  pagos() {
     this.pedido.producto = this.puestosE;
-    alert(this.pedido.producto);
-    
+    if (this.pedido.producto != this.puestos) {
+      alert("Por favor escoje tus sillas");
+    } else {
+      alert(this.pedido.producto);
+      this._router.navigate(['/pagos']);
+    }
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PedidoService } from 'src/app/services/pedido.service';
 
 @Component({
   selector: 'app-pagos',
@@ -36,10 +37,11 @@ export class PagosComponent implements OnInit {
  }
 
 
-  constructor() { }
+  constructor(public pedido : PedidoService) { }
 
   ngOnInit(): void {
     this.calculoSubtotal();
+    this.pedido;
   }
   ngDoCheck(){
     this.calculoSubtotal();
