@@ -41,6 +41,11 @@ export class PerfilUsuarioComponent implements OnInit {
 
       this.usuarioModel.birthdate = fecha;
     } else {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'No puedes acceder sin una sesion!',
+      })
       this._router.navigate(['/home']);
     }
     //console.log(this.usuarioModel.birthdate);
