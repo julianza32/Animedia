@@ -37,6 +37,9 @@
     width: 100%;
 }
 
+.img{
+    object-fit: cover;
+}
 .contenedorInfo {
     background-color: rgba(0,0, 0, 0.5);
     padding: 20px;
