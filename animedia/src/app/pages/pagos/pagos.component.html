@@ -74,7 +74,7 @@
                         <div class="form-group row">
                             <label class="col-sm-4 col-12 col-form-label" for="banco">Banco</label>
                             <div class="col-sm-8 col-12">
-                                <select class="custom-select custom-select-sm" id="banco" [(ngModel)]="datos.banco">
+                                <select class="custom-select custom-select-sm" id="banco" name="banco" [(ngModel)]="datos.banco">
                                     <option selected> Seleccionar</option>
                                     <option value="1">Anibanco</option>
                                     <option value="2">Simpsons Bank</option>
@@ -87,14 +87,14 @@
                             <label class="col-sm-4 col-12 col-form-label " for="titular">Nombre del Titular</label>
                             <div class="col-sm-8 col-12">
                                 <input type="text" class=" form-control form-control-sm " placeholder="Nombre"
-                                    id="titular" name="titular" #titular="ngModel" [(ngModel)]="datos.titular">
+                                    id="nombreT" name="nombreT" #nombreT="ngModel" [(ngModel)]="datos.titular">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label class="col-sm-4 col-12 col-form-label" for="tipoD">Tipo de documento</label>
                             <div class="col-sm-8 col-12">
-                                <select class="custom-select custom-select-sm" id="tipoD" [(ngModel)]="datos.tipoI">
+                                <select class="custom-select custom-select-sm" id="tipoI" name="tipoI" [(ngModel)]="datos.tipoI">
                                     <option selected> Seleccionar</option>
                                     <option value="1">C.C. (Cédula de Ciudadania)</option>
                                     <option value="2">C.E. (Cédula de Extranjería)</option>
@@ -117,7 +117,7 @@
                             <label class="col-sm-4 col-12 col-form-label " for="correo">Correo</label>
                             <div class="col-sm-8 col-12">
                                 <input type="text" class=" form-control form-control-sm " placeholder="Correo"
-                                    id="correo" name="correo" #identificacion="ngModel" [(ngModel)]="datos.correo">
+                                    id="correo" name="correo" #correo="ngModel" [(ngModel)]="datos.correo">
                             </div>
                         </div>
 
@@ -188,7 +188,7 @@
                         <div class="form-group row">
                             <label class="col-sm-4 col-12 col-form-label" for="tipoD">Tipo de documento</label>
                             <div class="col-sm-8 col-12">
-                                <select class="custom-select custom-select-sm" id="tipoD" [(ngModel)]="datos.tipoI">
+                                <select class="custom-select custom-select-sm" id="tipoD" name="tipoD" [(ngModel)]="datos.tipoI">
                                     <option selected> Seleccionar</option>
                                     <option value="1">C.C. (Cédula de Ciudadania)</option>
                                     <option value="2">C.E. (Cédula de Extranjería)</option>
@@ -199,19 +199,19 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-sm-4 col-12 col-form-label " for="identificacion">Número de
+                            <label class="col-sm-4 col-12 col-form-label " for="identificacionT">Número de
                                 Identificación</label>
                             <div class="col-sm-8 col-12">
                                 <input type="text" class=" form-control form-control-sm "
-                                    placeholder="Número de Identificación" id="identificacion" name="identificacion"
-                                    #identificacion="ngModel" [(ngModel)]="datos.identificacion">
+                                    placeholder="Número de Identificación" id="identificacionT" name="identificacionT"
+                                    #identificacionT="ngModel" [(ngModel)]="datos.identificacion">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-4 col-12 col-form-label " for="correo">Correo</label>
                             <div class="col-sm-8 col-12">
                                 <input type="text" class=" form-control form-control-sm " placeholder="Correo"
-                                    id="correo" name="correo" #identificacion="ngModel" [(ngModel)]="datos.correo">
+                                    id="correoT" name="correoT" #correoT="ngModel" [(ngModel)]="datos.correo">
                             </div>
                         </div>
 
