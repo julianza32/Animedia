@@ -1,3 +1,19 @@
+.conteneVideo{
+    width: 99%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.video{
+    width: 99%;
+
+}
+.conteneInfo{
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 50%;
+    left:50%;
+}
 .contenedorPeliEs {
     width: 30%;
     margin: 10px;
