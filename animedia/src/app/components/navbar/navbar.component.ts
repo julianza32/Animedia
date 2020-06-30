@@ -31,12 +31,12 @@ export class NavbarComponent implements OnInit {
       this.botones.nativeElement.display = 'none';
       this.nUsua.nativeElement.innerText = this.Lsesion.names;
       //No BORRAR !!!!!! 
-    //    if(this.Lsesion.rol == 'administrador'||this.Lsesion.rol == 'Administrador')
-    //   {
-    //     this.usuarioService.admin = true;
-    //   }else{
-    //     this.usuarioService.admin = false;
-    //   }
+       if(this.Lsesion.rol == 'administrador'||this.Lsesion.rol == 'Administrador')
+      {
+        this.usuarioService.admin = true;
+      }else{
+        this.usuarioService.admin = false;
+      }
 
     // } else {
     //   this.usuarioService.sesion = false;
