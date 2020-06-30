@@ -1,18 +1,14 @@
 .sillas{
-    width: 8%;
-    max-width: 40px;
-    max-height: 40px;
-    
+    width: 37px;
+    height: 37px;
     margin: 2px; 
-    
-    
 }
 .sillasm{
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
 }
 .pantalla{
-    margin-top:10px;
+    width: 700px;
     background-color: rgba(128, 128, 128, 0.74);
 }
 .disponibles{
@@ -30,4 +26,25 @@ section, .boleteria{
 
 .sillas:hover{
     background-color: rgb(43, 136, 43);
+}
+
+input{
+    max-width: 100px;
+}
+select{
+    min-width: 100px;
+}
+.contenedorSillas{
+    overflow: auto;
+    min-width: auto;
+    max-height: 400px;
+}
+.columna{
+    min-width: 170px;
+}
+.columnaC{
+    min-width: 470px;
+}
+.preferencial, .pantalla{
+    min-width: 810px;
 }
