@@ -1,34 +1,43 @@
- .info{
-    /* background-color:rgba(199, 45, 40, 0.5) !important; */
-    background-color: #231e1e8f;;
-    border-radius: 5%;
-}
-  
-.input-group.md-form.form-sm.form-1 input{
-    border: 1px solid rgba(29, 18, 18, 0.5) !important;
-    border-top-right-radius: 0.25rem;
-    border-bottom-right-radius: 0.25rem;
-    
-  }
-  h3{
-    font-size:x-large;
-   
-    font-weight: bolder;
-  } 
-  .nav-link{
-    color:rgba(199, 45, 40) !important; 
-    color: grey; 
-  }
- .contenedorAP{
-   background-image: url(https://lh3.googleusercontent.com/proxy/a-xO2sIIYeQGPdHm5L_Mu5oG6iMoa-bQELLHzL0HF--ahrGc84BGIcUINb1Y8opx_p4cJ5amy9zQzzELj7m5TpAOa_G2EJtXhrcgUjMW4WyQdvaHp7nOxkPEIYJzf1592_z-2SKpA3z7sedEwPI);
-   background-size: cover;
+ .info {
+     /* background-color:rgba(199, 45, 40, 0.5) !important; */
+     background-color: #231e1e8f;
+     ;
+     border-radius: 5%;
  }
- .subc{
-   background-color: rgba(0, 0, 0, 0.582);
-   } 
-   video {
+ 
+ .input-group.md-form.form-sm.form-1 input {
+     border: 1px solid rgba(29, 18, 18, 0.5) !important;
+     border-top-right-radius: 0.25rem;
+     border-bottom-right-radius: 0.25rem;
+ }
+ 
+ h3 {
+     font-size: x-large;
+     font-weight: bolder;
+ }
+ 
+ .nav-link {
+     color: rgba(199, 45, 40) !important;
+     color: grey;
+ }
+ 
+ .contenedorAP {
+     /*      background-image: url(https://p4.wallpaperbetter.com/wallpaper/887/963/719/rick-and-morty-adult-swim-minimalism-wallpaper-preview.jpg);*/
+     background-image: url(data:image/jpeg;base64,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);
+     height: 100%;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+ }
+ 
+ .subc {
+     background-color: rgba(0, 0, 0, 0.582);
+ }
+ 
+ video {
      max-width: 300px;
-   }
-   img{
+ }
+ 
+ img {
      max-width: 100px;
-   }
+ }
