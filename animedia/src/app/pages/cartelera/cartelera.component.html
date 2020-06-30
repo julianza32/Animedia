@@ -1,1 +1,26 @@
-<p>cartelera works!</p>
+<div class="row m-5">
+    <div class="col-md-4 col-12 d-flex justify-content-center"> 
+        <img src="{{actual.image}}" alt="">
+        
+    </div>
+ 
+    <div class="col-md-6 col-12" >
+        <h2>{{actual.nombre}}</h2> <br>
+        <p>{{actual.anio}}</p> <br>
+        <p>{{actual.sinopsis}}</p>
+         <button class="myButton "> Ver Trailer</button>
+
+    </div>
+</div>
+<div class="contenedorCartelera d-flex flex-lg-row flex-md-row flex-sm-row flex-xl-row flex-wrap flex-column w-100">
+    <div *ngFor="let pelicula of peliculas" class="contenedorPeliEs">
+        <div class="card peli bg-dark text-white" (click)="pasarPelicula(this.pelicula.nombre)">
+            <img class="card-img" src={{pelicula.image}} alt="">
+            <div class="card-img-overlay">
+                <h5 class="card-title">Nombre: {{pelicula.nombre}}</h5>
+                <p class="card-text">Sinopsis: {{pelicula.sinopsis}}</p>
+                <p class="card-text">Año: {{pelicula.anio}}</p>
+            </div>
+        </div>
+    </div>
+</div>

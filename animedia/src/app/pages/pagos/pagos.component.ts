@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PedidoService } from 'src/app/services/pedido.service';
 
 @Component({
   selector: 'app-pagos',
@@ -7,21 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagosComponent implements OnInit {
   public opcionSeleccionada;
-  public listaProductos=[{
-    "nombre":"prueba",
-    "imagenP":"../../../assets/imagenes/cinema.gif",
-    "descripcion":'hola',
-    "costoU": 1,
-    "cantidad":2,
-    },
-  {
-    "nombre":'prueba2',
-    "imagenP":"../../../assets/imagenes/cinema.gif",
-    "descripcion":'hola2',
-    "costoU": 3,
-    "cantidad":4
-  }];
-  
+  public listaProductos= this.pedido.producto;
+  public descuento= 10;
+
  public datos={
    "nombre": "",
    "direccion":"",
@@ -36,10 +25,12 @@ export class PagosComponent implements OnInit {
  }
 
 
-  constructor() { }
+  constructor(public pedido : PedidoService) { }
 
   ngOnInit(): void {
     this.calculoSubtotal();
+    this.pedido;
+    
   }
   ngDoCheck(){
     this.calculoSubtotal();
@@ -47,7 +38,7 @@ export class PagosComponent implements OnInit {
   
   calculoSubtotal(){
     for(var i=0;i<this.listaProductos.length;i++){
-      let sub=(this.listaProductos[i].costoU*this.listaProductos[i].cantidad);
+      let sub=(this.listaProductos[i].valor*this.listaProductos[i].cantidad*(1-this.descuento/100));
       /* this.listaProductos[i].subtotal=sub */
       this.listaProductos[i]["subtotal"]= sub;
       

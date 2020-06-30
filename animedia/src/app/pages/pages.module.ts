@@ -18,6 +18,7 @@ import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.componen
 import { PeliculasService } from '../services/peliculas.service';
 import { PagosComponent } from './pagos/pagos.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { PedidoService } from '../services/pedido.service';
 
 
 
@@ -29,7 +30,8 @@ import { AppRoutingModule } from '../app-routing.module';
     CommonModule,FormsModule,ReactiveFormsModule,AppRoutingModule
   ],providers:[
     UsuarioService,
-    PeliculasService //Sujeto a cambio
+    PeliculasService,
+    PedidoService //Sujeto a cambio
     
   ]
 })
