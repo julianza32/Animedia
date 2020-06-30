@@ -17,6 +17,7 @@ import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.componen
 // Sujeto al cambio por posibles errores
 import { PeliculasService } from '../services/peliculas.service';
 import { PagosComponent } from './pagos/pagos.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -25,7 +26,7 @@ import { PagosComponent } from './pagos/pagos.component';
 @NgModule({
   declarations: [HomeComponent, CarteleraComponent, BoleteriaComponent, CineCasaComponent, ConfiteriaComponent, TarjetaComponent, LoginComponent, RegistroUsuarioComponent, AdminPeliculasComponent, PerfilUsuarioComponent, PagosComponent],
   imports: [
-    CommonModule,FormsModule,ReactiveFormsModule
+    CommonModule,FormsModule,ReactiveFormsModule,AppRoutingModule
   ],providers:[
     UsuarioService,
     PeliculasService //Sujeto a cambio
