@@ -114,9 +114,7 @@ export class ConfiteriaComponent implements OnInit {
   }
   pagos(product)
   {
-    
-        
-    
+
     this.producto = {
       "nombre": product.nombre,
       "imagen": product.imagen,
