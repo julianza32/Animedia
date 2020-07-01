@@ -13,8 +13,8 @@ export class ChatBoxComponent implements OnInit {
 
   public preguntas=[
     {"indice":1,"texto":"¿Como puedo ver contenido dentro de la pagina?"},
-    {"indice":2,"texto":"en donde puedo cambiar mi membresia"},
-    {"indice":3,"texto":"pregunta 3"}
+    {"indice":2,"texto":"¿En donde puedo cambiar mi membresía?"},
+    {"indice":3,"texto":"¿En donde puedo reservar mis boletas?"}
   ];
   public respuesta:any;
 
@@ -33,9 +33,9 @@ export class ChatBoxComponent implements OnInit {
     {
       case 1: this.respuesta.push({"texto":"Debes iniciar sesion y contar con una cuenta platino"});
       break;
-      case 2:this.respuesta.push({"texto":"Puedes seguir"+"<a routerLink='/tarjetas'>este link</a>"+" para hacer el cambio" });
+      case 2:this.respuesta.push({"texto":"Ve al menu, click en Boletería y comprar tarjeta" });
       break;
-      case 3:this.respuesta.push({"texto":" respuesta pregunta 2"});;
+      case 3:this.respuesta.push({"texto":"Ve al menu, opción Boletería y podras escoger tambien la ubicación en la sala"});;
       break;
     }
   }
