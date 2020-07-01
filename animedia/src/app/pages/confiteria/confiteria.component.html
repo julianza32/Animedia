@@ -1,5 +1,5 @@
 
-  <!-- Avance 2 en pruebas -->
+  <!-- Avance 2 en pruebas  -->
 
   <div class=" container pt-5">
     <div class="card-deck contenedorConfi d-flex flex-nowrap text-white">
@@ -13,14 +13,14 @@
               <div class="card-body">
                 <h5 class="card-title ">{{confit.nombre}}</h5>
                 <p class="card-text" [style.display]= "!sesion.membresia ? 'block':'none'">{{confit.precio}}</p>
-              </div>
+              </div> 
               <div class="card-footer row">
                 <p [style.display]="sesion.membresia === 'platino' ? 'block':'none'" class="fondoP text-dark col-xl-6 col-lg-6 col-md-6 col-sm-10">{{confit.platino}}</p>
                 <p [style.display]="sesion.membresia === 'gold' ? 'block':'none'" class="fondoG col-xl-6 col-lg-6 col-md-6 col-sm-10">{{confit.gold}}</p>
               </div>
             </div>
         </div>
-    </div>
+    </div>   
   </div>
 
   <!-- Cards combos -->
