@@ -18,7 +18,7 @@
 .animedia {
     width: 100%;
     height: 20px;
-    background: #f92672;
+    
     transition: width 2s, height 2s, margin 2s;
     margin: 100vH auto 0;
     position: absolute;
