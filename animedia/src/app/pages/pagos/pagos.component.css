@@ -2,5 +2,5 @@
     display: none;
 }
 .visible{
-    display: inline-block;
+    display: block;
 }

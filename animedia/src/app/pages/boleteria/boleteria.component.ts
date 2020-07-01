@@ -48,7 +48,7 @@ export class BoleteriaComponent implements OnInit {
   pagos() {
      this.boleteria = {
       "nombre": "Boleta",
-      "imagen":"src/assets/imagenes/cinema.gif",
+      "imagen":"../../../assets/imagenes/boletas.PNG",
       "descripcion": `${this.puestosE} boletas para la película ${this.peliculaC} \n  ${this.sillasS} `,
       "valor": 12000,
       "cantidad": this.puestos
@@ -56,11 +56,11 @@ export class BoleteriaComponent implements OnInit {
     if (this.boleteria.cantidad != this.puestos) {
       alert("Por favor escoje tus sillas");
     } else {
-      alert(this.pedido.producto);
+     
       this._router.navigate(['/pagos']);
       this.pedido.producto.push(this.boleteria);
       console.log(this.pedido);
-
+      
     }
   }
 }
