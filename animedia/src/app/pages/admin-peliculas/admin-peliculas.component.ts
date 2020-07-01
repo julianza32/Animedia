@@ -4,6 +4,7 @@ import {PeliculasService} from  '../../services/peliculas.service';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/model/usuario';
 //import { Route } from '@angular/compiler/src/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-admin-peliculas',
@@ -81,13 +82,25 @@ export class AdminPeliculasComponent implements OnInit {
           console.log(newPelicula);
           if(!newPelicula._id)
           {
-            alert("Error al registrar pelicula");
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Error al registrar pelicula',
+            })
+            //alert("Error al registrar pelicula");
 
           }else{
             //reasignacion de pelicula despues de ser grabada
           this.peliculaTrabajada = newPelicula;
           this.subirarchivos(newPelicula._id);
-          alert(`se ha creado correctamente ${newPelicula.title}`);
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: `Se ha creado correctamente ${newPelicula.title}`,
+            showConfirmButton: false,
+            timer: 1500
+          })
+         // alert(`se ha creado correctamente ${newPelicula.title}`);
           }
         });
     
@@ -98,12 +111,25 @@ export class AdminPeliculasComponent implements OnInit {
           let modPelicula=response.movie;
           if(!modPelicula._id)
           {
-            alert("Error al modificar la pelicula");
+
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Error al modificar pelicula',
+            })
+           // alert("Error al modificar la pelicula");
 
           }else{
           this.peliculaTrabajada = modPelicula;
           this.subirarchivos(modPelicula._id);
-          alert(`se ha modificado correctamente ${modPelicula.title}`);
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: `Se ha modificado correctamente ${modPelicula.title}`,
+            showConfirmButton: false,
+            timer: 1500
+          })
+          //alert(`se ha modificado correctamente ${modPelicula.title}`);
           }
         });
 
@@ -188,7 +214,14 @@ export class AdminPeliculasComponent implements OnInit {
     this.peliculaService.eliminarPeli(id).subscribe(
       (response:any)=>{
         
-        alert(response.message);
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: response.message,
+          showConfirmButton: false,
+          timer: 1500
+        })
+        //alert(response.message);
       }
       );
       this.deleteId();

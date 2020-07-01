@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PedidoService } from 'src/app/services/pedido.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-pagos',
@@ -77,6 +78,13 @@ export class PagosComponent implements OnInit {
   }
   //procesa el envio de datos
   envioDatos(){
-    alert(`Compra exitosa !!. Tu pedido se encuentra en camino`);
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: "Compra exitosa !!. Tu pedido se encuentra en camino",
+      showConfirmButton: false,
+      timer: 2000
+    })
+    //alert(`Compra exitosa !!. Tu pedido se encuentra en camino`);
   }
 }

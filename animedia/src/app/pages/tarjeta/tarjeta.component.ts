@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PedidoService } from 'src/app/services/pedido.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-tarjeta',
@@ -43,8 +44,22 @@ export class TarjetaComponent implements OnInit {
 
     if (memb=='platino') {
       this.pedidoService.producto.push(this.membresia[0]);//para que al producto que va a comprar le agregue la membresía
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: `Felicidades, ya eres parte de nuestro equipo Platino! Empieza a disfrutar de todos los beneficios`,
+        showConfirmButton: false,
+        timer: 2000
+      })
     } else {
       this.pedidoService.producto.push(this.membresia[1]);
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: `Felicidades, ya eres parte de nuestro equipo Dorado! Empieza a disfrutar de todos los beneficios`,
+        showConfirmButton: false,
+        timer: 2000
+      })
     }
 
       
