@@ -147,6 +147,7 @@ export class PerfilUsuarioComponent implements OnInit {
               // this.identidad = null;
               this.identidad = new Usuario('', '', '', 0, '', '', '', '', '');
               this.usuarioModel = new Usuario('', '', '', 0, '', '', '', '', '');
+              this.usuarioService.sesion = false;
               this._router.navigate(['/']);
             } else {
               alert(response.message);
