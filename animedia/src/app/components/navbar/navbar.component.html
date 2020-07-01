@@ -49,6 +49,11 @@
                     <!-- nombre de la persona logueada :V --> {{this.usuarioService.nombreUs}}
                 </a>
             </li>
+            <li class="nav-item">
+                
+                    <a *ngIf="pedidoservice.producto.length != 0" routerLink="/pagos" class="nav-link text-white"><i class="material-icons">shopping_cart</i></a>
+                    
+            </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2 buscador" type="search" placeholder="Search" aria-label="Search">
