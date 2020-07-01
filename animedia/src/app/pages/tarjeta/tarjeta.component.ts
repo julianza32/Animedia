@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TarjetaComponent implements OnInit {
 
-  public cardRick: String = "../../../assets/imagenes/cardRick.png"
+  public cardRick: String = "../../../assets/imagenes/cardRick.jpg"
   public cardMorty : String = "../../../assets/imagenes/mortyCard.jpg";
   constructor() { 
     this.cardMorty;

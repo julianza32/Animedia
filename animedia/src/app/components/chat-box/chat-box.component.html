@@ -1,15 +1,20 @@
-<div class="contenedor fixed-bottom d-flex justify-content-end ">
+<div class="contenedor fixed-bottom d-flex flex-column justify-content-end align-items-end">
+    <div class="cabecera d-flex flex-wrap flex-row justify-content-end align-content-center">
+        <div #max>
+            <span (click)="maximizar()" class="material-icons">crop_din</span>
+        </div>
+        <div #min [style.display]="'none'">
+            <span (click)="minimizar()" class="material-icons">remove</span>
+        </div>
+        <div (click)="cerrar()">
+            <span class="material-icons">close</span>
+        </div>     
+    </div>
     <div #chat class="subContenedor">
-        <div class="cabecera d-flex flex-wrap flex-row justify-content-end align-content-center">
-            <div #max>
-                <span (click)="maximizar()" class="material-icons">crop_din</span>
-            </div>
-            <div #min [style.display]="'none'">
-                <span (click)="minimizar()" class="material-icons">remove</span>
-            </div>
-            <div (click)="cerrar()">
-                <span class="material-icons">close</span>
-            </div>
+        
+        <div class="contenido">
+           <div class="pregunta" *ngFor="let pregunta of preguntas" (click)="validarPregunta(pregunta.indice)">{{pregunta.texto}}</div>
+           <div class="respuesta" #resdiv *ngFor="let respuesta of respuesta" >{{respuesta.texto}}</div>
         </div>
     </div>
 </div>

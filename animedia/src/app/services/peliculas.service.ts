@@ -10,11 +10,11 @@ import { Observable } from "rxjs";
 
 
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class PeliculasService {
+  public peliculaCarte: String = "";
 
   url = "http://localhost:3000/api/";
 

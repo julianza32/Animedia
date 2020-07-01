@@ -7,6 +7,7 @@ import { PagesModule } from './pages/pages.module';
 import { UsuarioService } from './services/usuario.service';
 import{PeliculasService} from './services/peliculas.service';
 import {FormsModule}from '@angular/forms';
+import {PedidoService} from './services/pedido.service';
 
 import {HttpClientModule} from '@angular/common/http'
 
@@ -24,7 +25,8 @@ import {HttpClientModule} from '@angular/common/http'
     ],
   providers: [
     UsuarioService, 
-    PeliculasService
+    PeliculasService, 
+    PedidoService
   ],
   bootstrap: [AppComponent]
 })
