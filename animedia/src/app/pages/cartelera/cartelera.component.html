@@ -10,15 +10,15 @@
         </div>
 
         <div class="col-md-6 col-12">
-            <h2 #nombre>{{actual.nombre}}</h2> <br>
-            <p #anio>{{actual.anio}}</p> <br>
-            <p #sinopsis>{{actual.sinopsis}}</p>
+            <h2 #nombre>{{actual.title}}</h2> <br>
+            <p #anio>{{actual.year}}</p> <br>
+            <p #sinopsis>{{actual.synopsis}}</p>
 
             <!-- Button trigger modal -->
             <button type="button" class="btn myButton" data-toggle="modal" data-target="#exampleModal">
                 Ver Trailer
             </button>
-            <button type="button" class="btn myButton"(click)="comprarB(this.actual.nombre)">Comprar boletas</button>
+            <button type="button" class="btn myButton"(click)="comprarB(this.actual.title)">Comprar boletas</button>
 
             <!-- Modal -->
             <div class="modal fade  " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -26,7 +26,7 @@
                 <div class="modal-dialog  modal-lg modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" > Trailer- {{actual.nombre}} </h5>
+                            <h5 class="modal-title" > Trailer- {{actual.title}} </h5>
                             <button type="button" class="close" style="color: white;" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -58,7 +58,7 @@
             <div class="card peli bg-dark text-white" (click)="pasarPelicula(pelicula)">
                 <img class="card-img img-fluid" src={{pelicula.image}} alt="">
                 <div class="card-img-overlay">
-                    <h5 class="card-title">{{pelicula.nombre}}</h5>
+                    <h5 class="card-title">{{pelicula.title}}</h5>
                     <!-- <p class="card-text">Sinopsis: {{pelicula.sinopsis}}</p>
                     <p class="card-text">Año: {{pelicula.anio}}</p> -->
                 </div>
