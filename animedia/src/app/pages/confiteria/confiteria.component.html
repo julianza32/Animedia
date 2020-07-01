@@ -1,19 +1,25 @@
 
-  <!-- Avance 2 en pruebas -->
+  <!-- Avance 2 en pruebas  -->
 
   <div class=" container pt-5">
     <div class="card-deck contenedorConfi d-flex flex-nowrap text-white">
 
-        <div *ngFor="let confit of confiteriaInfo">
+        <div *ngFor="let confit of confiteriaInfo" >
 
             <div class="card text-white gradientbg">
                 <div class="inner" >
-                    <img src={{confit.imagenL}} class="card-img-top card-imagen" alt="producto">     
+                    <img src={{confit.imagen}} class="card-img-top card-imagen" alt="producto">     
                  </div>
               <div class="card-body">
                 <h5 class="card-title ">{{confit.nombre}}</h5>
                 <!-- [style.display]= "!sesion.membresia ? 'block':'none'" -->
-                <p class="card-text">{{confit.precio}}</p>
+
+                <p class="card-text">{{confit.precio}}
+                  <button type="button" class="btn btn-secondary btn-sm" (click)="pagos(confit)"> 
+                    <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                  </button>
+                </p>
+
               </div>
               <div class="card-footer row">
                 <!-- [style.display]="sesion.membresia === 'platino' ? 'block':'none'" -->
@@ -23,7 +29,7 @@
               </div>
             </div>
         </div>
-    </div>
+    </div>   
   </div>
 
   <!-- Cards combos -->
@@ -31,16 +37,21 @@
   <div class="container pt-5">
     <div class="card-deck contenedorConfi d-flex flex-nowrap text-white ">
 
-        <div *ngFor="let confitC of confiteriaCombo" class="anchoCombo">
+        <div *ngFor="let confitC of confiteriaCombo" class="anchoCombo" >
           <div class="card text-white gradientbg">
 
           <div class="inner">
-            <img src={{confitC.imagenC}} class="card-img-top card-imagenCombo" alt="combo">
+            <img src={{confitC.imagen}} class="card-img-top card-imagenCombo" alt="combo">
           </div>            
               <div class="card-body">
                 <h5 class="card-title">{{confitC.nombre}}</h5>
                 <p class="card-text">{{confitC.contenido}}</p>
-                <p class="card-text">{{confitC.precio}}</p>
+                <p class="card-text">{{confitC.precio}} 
+                  <button type="button" class="btn btn-secondary btn-sm" (click)="pagos(confitC)">
+                  <span> <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                </span>
+              </button>
+              </p>
               </div>
               <div class="card-footer row">
         

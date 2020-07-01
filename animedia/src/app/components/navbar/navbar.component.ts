@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { Router } from '@angular/router';
+import { PedidoService } from 'src/app/services/pedido.service';
 
 
 @Component({
@@ -18,8 +19,9 @@ export class NavbarComponent implements OnInit {
   public Lsesion = JSON.parse(localStorage.getItem('sesion'));
   public admin:any; 
   
-  constructor(public usuarioService: UsuarioService,private _router:Router) {
-    this.imagenLogo
+  constructor(public usuarioService: UsuarioService,public pedidoservice:PedidoService,private _router:Router) {
+    this.imagenLogo;
+    pedidoservice.producto == null ? []:pedidoservice.producto;
   }
 
   ngOnInit(): void {
@@ -37,7 +39,7 @@ export class NavbarComponent implements OnInit {
       }else{
         this.usuarioService.admin = false;
       }
-
+     
     // } else {
     //   this.usuarioService.sesion = false;
       
