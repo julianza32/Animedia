@@ -146,6 +146,7 @@ export class CarteleraComponent implements OnInit {
     this.anio.nativeElement.innerText = pelicula.anio;
     this.sinopsis.nativeElement.innerText = pelicula.sinopsis;
     this.video.nativeElement.src=pelicula.trailer;
+    document.getElementById("conteneInfo").setAttribute("class","conteneInfo visible");
     // this.renderer.setStyle(this.fondo.'')    
 
     // this.renderer.setAttribute(this.imagenP,"src",pelicula.image);  // this.peliculaService.peliculaCarte = titulo;

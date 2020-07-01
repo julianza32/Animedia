@@ -54,3 +54,9 @@
         margin: auto;
     }
 }
+.oculto {
+    display: none;
+}
+.visible{
+    display: block;
+}
