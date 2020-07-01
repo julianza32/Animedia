@@ -39,7 +39,7 @@ export class NavbarComponent implements OnInit {
       }else{
         this.usuarioService.admin = false;
       }
-      console.log(this.pedidoservice.producto);
+     
     // } else {
     //   this.usuarioService.sesion = false;
       

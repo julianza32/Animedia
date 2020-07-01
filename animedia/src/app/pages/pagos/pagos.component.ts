@@ -29,19 +29,36 @@ export class PagosComponent implements OnInit {
 
   ngOnInit(): void {
     this.calculoSubtotal();
+    
     this.pedido;
+
     
   }
   ngDoCheck(){
     this.calculoSubtotal();
+    console.log(this.pedido.producto);
   }
   
   calculoSubtotal(){
+    
     for(var i=0;i<this.listaProductos.length;i++){
-      let sub=(this.listaProductos[i].valor*this.listaProductos[i].cantidad*(1-this.descuento/100));
-      /* this.listaProductos[i].subtotal=sub */
-      this.listaProductos[i]["subtotal"]= sub;
+    
+      if(this.listaProductos[i].cantidad == 0)
+      {
+        if(this.listaProductos.length == 0){
+          this.listaProductos =[];
+        }else{
+        this.listaProductos[i]='';
+        this.listaProductos.sort();
+        this.listaProductos.shift();
+        }
+      }else{
+        let sub=(this.listaProductos[i].valor*this.listaProductos[i].cantidad*(1-this.descuento/100));
+       /* this.listaProductos[i].subtotal=sub */
+       this.listaProductos[i]["subtotal"]= sub;
       
+      }
+     
     }
   }
   //muestra pagos por debito o credito
