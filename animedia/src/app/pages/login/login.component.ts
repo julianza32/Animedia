@@ -9,6 +9,8 @@ import { UsuarioService } from '../../services/usuario.service';
 // Importar el manejo de rutas
 import { Router, ActivatedRoute, Params } from '@angular/router'; 
 
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -67,7 +69,19 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('sesion',JSON.stringify(usuarioLogueado));
           // Consumir el servicio obtenerNombreUsuario
           this.identidad = this.usuarioService.obtenerNombreUsuario();
-          alert(`Hola ${this.identidad.names}. Empieza a disfurtar de nuestro contenido!`);
+          Swal.fire({
+            title: `Hola ${this.identidad.names}. Empieza a disfurtar de nuestro contenido!`,
+            width: 600,
+            padding: '3em',
+            background: '#fff url(/images/trees.png)',
+            backdrop: `
+              rgba(0,0,123,0.4)
+              url("/images/nyan-cat.gif")
+              left top
+              no-repeat
+            `
+          })
+          //alert(`Hola ${this.identidad.names}. Empieza a disfurtar de nuestro contenido!`);
           this.usuarioService.sesion = true;
           this.usuarioService.nombreUs = this.identidad.names;
 
@@ -83,7 +97,12 @@ export class LoginComponent implements OnInit {
           // alert(this.usuarioService.sesion);
           this._router.navigate(['/home']);
         } else{
-          alert("Usuario no identificado")
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Usuario no identificado',
+          })
+          // alert("Usuario no identificado")
           this.login = new Usuario('', '', '',  0, '', '','', 'usuario', '');
         }
         // Cierre validación

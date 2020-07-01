@@ -3,6 +3,9 @@ import { Usuario } from '../../model/usuario';
 import { UsuarioService } from '../../services/usuario.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 //'../../services/usuario.service';
+import Swal from 'sweetalert2';
+
+
 @Component({
   selector: 'app-registro-usuario',
   templateUrl: './registro-usuario.component.html',
@@ -42,27 +45,62 @@ export class RegistroUsuarioComponent implements OnInit {
   }
   validarFormulario() {
     if (this.nombre === "") {
-      alert("Por favor llena el campo nombre");
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Por favor llena el campo nombre',
+      })
+      //alert("Por favor llena el campo nombre");
     } else {
       if (this.apellido === "") {
-        alert("Por favor llena el campo apellido");
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Por favor llena el campo apellido',
+        })
+       // alert("Por favor llena el campo apellido");
       } else {
         if (this.telefono === "0" || this.telefono === "") {
-          alert("Por favor llena el campo telefono")
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Por favor llena el campo telefono',
+          })
+          //alert("Por favor llena el campo telefono")
         } else {
-          if (this.telefono.length < 9) {
-            alert("Por favor ingrese el numero de telefono correcto");
+          if (this.telefono.length < 10) {
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Por favor ingrese el numero de telefono correcto',
+            })
+            //alert("Por favor ingrese el numero de telefono correcto");
           } else {
             if (this.email === "") {
-              alert("Por favor llena el campo de correo");
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Por favor llena el campo de correo',
+              })
+              //alert("Por favor llena el campo de correo");
             } else {
               if (this.contrasena == "") {
-                alert("Por favor llena el campo de contraseña")
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: 'Por favor llena el campo de contraseña',
+                })
+                //alert("Por favor llena el campo de contraseña")
               } else {
                 if (this.tyc.nativeElement.checked) {
                   this.registrarUsuario();
                 } else {
-                  alert("Por favor Acepta terminos y condiciones");
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Por favor Acepta terminos y condiciones',
+                  })
+                  //alert("Por favor Acepta terminos y condiciones");
                 }
               }
             }
@@ -79,16 +117,31 @@ export class RegistroUsuarioComponent implements OnInit {
           let usuario = response.user;
          // this.usuarioService = usuario;
           if (!usuario._id) {
-            alert("Error al registrate");
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Error al registrate',
+            })
+            //alert("Error al registrate");
           } else {
-            alert(`Te registraste correctamente! inicia sesion con ${usuario.email}`);
-            this.notificacion = usuario.email;
-            this.enviarCorreo();
-            this.usuarioModel = new Usuario('', '', '', 0, '', '', '', '', '');
+            Swal.fire({
+              position: 'top-end',
+              icon: 'success',
+              title: `Te registraste correctamente! inicia sesion con ${usuario.email}`,
+              showConfirmButton: false,
+              timer: 2000
+            })
+            //alert(`Te registraste correctamente! inicia sesion con ${usuario.email}`);
+            this.usuarioModel = new Usuario('', '', '', 0,'', '', '', '', '');
             this._router.navigate(['/login']);
           }
         } else {
-          alert(response.message);
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: response.message,
+          })
+          //alert(response.message);
         }
       }, error => {
         var errorMensaje = <any>error;
