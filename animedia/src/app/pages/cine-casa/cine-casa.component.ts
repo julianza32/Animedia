@@ -27,13 +27,13 @@ export class CineCasaComponent implements OnInit {
     "nombre": "Buñuel en el laberinto de las tortugas' ",
     "sinopsis": "Ambientada en la década de 1930, el espectador adulto y cinéfilo disfrutará como un niño de esta aventura que se introduce en la Historia con personajes como Buñuel y Dalí. Pero los niños y niñas tendrán que seguir descubriendo estas dos grandes figuras de la historia del arte para disfrutar la propuesta del director Salvador Simó.",
     "anio": "2019",
-    "image": "https://images2.coveralia.com/dvd/b/bunuel-en-el-laberinto-de-las-tortugas-cartel3.jpg",
+    "image": "../../../assets/imagenes/Buñuel.jpg",
     "trailer": "../../../assets/trailers/Buñuelenellaberintodelastortugas.mp4"
   }, {
     "nombre": "La tortuga roja",
     "sinopsis": "Aunque inofensivo, el primer largometraje del belga Michael Dudok de Wit no es para nada una película infantil aunque, insistimos, cada niño es un mundo y siempre puede haber excepciones. Aunque sus imágenes promocionales puedan invitar a pensar lo contrario, 'La tortuga roja' es una reflexión vital demasiado profunda para determinadas edades. Además, el hecho de que no tenga diálogos puede provocar momentos angustiosos para unos papás inmersos en la belleza poética de la cinta y unos niños que no logran conectar con ella.",
     "anio": "2016",
-    "image": "https://images2.coveralia.com/dvd/l/la-tortuga-roja-cartel.jpg",
+    "image": "../../../assets/imagenes/toruga.jpg",
     "trailer": "../../../assets/trailers/Latortugaroja.mp4"
   }, {
     "nombre": "Beavis and Butt-Head do America",
@@ -57,13 +57,13 @@ export class CineCasaComponent implements OnInit {
   "nombre": "Buñuel en el laberinto de las tortugas' ",
   "sinopsis": "Ambientada en la década de 1930, el espectador adulto y cinéfilo disfrutará como un niño de esta aventura que se introduce en la Historia con personajes como Buñuel y Dalí. Pero los niños y niñas tendrán que seguir descubriendo estas dos grandes figuras de la historia del arte para disfrutar la propuesta del director Salvador Simó.",
   "anio": "2019",
-  "image": "https://images2.coveralia.com/dvd/b/bunuel-en-el-laberinto-de-las-tortugas-cartel3.jpg",
+  "image": "../../../assets/imagenes/Buñuel.jpg",
   "trailer": "../../../assets/trailers/Buñuelenellaberintodelastortugas.mp4"
 }, {
   "nombre": "La tortuga roja",
   "sinopsis": "Aunque inofensivo, el primer largometraje del belga Michael Dudok de Wit no es para nada una película infantil aunque, insistimos, cada niño es un mundo y siempre puede haber excepciones. Aunque sus imágenes promocionales puedan invitar a pensar lo contrario, 'La tortuga roja' es una reflexión vital demasiado profunda para determinadas edades. Además, el hecho de que no tenga diálogos puede provocar momentos angustiosos para unos papás inmersos en la belleza poética de la cinta y unos niños que no logran conectar con ella.",
   "anio": "2016",
-  "image": "https://images2.coveralia.com/dvd/l/la-tortuga-roja-cartel.jpg",
+  "image": "../../../assets/imagenes/toruga.jpg",
   "trailer": "../../../assets/trailers/Latortugaroja.mp4"
 }, {
   "nombre": "Beavis and Butt-Head do America",
@@ -81,13 +81,13 @@ export class CineCasaComponent implements OnInit {
   "nombre": "Buñuel en el laberinto de las tortugas' ",
   "sinopsis": "Ambientada en la década de 1930, el espectador adulto y cinéfilo disfrutará como un niño de esta aventura que se introduce en la Historia con personajes como Buñuel y Dalí. Pero los niños y niñas tendrán que seguir descubriendo estas dos grandes figuras de la historia del arte para disfrutar la propuesta del director Salvador Simó.",
   "anio": "2019",
-  "image": "https://images2.coveralia.com/dvd/b/bunuel-en-el-laberinto-de-las-tortugas-cartel3.jpg",
+  "image": "../../../assets/imagenes/Buñuel.jpg",
   "trailer": "../../../assets/trailers/Buñuelenellaberintodelastortugas.mp4"
 }, {
   "nombre": "La tortuga roja",
   "sinopsis": "Aunque inofensivo, el primer largometraje del belga Michael Dudok de Wit no es para nada una película infantil aunque, insistimos, cada niño es un mundo y siempre puede haber excepciones. Aunque sus imágenes promocionales puedan invitar a pensar lo contrario, 'La tortuga roja' es una reflexión vital demasiado profunda para determinadas edades. Además, el hecho de que no tenga diálogos puede provocar momentos angustiosos para unos papás inmersos en la belleza poética de la cinta y unos niños que no logran conectar con ella.",
   "anio": "2016",
-  "image": "https://images2.coveralia.com/dvd/l/la-tortuga-roja-cartel.jpg",
+  "image": "../../../assets/imagenes/toruga.jpg",
   "trailer": "../../../assets/trailers/Latortugaroja.mp4"
 }, {
   "nombre": "Beavis and Butt-Head do America",
@@ -111,13 +111,13 @@ export class CineCasaComponent implements OnInit {
 "nombre": "Buñuel en el laberinto de las tortugas' ",
 "sinopsis": "Ambientada en la década de 1930, el espectador adulto y cinéfilo disfrutará como un niño de esta aventura que se introduce en la Historia con personajes como Buñuel y Dalí. Pero los niños y niñas tendrán que seguir descubriendo estas dos grandes figuras de la historia del arte para disfrutar la propuesta del director Salvador Simó.",
 "anio": "2019",
-"image": "https://images2.coveralia.com/dvd/b/bunuel-en-el-laberinto-de-las-tortugas-cartel3.jpg",
+"image": "../../../assets/imagenes/Buñuel.jpg",
 "trailer": "../../../assets/trailers/Buñuelenellaberintodelastortugas.mp4"
 }, {
 "nombre": "La tortuga roja",
 "sinopsis": "Aunque inofensivo, el primer largometraje del belga Michael Dudok de Wit no es para nada una película infantil aunque, insistimos, cada niño es un mundo y siempre puede haber excepciones. Aunque sus imágenes promocionales puedan invitar a pensar lo contrario, 'La tortuga roja' es una reflexión vital demasiado profunda para determinadas edades. Además, el hecho de que no tenga diálogos puede provocar momentos angustiosos para unos papás inmersos en la belleza poética de la cinta y unos niños que no logran conectar con ella.",
 "anio": "2016",
-"image": "https://images2.coveralia.com/dvd/l/la-tortuga-roja-cartel.jpg",
+"image": "../../../assets/imagenes/toruga.jpg",
 "trailer": "../../../assets/trailers/Latortugaroja.mp4"
 }, {
 "nombre": "Beavis and Butt-Head do America",
