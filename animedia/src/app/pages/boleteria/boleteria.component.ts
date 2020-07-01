@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { PedidoService } from 'src/app/services/pedido.service';
 import { Router } from '@angular/router';
-
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -41,8 +41,15 @@ export class BoleteriaComponent implements OnInit {
       document.getElementById(x).setAttribute("class", "btn btn-success sillas");
       this.sillasS=` ${this.sillasS} ${x} `;
     } else {
-      alert(`Ya escogiste tus puestos, puedes dirigirte a pagos ${this.puestosE}`);
-    }
+      Swal.fire({
+  position: 'top-end',
+  icon: 'success',
+  title: `Ya escogiste tus ${this.puestosE} puestos, puedes dirigirte a pagos `,
+  showConfirmButton: false,
+  timer: 2000
+})
+/*       alert(`Ya escogiste tus puestos, puedes dirigirte a pagos ${this.puestosE}`);
+ */    }
   }
 
   pagos() {
@@ -54,7 +61,14 @@ export class BoleteriaComponent implements OnInit {
       "cantidad": this.puestos
     };
     if (this.boleteria.cantidad != this.puestos) {
-      alert("Por favor escoje tus sillas");
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: "Por favor escoge tus sillas",
+        showConfirmButton: false,
+        timer: 1500
+      })
+     // alert("Por favor escoje tus sillas");
     } else {
      
       this._router.navigate(['/pagos']);
