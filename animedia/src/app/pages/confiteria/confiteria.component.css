@@ -1,7 +1,7 @@
 
 
   .container{
-    margin-top: 8%;
+   /*  margin-top: 8%; */
   }
   .inner{
     overflow: hidden;  /* para wue la imagen no se salga del card cuando seaumente */
