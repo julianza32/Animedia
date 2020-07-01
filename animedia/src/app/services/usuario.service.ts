@@ -1,33 +1,44 @@
 import { Injectable } from '@angular/core';
-import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 @Injectable()
 export class UsuarioService {
 
-    sesion: boolean = false;
-    admin:boolean = false;
-    nombreUs: string;
+  sesion: boolean = false;
+  admin: boolean = false;
+  nombreUs: string;
 
 
-    url='http://localhost:3000/api/'
+  url = 'http://localhost:3000/api/'
 
-    public identidad; //variable de sesion
+  public identidad; //variable de sesion
 
   constructor(
     private _http: HttpClient
   ) { }
-// registrar cancion 
-  registrarUsuario(usuarioNuevo){
+  // registrar cancion 
+  registrarUsuario(usuarioNuevo) {
     let params = JSON.stringify(usuarioNuevo);
     console.log(params);
     let options = {
-      headers: new HttpHeaders({'Content-Type':'application/json'})
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
+    // let contEmail={
+    //   "to": usuarioNuevo.email,
+    //   "subject": "Bienevenid@ a animedia",
+    //   "text": "Has creado una cuenta satisfactoriamente con animedia, muchas gracias\n ahora podras disfrutar de nuestro contenido." 
+    // }
+    // this.enviarCorreo(contEmail);
     return this._http.post(
-      this.url + 'registerUser',params,options).pipe(map(res=>res));
+      this.url + 'registerUser', params, options).pipe(map(res => res));
   }
-
+  enviarCorreo(contEmail) {
+    let options = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
+    return this._http.post(this.url + 'sendMail', contEmail, options).pipe(map(res => res));
+  }
   iniciarSesion(usuarioLogueado) {
     let params = JSON.stringify(usuarioLogueado);
     let options = {
@@ -55,40 +66,39 @@ export class UsuarioService {
   }
   //-----------------------------------------------------
   //Declarar el metodo del servicio editarUsuario
-  
-  editarUsuario(id,usuarioActualizado){
+
+  editarUsuario(id, usuarioActualizado) {
     let params = JSON.stringify(usuarioActualizado);
-    let options ={
-      headers: new HttpHeaders({'Content-Type': 'application/json'})
+    let options = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     }
     return this._http.put(
-      this.url+'updateUser/'+id,
+      this.url + 'updateUser/' + id,
       params,
       options
-    ).pipe(map(res=>res));
+    ).pipe(map(res => res));
   }
   //----------------------------------------------
   //Declarar el metodo del servicio cargarImagenUsuario
-  cargarImagenUsuario(file: File, id ){
+  cargarImagenUsuario(file: File, id) {
     // instanciamos el objeto FormData que nos permitira enviar la img
 
     let formData = new FormData();
-    formData.append('image',file);
+    formData.append('image', file);
     return this._http.put(
-      this.url+'uploadUserImage/'+id,
+      this.url + 'uploadUserImage/' + id,
       formData
-    ).pipe(map(res=>res));
+    ).pipe(map(res => res));
   }
 
-  eliminarUsuario(id){ 
-    let options = {      
-      headers: new HttpHeaders( { 'Content-Type' : 'application/json' } )  
-      }  
-      
-      return this._http.delete(      
-        this.url+'deleteUser/'+id,      
-        options          
-        ).pipe(map(res => res));  
+  eliminarUsuario(id) {
+    let options = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    }
 
+    return this._http.delete(
+      this.url + 'deleteUser/' + id,
+      options
+    ).pipe(map(res => res));
   }
 }

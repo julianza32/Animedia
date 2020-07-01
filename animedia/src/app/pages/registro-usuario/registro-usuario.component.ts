@@ -12,7 +12,6 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class RegistroUsuarioComponent implements OnInit {
   public usuarioModel: Usuario;
   public url: String;
-  ;
 
   @ViewChild('tyc') tyc: ElementRef;
   public nombre: String;
@@ -21,10 +20,11 @@ export class RegistroUsuarioComponent implements OnInit {
   public cumpleanos: String;
   public email: String;
   public contrasena: String;
+  public notificacion: String;
 
-  constructor(private usuarioService: UsuarioService,private _router:Router) {
-    this.usuarioModel= new Usuario('','','',0,'','','','','');
-   }
+  constructor(private usuarioService: UsuarioService, private _router: Router) {
+    this.usuarioModel = new Usuario('', '', '', 0, '', '', '', '', '');
+  }
 
   // @ViewChild('apellido') apellido: ElementRef;
 
@@ -35,7 +35,6 @@ export class RegistroUsuarioComponent implements OnInit {
     this.cumpleanos = this.usuarioModel.birthdate;
     this.email = this.usuarioModel.email;
     this.contrasena = this.usuarioModel.pass;
-
 
   }
 
@@ -51,7 +50,7 @@ export class RegistroUsuarioComponent implements OnInit {
         if (this.telefono === "0" || this.telefono === "") {
           alert("Por favor llena el campo telefono")
         } else {
-          if (this.telefono.length < 10) {
+          if (this.telefono.length < 9) {
             alert("Por favor ingrese el numero de telefono correcto");
           } else {
             if (this.email === "") {
@@ -78,12 +77,14 @@ export class RegistroUsuarioComponent implements OnInit {
       (response: any) => {
         if (response.user) {
           let usuario = response.user;
-          this.usuarioService = usuario;
+         // this.usuarioService = usuario;
           if (!usuario._id) {
             alert("Error al registrate");
           } else {
             alert(`Te registraste correctamente! inicia sesion con ${usuario.email}`);
-            this.usuarioModel = new Usuario('', '', '', 0,'', '', '', '', '');
+            this.notificacion = usuario.email;
+            this.enviarCorreo();
+            this.usuarioModel = new Usuario('', '', '', 0, '', '', '', '', '');
             this._router.navigate(['/login']);
           }
         } else {
@@ -93,6 +94,29 @@ export class RegistroUsuarioComponent implements OnInit {
         var errorMensaje = <any>error;
         if (errorMensaje != null) {
           console.log(error);
+        }
+      }
+    );
+    // console.log(this.notificacion);
+    // if (this.notificacion) {
+    //   console.log(this.notificacion);
+    //   this.enviarCorreo();
+    // }
+  }
+  enviarCorreo() {
+    console.log(this.notificacion);
+    let contEmail = {
+      "to": this.usuarioModel.email,
+      "subject": `Bienevenid@ ${this.usuarioModel.names} a animedia`,
+      "text": "Has creado una cuenta satisfactoriamente con animedia, muchas gracias\nahora podras disfrutar de nuestro contenido."
+    }
+    this.usuarioService.enviarCorreo(contEmail).subscribe(
+      (response: any) => {
+        this.notificacion="";
+      }, error => {
+        var errorMensaje = <any>error;
+        if (errorMensaje != null) {
+          console.log(error)
         }
       }
     );
