@@ -32,7 +32,7 @@ export class CarteleraComponent implements OnInit {
     "nombre": "La tortuga roja",
     "sinopsis": "Aunque inofensivo, el primer largometraje del belga Michael Dudok de Wit no es para nada una película infantil aunque, insistimos, cada niño es un mundo y siempre puede haber excepciones. Aunque sus imágenes promocionales puedan invitar a pensar lo contrario, 'La tortuga roja' es una reflexión vital demasiado profunda para determinadas edades. Además, el hecho de que no tenga diálogos puede provocar momentos angustiosos para unos papás inmersos en la belleza poética de la cinta y unos niños que no logran conectar con ella.",
     "anio": "2016",
-    "image": "https://images2.coveralia.com/dvd/l/la-tortuga-roja-cartel.jpg",
+    "image": "../../../assets/imagenes/toruga.jpg",
     "trailer": "../../../assets/trailers/Latortugaroja.mp4"
   }, {
     "nombre": "Beavis and Butt-Head do America",
@@ -62,7 +62,7 @@ export class CarteleraComponent implements OnInit {
   "nombre": "La tortuga roja",
   "sinopsis": "Aunque inofensivo, el primer largometraje del belga Michael Dudok de Wit no es para nada una película infantil aunque, insistimos, cada niño es un mundo y siempre puede haber excepciones. Aunque sus imágenes promocionales puedan invitar a pensar lo contrario, 'La tortuga roja' es una reflexión vital demasiado profunda para determinadas edades. Además, el hecho de que no tenga diálogos puede provocar momentos angustiosos para unos papás inmersos en la belleza poética de la cinta y unos niños que no logran conectar con ella.",
   "anio": "2016",
-  "image": "https://images2.coveralia.com/dvd/l/la-tortuga-roja-cartel.jpg",
+  "image": "../../../assets/imagenes/toruga.jpg",
   "trailer": "../../../assets/trailers/Latortugaroja.mp4"
 }, {
   "nombre": "Beavis and Butt-Head do America",
@@ -86,7 +86,7 @@ export class CarteleraComponent implements OnInit {
   "nombre": "La tortuga roja",
   "sinopsis": "Aunque inofensivo, el primer largometraje del belga Michael Dudok de Wit no es para nada una película infantil aunque, insistimos, cada niño es un mundo y siempre puede haber excepciones. Aunque sus imágenes promocionales puedan invitar a pensar lo contrario, 'La tortuga roja' es una reflexión vital demasiado profunda para determinadas edades. Además, el hecho de que no tenga diálogos puede provocar momentos angustiosos para unos papás inmersos en la belleza poética de la cinta y unos niños que no logran conectar con ella.",
   "anio": "2016",
-  "image": "https://images2.coveralia.com/dvd/l/la-tortuga-roja-cartel.jpg",
+  "image": "../../../assets/imagenes/toruga.jpg",
   "trailer": "../../../assets/trailers/Latortugaroja.mp4"
 }, {
   "nombre": "Beavis and Butt-Head do America",
@@ -116,7 +116,7 @@ export class CarteleraComponent implements OnInit {
 "nombre": "La tortuga roja",
 "sinopsis": "Aunque inofensivo, el primer largometraje del belga Michael Dudok de Wit no es para nada una película infantil aunque, insistimos, cada niño es un mundo y siempre puede haber excepciones. Aunque sus imágenes promocionales puedan invitar a pensar lo contrario, 'La tortuga roja' es una reflexión vital demasiado profunda para determinadas edades. Además, el hecho de que no tenga diálogos puede provocar momentos angustiosos para unos papás inmersos en la belleza poética de la cinta y unos niños que no logran conectar con ella.",
 "anio": "2016",
-"image": "https://images2.coveralia.com/dvd/l/la-tortuga-roja-cartel.jpg",
+"image": "../../../assets/imagenes/toruga.jpg",
 "trailer": "../../../assets/trailers/Latortugaroja.mp4"
 }, {
 "nombre": "Beavis and Butt-Head do America",
@@ -147,6 +147,7 @@ export class CarteleraComponent implements OnInit {
     this.sinopsis.nativeElement.innerText = pelicula.sinopsis;
     this.video.nativeElement.src=pelicula.trailer;
     document.getElementById("conteneInfo").setAttribute("class","conteneInfo visible");
+    document.getElementById("tituloCartelera").setAttribute("class","oculto");
     // this.renderer.setStyle(this.fondo.'')    
 
     // this.renderer.setAttribute(this.imagenP,"src",pelicula.image);  // this.peliculaService.peliculaCarte = titulo;
