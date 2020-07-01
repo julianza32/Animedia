@@ -40,3 +40,9 @@ body{
     color: #231e1e;
     border: 1px solid #c0c0c0;
 }
+.modal{
+  background-color: #231e1e3f;;
+}
+.modal-content{
+  background-color: #231e1e ;
+}
