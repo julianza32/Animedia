@@ -131,6 +131,7 @@ export class RegistroUsuarioComponent implements OnInit {
               showConfirmButton: false,
               timer: 2000
             })
+            this.enviarCorreo();
             //alert(`Te registraste correctamente! inicia sesion con ${usuario.email}`);
             this.usuarioModel = new Usuario('', '', '', 0,'', '', '', '', '');
             this._router.navigate(['/login']);
