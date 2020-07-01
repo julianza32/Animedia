@@ -8,6 +8,7 @@
 }
 .contenedorPeliEs{
   background-color: #231e1e;
+  overflow-y: scroll;
 }
 .contenedorEstrenos {
     width: 100%;
