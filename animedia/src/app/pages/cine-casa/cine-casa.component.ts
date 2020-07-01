@@ -21,7 +21,7 @@ export class CineCasaComponent implements OnInit {
     "nombre": "Las golondrinas de Kabul",
     "sinopsis": "Ambientada en el Kabul de 1998, esta película nos traslada a las ruinas que han dejado los Talibanes, y lo hace a través de la mirada de dos adolescentes enamorados. Incluso rodeados de violencia, el amor es posible. Cuando una decisión desafortunada rompa el equilibrio entre ambos y su entorno, el drama social sacará la crudeza de esta película animada de producción francesa dirigida por Zabou Breitman y Eléa Gobbé-Mévellec.",
     "anio": "2019",
-    "image": "https://images2.coveralia.com/dvd/l/las-golondrinas-de-kabul-cartel.jpg",
+    "image": "../../../assets/imagenes/kabul.jpg",
     "trailer": "../../../assets/trailers/LasgolondrinasdeKabul.mp4"
   }, {
     "nombre": "Buñuel en el laberinto de las tortugas' ",
@@ -39,19 +39,19 @@ export class CineCasaComponent implements OnInit {
     "nombre": "Beavis and Butt-Head do America",
     "sinopsis": "Unos adolescentes ineptos investigan el robo de su televisión y son secuestrados por unos distribuidores de armas",
     "anio": "1996",
-    "image": "https://i.pinimg.com/564x/a0/cc/86/a0cc86b60d8fed2519513ec9a951425f.jpg",
+    "image": "../../../assets/imagenes/america.jpg",
     "trailer": "../../../assets/trailers/BeavisandButtheadDoAmerica.mp4"
   }, {
     "nombre": "BoJack especial de navidad",
     "sinopsis": "Es Navidad y BoJack no quiere saber nada del tema, hasta que aparece Todd con un bastón de caramelo gigante y un antiguo episodio navideño de 'Retozando'",
     "anio": "2014",
-    "image": "http://es.web.img2.acsta.net/c_216_288/pictures/15/02/20/10/21/222923.jpg",
+    "image": "../../../assets/imagenes/jorse.jpg",
     "trailer": "../../../assets/trailers/Latortugaroja.mp4"
   },{
   "nombre": "Las golondrinas de Kabul",
   "sinopsis": "Ambientada en el Kabul de 1998, esta película nos traslada a las ruinas que han dejado los Talibanes, y lo hace a través de la mirada de dos adolescentes enamorados. Incluso rodeados de violencia, el amor es posible. Cuando una decisión desafortunada rompa el equilibrio entre ambos y su entorno, el drama social sacará la crudeza de esta película animada de producción francesa dirigida por Zabou Breitman y Eléa Gobbé-Mévellec.",
   "anio": "2019",
-  "image": "https://images2.coveralia.com/dvd/l/las-golondrinas-de-kabul-cartel.jpg",
+  "image": "../../../assets/imagenes/kabul.jpg",
   "trailer": "../../../assets/trailers/LasgolondrinasdeKabul.mp4"
 }, {
   "nombre": "Buñuel en el laberinto de las tortugas' ",
@@ -69,13 +69,13 @@ export class CineCasaComponent implements OnInit {
   "nombre": "Beavis and Butt-Head do America",
   "sinopsis": "Unos adolescentes ineptos investigan el robo de su televisión y son secuestrados por unos distribuidores de armas",
   "anio": "1996",
-  "image": "https://i.pinimg.com/564x/a0/cc/86/a0cc86b60d8fed2519513ec9a951425f.jpg",
+  "image": "../../../assets/imagenes/america.jpg",
   "trailer": "../../../assets/trailers/BeavisandButtheadDoAmerica.mp4"
 },{
   "nombre": "Las golondrinas de Kabul",
   "sinopsis": "Ambientada en el Kabul de 1998, esta película nos traslada a las ruinas que han dejado los Talibanes, y lo hace a través de la mirada de dos adolescentes enamorados. Incluso rodeados de violencia, el amor es posible. Cuando una decisión desafortunada rompa el equilibrio entre ambos y su entorno, el drama social sacará la crudeza de esta película animada de producción francesa dirigida por Zabou Breitman y Eléa Gobbé-Mévellec.",
   "anio": "2019",
-  "image": "https://images2.coveralia.com/dvd/l/las-golondrinas-de-kabul-cartel.jpg",
+  "image": "../../../assets/imagenes/kabul.jpg",
   "trailer": "../../../assets/trailers/LasgolondrinasdeKabul.mp4"
 }, {
   "nombre": "Buñuel en el laberinto de las tortugas' ",
@@ -93,19 +93,19 @@ export class CineCasaComponent implements OnInit {
   "nombre": "Beavis and Butt-Head do America",
   "sinopsis": "Unos adolescentes ineptos investigan el robo de su televisión y son secuestrados por unos distribuidores de armas",
   "anio": "1996",
-  "image": "https://i.pinimg.com/564x/a0/cc/86/a0cc86b60d8fed2519513ec9a951425f.jpg",
+  "image": "../../../assets/imagenes/america.jpg",
   "trailer": "../../../assets/trailers/BeavisandButtheadDoAmerica.mp4"
 }, {
   "nombre": "BoJack especial de navidad",
   "sinopsis": "Es Navidad y BoJack no quiere saber nada del tema, hasta que aparece Todd con un bastón de caramelo gigante y un antiguo episodio navideño de 'Retozando'",
   "anio": "2014",
-  "image": "http://es.web.img2.acsta.net/c_216_288/pictures/15/02/20/10/21/222923.jpg",
+  "image": "../../../assets/imagenes/jorse.jpg",
   "trailer": "../../../assets/trailers/Latortugaroja.mp4"
 },{
 "nombre": "Las golondrinas de Kabul",
 "sinopsis": "Ambientada en el Kabul de 1998, esta película nos traslada a las ruinas que han dejado los Talibanes, y lo hace a través de la mirada de dos adolescentes enamorados. Incluso rodeados de violencia, el amor es posible. Cuando una decisión desafortunada rompa el equilibrio entre ambos y su entorno, el drama social sacará la crudeza de esta película animada de producción francesa dirigida por Zabou Breitman y Eléa Gobbé-Mévellec.",
 "anio": "2019",
-"image": "https://images2.coveralia.com/dvd/l/las-golondrinas-de-kabul-cartel.jpg",
+"image": "../../../assets/imagenes/kabul.jpg",
 "trailer": "../../../assets/trailers/LasgolondrinasdeKabul.mp4"
 }, {
 "nombre": "Buñuel en el laberinto de las tortugas' ",
@@ -123,7 +123,7 @@ export class CineCasaComponent implements OnInit {
 "nombre": "Beavis and Butt-Head do America",
 "sinopsis": "Unos adolescentes ineptos investigan el robo de su televisión y son secuestrados por unos distribuidores de armas",
 "anio": "1996",
-"image": "https://i.pinimg.com/564x/a0/cc/86/a0cc86b60d8fed2519513ec9a951425f.jpg",
+"image": "../../../assets/imagenes/america.jpg",
 "trailer": "../../../assets/trailers/BeavisandButtheadDoAmerica.mp4"
 },
   ];
