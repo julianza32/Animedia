@@ -15,7 +15,7 @@
                     </tr>
                     <tr *ngFor="let producto of listaProductos" class="">
                         <td> <span>{{producto.nombre}}</span> <br>
-                            <img class="card-img" src={{producto.imagen}}>
+                            <img class="card-img img-fluid my-2" src={{producto.imagen}}>
                         </td>
                         <td> <span>{{producto.descripcion}}</span> </td>
                         <td><span>{{producto.valor}}</span></td>
@@ -60,7 +60,8 @@
                         <div class="form-group row">
                             <label class="col-sm-4 col-12 col-form-label" for="metodo">Método de pago</label>
                             <div class="col-sm-8 col-12">
-                                <select [(ngModel)]="opcionSeleccionada" name="metodo" class="custom-select custom-select-sm" id="metodo" (change)="mostrar()">
+                                <select [(ngModel)]="opcionSeleccionada" name="metodo"
+                                    class="custom-select custom-select-sm" id="metodo" (change)="mostrar()">
                                     <option selected> Seleccionar</option>
                                     <option value="1">Tarjeta de crédito</option>
                                     <option value="2">Débito Pse</option>
@@ -76,7 +77,8 @@
                         <div class="form-group row">
                             <label class="col-sm-4 col-12 col-form-label" for="banco">Banco</label>
                             <div class="col-sm-8 col-12">
-                                <select class="custom-select custom-select-sm" id="banco" name="banco" [(ngModel)]="datos.banco">
+                                <select class="custom-select custom-select-sm" id="banco" name="banco"
+                                    [(ngModel)]="datos.banco">
                                     <option selected> Seleccionar</option>
                                     <option value="1">Anibanco</option>
                                     <option value="2">Simpsons Bank</option>
@@ -96,7 +98,8 @@
                         <div class="form-group row">
                             <label class="col-sm-4 col-12 col-form-label" for="tipoD">Tipo de documento</label>
                             <div class="col-sm-8 col-12">
-                                <select class="custom-select custom-select-sm" id="tipoI" name="tipoI" [(ngModel)]="datos.tipoI">
+                                <select class="custom-select custom-select-sm" id="tipoI" name="tipoI"
+                                    [(ngModel)]="datos.tipoI">
                                     <option selected> Seleccionar</option>
                                     <option value="1">C.C. (Cédula de Ciudadania)</option>
                                     <option value="2">C.E. (Cédula de Extranjería)</option>
@@ -123,29 +126,35 @@
                             </div>
                         </div>
 
-                        <button class="btn btn-sm btn-secondary">Enviar</button>
+                        <button class="btn btn-sm myButton">Enviar</button>
 
 
                     </div>
 
                     <!------------- Metodo Credito -------------->
                     <div id="credito" class="oculto">
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-12 col-form-label " for="mPago">Medios de pago</label>
+                            <div class="col-sm-8 col-12" id="mPago">
+                                <a class="m-2"><i class='fab fa-cc-visa'
+                                        style='font-size:24px; color:blue; background-color: white;'></i></a>
+                                <a class="m-2"><i class='fab fa-cc-mastercard'
+                                        style='font-size:24px; background: linear-gradient(90deg, rgba(253,29,29,1) 2%, rgba(253,123,29,1) 50%, rgba(224,236,24,1) 100%);'></i></a>
+                            </div>
+                        </div>
 
-                        <a><i class='fab fa-cc-visa' style='font-size:24px; color:blue; background-color: white;'></i></a>
-                        <a ><i class='fab fa-cc-mastercard' style='font-size:24px; background: linear-gradient(90deg, rgba(253,29,29,1) 2%, rgba(253,123,29,1) 50%, rgba(224,236,24,1) 100%);'></i></a>
-                        
                         <div class="form-group row">
                             <label class="col-sm-4 col-12 col-form-label " for="numTarjeta">Número de la tarjeta</label>
                             <div class="col-sm-8 col-12">
-                                <input type="text" class=" form-control form-control-sm " placeholder="xxxx xxxx xxxx xxxx"
-                                    id="numTarjeta" name="numTarjeta"  >
+                                <input type="text" class=" form-control form-control-sm "
+                                    placeholder="xxxx xxxx xxxx xxxx" id="numTarjeta" name="numTarjeta">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label class="col-sm-4 col-12 col-form-label" for="fechaV">Fecha de vencimiento</label>
                             <div class="col-sm-4 col-12">
-                                <select class="custom-select custom-select-sm" id="fechaV" >
+                                <select class="custom-select custom-select-sm" id="fechaV">
                                     <option selected> MM</option>
                                     <option value="1">Enero</option>
                                     <option value="2">Febrero</option>
@@ -182,15 +191,17 @@
                         <div class="form-group row">
                             <label class="col-sm-4 col-12 col-form-label " for="titular">Nombre del titular</label>
                             <div class="col-sm-8 col-12">
-                                <input type="text" class=" form-control form-control-sm " placeholder="Nombre impreso en tarjeta"
-                                    id="titular" name="titular" #titular="ngModel" [(ngModel)]="datos.nombre">
+                                <input type="text" class=" form-control form-control-sm "
+                                    placeholder="Nombre impreso en tarjeta" id="titular" name="titular"
+                                    #titular="ngModel" [(ngModel)]="datos.nombre">
                             </div>
                         </div>
-                        
+
                         <div class="form-group row">
                             <label class="col-sm-4 col-12 col-form-label" for="tipoD">Tipo de documento</label>
                             <div class="col-sm-8 col-12">
-                                <select class="custom-select custom-select-sm" id="tipoD" name="tipoD" [(ngModel)]="datos.tipoI">
+                                <select class="custom-select custom-select-sm" id="tipoD" name="tipoD"
+                                    [(ngModel)]="datos.tipoI">
                                     <option selected> Seleccionar</option>
                                     <option value="1">C.C. (Cédula de Ciudadania)</option>
                                     <option value="2">C.E. (Cédula de Extranjería)</option>
@@ -217,10 +228,10 @@
                             </div>
                         </div>
 
-                        <button class="btn btn-sm btn-secondary">Enviar</button>
+                        <button class="btn btn-sm myButton">Enviar</button>
 
                     </div>
-                  
+
                 </form>
             </div>
 

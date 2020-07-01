@@ -1,41 +1,39 @@
 <div class="boleteria">
     <section class="seleccion m-3 px-4">
-        <form class="row d-flex bd-highlight " #boleteriaForm="ngForm">
-            <div class="d-flex justify-conten-between">
+        <form class="row bd-highlight d-flex justify-content-between " #boleteriaForm="ngForm">
+            <div class="d-flex justify-content-between">
                 <label class="col-form-label mr-4 ml-2" for="puestosE">Cantidad de sillas</label>
                 <input class="form-control form-control-sm mr-4" name="puestosE" type="number" [(ngModel)]="puestosE">
             </div>
-            <div class="d-flex justify-conten-between">
-                <label class="col-form-label mr-4" for="sala">Sala</label>
+            <div class="d-flex justify-content-between">
+                <label class="col-form-label mr-4" for="sala">Horario</label>
                 <select class="custom-select custom-select-sm mr-4" name="sala" id="sala">
-                    <option value="1"> 1 </option>
-                    <option value="2"> 2 </option>
-                    <option value="3"> 3 </option>
-                    <option value="4"> 4 </option>
-                    <option value="5"> 5 </option>
-                    <option value="6"> 6 </option>
-                    <option value="7"> 7 </option>
-                    <option value="8"> 8 </option>
+                    <option value="1"> 1:20 pm </option>
+                    <option value="2"> 3:00 pm </option>
+                    <option value="3"> 4:20 pm </option>
+                    <option value="4"> 5:50 pm </option>
+                    <option value="5"> 7:00 pm </option>
+                    <option value="6"> 9:10 pm </option>
+                    <option value="7"> 10:00 pm </option>
+
                 </select>
             </div>
 
 
-            <div class="d-flex justify-conten-between">
+            <!-- <div class="d-flex justify-conten-between">
                 <label class="col-form-label mr-4" for="Colum">Columna</label>
                 <input class="form-control form-control-sm mr-4" type="number" name="Colum">
                 <label class="col-form-label mr-4" for="Fila">Fila</label>
                 <input class="form-control form-control-sm mr-4" type="text" name="Fila">
-            </div>
+            </div> -->
 
-            <div class="d-flex justify-conten-between">
+            <div class="d-flex justify-content-between">
                 <span class="mr-4"> Ocupadas</span>
                 <div class="sillasm ocupadas mr-4"></div>
                 <span class="mr-4"> Disponibles</span>
                 <div class="sillasm disponibles mr-4"></div>
+                <span class="mr-4"> Seleccionadas</span>
 
-            </div>
-            <span class="mr-4"> Seleccionadas</span>
-            <div class="d-flex justify-conten-between">
                 <div class="sillasm seleccionadas mr-4"></div>
             </div>
         </form>
@@ -44,7 +42,7 @@
     <div class="contenedorSillas">
         <div class="d-flex justify-content-center">
             <div class="pantalla text-center m-3">
-                <h2>Pantalla</h2>
+                <h2>Pantalla - {{peliculaC}} </h2>
             </div>
         </div>
 
@@ -53,19 +51,19 @@
             <div class="col-12">
                 <div class="d-flex justify-content-between">
                     <div class="col-3 d-flex justify-content-center columna">
-                        <button id="{{silla}}{{columna}}" class="btn btn-secondary btn-sm sillas"
+                        <button id="{{silla}}{{columna}}" class="btn myButton btn-sm sillas"
                             (click)="puestosSeleccionados(this.silla+this.columna)"
                             *ngFor="let columna of columnas">{{silla}}{{columna}}</button>
 
                     </div>
                     <div class="col-6  d-flex justify-content-center columnaC">
-                        <button id="{{silla}}{{columna}}" class="btn btn-secondary btn-sm sillas "
+                        <button id="{{silla}}{{columna}}" class="btn myButton btn-sm sillas "
                             *ngFor="let columna of columnas2"
                             (click)="puestosSeleccionados(this.silla+this.columna)">{{silla}}{{columna}}</button>
                     </div>
 
                     <div class="col-3  d-flex justify-content-center columna">
-                        <button id="{{silla}}{{columna}}" class="btn btn-secondary btn-sm sillas"
+                        <button id="{{silla}}{{columna}}" class="btn myButton btn-sm sillas"
                             (click)="puestosSeleccionados(this.silla+this.columna)"
                             *ngFor="let columna of columnas3">{{silla}}{{columna}}</button>
 
@@ -81,7 +79,7 @@
                 <div class="col-12">
                     <div class="d-flex justify-content-center ">
 
-                        <button id="{{silla}}{{columna}}" class="btn btn-secondary btn-sm sillas"
+                        <button id="{{silla}}{{columna}}" class="btn myButton btn-sm sillas"
                             (click)="puestosSeleccionados(this.silla+this.columna)"
                             *ngFor="let columna of columnas4">{{silla}}{{columna}}</button>
 
@@ -91,7 +89,8 @@
         </div>
     </div>
     <div class="text-center m-3">
-        <button type="submit" style="width: 200px;" class="btn-responsive btn btn-secondary" (click)="pagos()">Ir a pagos </button>
+        <button type="submit" style="width: 200px;" class="btn-responsive btn myButton" (click)="pagos()">Añadir al
+            carrito </button>
     </div>
     <!-- </div> -->
 </div>

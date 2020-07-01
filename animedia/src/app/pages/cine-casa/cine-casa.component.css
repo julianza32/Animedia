@@ -1,0 +1,62 @@
+
+.conteneVideo{
+    
+    width: 54%; 
+    height: auto;
+    position: absolute;
+    left: 46%;
+    top: 70px;
+    z-index: -1;
+    
+}
+.conteneVideo video{
+    width: 100%;
+    height: auto;
+  }
+
+
+.conteneInfo{
+   background:linear-gradient(90deg, rgba(5,5,7,1) 0%, rgba(54,54,70,1) 39%, rgba(0,212,255,0) 100%); 
+}
+
+.conteneInfo img{
+    /* max-width:250px; 
+    max-height:400px; */
+    width: 55%;
+    height: auto;
+    
+}
+
+.contenedorPeliEs {
+    height: auto;
+}
+/* 
+.card-img {
+    height: 535px;
+} */
+
+.card-img-overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+}
+
+/* .contenedorPeliEs:hover>.card-img-overlay{
+        display: none;
+    } */
+
+.peli:hover>.card-img-overlay {
+    opacity: 1;
+}
+
+@media only screen and (max-width: 768px) {
+    .contenedorPeliEs {
+        width: 70%;
+        margin: auto;
+    }
+}
+.oculto {
+    display: none;
+}
+.visible{
+    display: block;
+}
