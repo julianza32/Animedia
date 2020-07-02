@@ -6,8 +6,11 @@
 .imgCarousel {
     height: 100vh;
 }
+
+
 .contenedorPeliEs{
   background-color: #231e1e;
+
 }
 .contenedorEstrenos {
     width: 100%;
@@ -21,8 +24,11 @@
 }
 
 .card-img-overlay {
-background-color: rgba(0, 0, 0, 0.8);
-opacity: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  width: 280px;
+  height: 350px;
+  overflow-y: scroll; /* Haga el scroll dentro de la img */
 }
 /* .contenedorPeliEs:hover>.card-img-overlay{
     display: none;

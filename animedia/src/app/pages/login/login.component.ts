@@ -73,10 +73,9 @@ export class LoginComponent implements OnInit {
             title: `Hola ${this.identidad.names}. Empieza a disfurtar de nuestro contenido!`,
             width: 600,
             padding: '3em',
-            background: '#fff url(/images/trees.png)',
             backdrop: `
-              rgba(0,0,123,0.4)
-              url("/images/nyan-cat.gif")
+              rgba(0,0,0,0.5)
+              url("../../../assets/imagenes/logoAnimediabb.png")
               left top
               no-repeat
             `

@@ -30,13 +30,13 @@
 
     <div class="contenedorEstrenos d-flex flex-nowrap text-white">
         <!-- col-xl-5 col-lg-5 col-md-8 col-sm-10 col-12 -->
-        <div *ngFor="let peli of peliculasEstreno">
+        <div class="cubrir" *ngFor="let peli of peliculasEstreno">
             <div class="card contenedorPeliEs text-white ">
-                <img class="card-img" src={{peli.imagenC}} alt="">
+                <img class="card-img" src={{peli.image}} alt="">
                 <div class="card-img-overlay">
-                    <h5 class="card-title">{{peli.nombre}}</h5>
-                    <p class="card-text">{{peli.sinopsis}}</p>
-                    <p class="card-text">Fecha de estreno: {{peli.fechaDeEstreno}}</p>
+                    <h5 class="card-title">{{peli.title}}</h5>
+                    <p class="card-text">{{peli.synopsis}}</p>
+                    <p class="card-text">Fecha de estreno: {{peli.year}}</p>
                 </div>
             </div>
         </div>
