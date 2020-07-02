@@ -33,8 +33,11 @@ export class HomeComponent implements OnInit {
         {
           this.peliculaService.obtenerPelicula(response.movies[i]._id).subscribe(
             (respuesta:any)=>{
-              respuesta.movie.image=this.url+"getMovieImage/"+respuesta.movie.image;
-              this.peliculasEstreno.push(respuesta.movie);
+              if(this.peliculasEstreno.length<6)
+              {
+                respuesta.movie.image=this.url+"getMovieImage/"+respuesta.movie.image;
+                this.peliculasEstreno.push(respuesta.movie);
+              }
             }
           );
         }
