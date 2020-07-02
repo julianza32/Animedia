@@ -11,6 +11,7 @@ import { RegistroUsuarioComponent } from './pages/registro-usuario/registro-usua
 import { AdminPeliculasComponent } from './pages/admin-peliculas/admin-peliculas.component';
 import { PerfilUsuarioComponent } from './pages/perfil-usuario/perfil-usuario.component';
 import {PagosComponent} from './pages/pagos/pagos.component';
+import { ReproductorComponent } from './pages/reproductor/reproductor.component';
 
 
 const routes: Routes = [{path:'home', component:HomeComponent}, 
@@ -24,7 +25,9 @@ const routes: Routes = [{path:'home', component:HomeComponent},
                         {path:'adminPelis',component:AdminPeliculasComponent},
                         {path:'perfil',component:PerfilUsuarioComponent},
                         {path:'pagos', component: PagosComponent},
+                        {path:'reproductor', component: ReproductorComponent},
                         {path:'**', pathMatch:'full', redirectTo:'home'}
+
                         ];
 
 @NgModule({
