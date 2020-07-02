@@ -74,7 +74,7 @@ export class LoginComponent implements OnInit {
             width: 600,
             padding: '3em',
             backdrop: `
-              rgba(0,0,123,0.4)
+              rgba(0,0,0,0.5)
               url("../../../assets/imagenes/logoAnimediabb.png")
               left top
               no-repeat
