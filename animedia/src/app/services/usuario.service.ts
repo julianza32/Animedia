@@ -20,7 +20,6 @@ export class UsuarioService {
   // registrar cancion 
   registrarUsuario(usuarioNuevo) {
     let params = JSON.stringify(usuarioNuevo);
-    console.log(params);
     let options = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };

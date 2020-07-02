@@ -21,7 +21,6 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit(): void {
-    console.log(this.peliculasEstreno);
     this.buscarpelis();
     document.getElementById('menu').setAttribute('class','oculto');
     document.getElementById('footer').setAttribute('class','oculto');
@@ -59,21 +58,22 @@ export class HomeComponent implements OnInit {
     this.peliculaService.listarPelis().subscribe(
       (response:any)=>{
         response.movies;
-        console.log(response.movies);
         
         for(let i=0;i<response.movies.length;i++)
         {
           this.peliculaService.obtenerPelicula(response.movies[i]._id).subscribe(
             (respuesta:any)=>{
-              respuesta.movie.image=this.url+"getMovieImage/"+respuesta.movie.image;
-              this.peliculasEstreno.push(respuesta.movie);
+              if(this.peliculasEstreno.length<6)
+              {
+                respuesta.movie.image=this.url+"getMovieImage/"+respuesta.movie.image;
+                this.peliculasEstreno.push(respuesta.movie);
+              }
             }
           );
         }
         
       }
     );
-    console.log(this.peliculasEstreno);
   }
   prueba() {
     var men=document.getElementById('menu');

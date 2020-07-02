@@ -1,0 +1,13 @@
+.contenedor{
+    height: 100vh;
+}
+.video{
+    margin-top: -108px;
+    width: 70%;
+    height: 80vh;
+    border: 0px solid rgb(0, 0, 0);
+    
+}
+.video:focus{
+    outline: none;
+}
