@@ -46,3 +46,6 @@ body{
 .modal-content{
   background-color: #231e1e ;
 }
+.oculto{
+  display: none;
+}

@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angula
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { Router } from '@angular/router';
 import { PedidoService } from 'src/app/services/pedido.service';
+import { PeliculasService } from 'src/app/services/peliculas.service';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class NavbarComponent implements OnInit {
   public Lsesion = JSON.parse(localStorage.getItem('sesion'));
   public admin:any; 
   
-  constructor(public usuarioService: UsuarioService,public pedidoservice:PedidoService,private _router:Router) {
+  constructor(public usuarioService: UsuarioService,public pedidoservice:PedidoService,private _router:Router,public peliculasService:PeliculasService) {
     this.imagenLogo;
     pedidoservice.producto == null ? []:pedidoservice.producto;
   }
@@ -51,5 +52,18 @@ export class NavbarComponent implements OnInit {
     this.usuarioService.identidad = '';
     this.usuarioService.sesion = false;
     this._router.navigate(['/home'])
+  }
+  buscarPelicula(find){
+
+
+    let parametro = {busqueda:find};
+    this.peliculasService.filtrarPeli(parametro).subscribe(
+      (respuesta:any)=>
+      {
+        console.log(respuesta);
+        this.pedidoservice.peliculas = respuesta.movie;
+      }
+    );
+    this._router.navigate(['/cartelera']);
   }
 }

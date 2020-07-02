@@ -18,22 +18,30 @@ export class CarteleraComponent implements OnInit {
   @ViewChild('video') video: ElementRef;
 
 
-  public peliculas = [];
+  public peliculas=[];
   public actual;
   public url;
 
 
   constructor(private peliculaService: PeliculasService, private _router: Router, private renderer: Renderer2, public pedido: PedidoService) {
+    this.pedido.peliculas;
     this.peliculas;
     this.actual = new Pelicula('','','','','','',[],'','','','','','');
     this.url = peliculaService.url; 
   }
 
   ngOnInit(): void {
+   
   }
   ngAfterViewInit(){
-    this.listarPeliculas();
-    console.log(this.peliculas);
+    if(this.pedido.peliculas.length<1){
+      this.listarPeliculas();
+    }else{
+      this.peliculas=this.pedido.peliculas;
+    }
+    
+
+    console.log(this.pedido.peliculas);
     console.log(this.actual);
     this.video.nativeElement.muted = "true";
   }
