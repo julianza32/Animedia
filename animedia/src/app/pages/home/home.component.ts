@@ -18,7 +18,6 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit(): void {
-    console.log(this.peliculasEstreno);
     this.buscarpelis();
   }
 
@@ -27,7 +26,6 @@ export class HomeComponent implements OnInit {
     this.peliculaService.listarPelis().subscribe(
       (response:any)=>{
         response.movies;
-        console.log(response.movies);
         
         for(let i=0;i<response.movies.length;i++)
         {
@@ -44,7 +42,6 @@ export class HomeComponent implements OnInit {
         
       }
     );
-    console.log(this.peliculasEstreno);
   }
   
   

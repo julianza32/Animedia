@@ -33,8 +33,6 @@ export class CarteleraComponent implements OnInit {
   }
   ngAfterViewInit(){
     this.listarPeliculas();
-    console.log(this.peliculas);
-    console.log(this.actual);
     this.video.nativeElement.muted = "true";
   }
   pasarPelicula(pelicula) {

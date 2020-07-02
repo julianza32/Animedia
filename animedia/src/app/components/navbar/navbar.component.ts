@@ -21,6 +21,8 @@ export class NavbarComponent implements OnInit {
   
   constructor(public usuarioService: UsuarioService,public pedidoservice:PedidoService,private _router:Router) {
     this.imagenLogo;
+    usuarioService.identidad = JSON.parse(localStorage.getItem('sesion'));
+    usuarioService.nombreUs = this.Lsesion.names;
     pedidoservice.producto == null ? []:pedidoservice.producto;
   }
 
@@ -31,7 +33,7 @@ export class NavbarComponent implements OnInit {
     if (this.Lsesion) {
       this.usuarioService.sesion = true;
       this.botones.nativeElement.display = 'none';
-      this.nUsua.nativeElement.innerText = this.Lsesion.names;
+      //this.nUsua.nativeElement.innerText = this.Lsesion.names;
       //No BORRAR !!!!!! 
        if(this.Lsesion.rol == 'administrador'||this.Lsesion.rol == 'Administrador')
       {
