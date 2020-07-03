@@ -88,6 +88,7 @@ export class CarteleraComponent implements OnInit {
     );
   
   } 
+
   reproducir(pelRepro){
     localStorage.setItem('pelicula',pelRepro);
 
