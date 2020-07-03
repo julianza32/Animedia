@@ -19,6 +19,7 @@
                 Ver Trailer
             </button>
             <button type="button" class="btn myButton"(click)="comprarB(this.actual.title)">Comprar boletas</button>
+            <button [style.display]="sesion == true && sesion.affiliateCard == 'platino' ? 'block':'none'" type="button" class="btn myButton"(click)="reproducir(actual.movie)">Comprar boletas</button>
 
             <!-- Modal -->
             <div class="modal fade  " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
