@@ -15,29 +15,33 @@
             <p #sinopsis>{{actual.synopsis}}</p>
 
             <!-- Button trigger modal -->
-            <button type="button" class="btn myButton" data-toggle="modal" data-target="#exampleModal">
-                Ver Trailer
-            </button>
-            <button type="button" class="btn myButton"(click)="comprarB(this.actual.title)">Comprar boletas</button>
-            <button [style.display]="sesion.affiliateCard == 'platino' ? 'block':'none'" type="button" class="btn myButton"(click)="reproducir(actual.movie)">Ver peli</button>
-
+            <div class="d-flex flew-wrap flex-row justify-content-start">
+                <button type="button" class="btn myButton" data-toggle="modal" data-target="#exampleModal">
+                    Ver Trailer
+                </button>
+                <button type="button" class="btn myButton" (click)="comprarB(this.actual.title)">Comprar
+                    boletas</button>
+                <button [style.display]="sesion.affiliateCard == 'platino' ? 'block':'none'" type="button"
+                    class="btn myButton" (click)="reproducir(actual.movie)">Ver peli</button>
+            </div>
             <!-- Modal -->
             <div class="modal fade  " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog  modal-lg modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" > Trailer- {{actual.title}} </h5>
-                            <button type="button" class="close" style="color: white;" data-dismiss="modal" aria-label="Close">
+                            <h5 class="modal-title"> Trailer- {{actual.title}} </h5>
+                            <button type="button" class="close" style="color: white;" data-dismiss="modal"
+                                aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
                             <div class="container-fluid d-flex justify-content-center">
-                            <video class="video" #video src="{{actual.trailer}}"  loop controls></video>
+                                <video class="video" #video src="{{actual.trailer}}" loop controls></video>
+                            </div>
                         </div>
-                        </div>
-<!--                         <div class="modal-footer">
+                        <!--                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">S</button>
                             <button type="button" class="btn btn-primary">Save changes</button>
                         </div> -->
@@ -48,11 +52,22 @@
 
     </div>
 </div>
-<div class="mx-5">
-<h2 id="tituloCartelera" class="mx-5 my-3" >Cartelera</h2>
+<div class="mx-5 my-3 row d-flex justify-content-between">
+    <div>
+        <h2 id="tituloCartelera" class="">Cartelera</h2>
+    </div>
+    <div>
+        <form class=" buscador form-inline my-5 my-lg-0">
+            <input class="form-control mr-sm-2 buscador" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline my-2 my-sm-0 text-white" type="search"
+                (keyup)="buscarPelicula($event.target.value)"><i class="material-icons">search</i></button>
+        </form>
+
+    </div>
+
 </div>
 <div class="mx-md-5 px-md-5 mx-3 px-3">
-    
+
     <div
         class="contenedorCartelera row d-flex flex-lg-row flex-md-row flex-sm-row flex-xl-row flex-wrap flex-column w-100">
         <div *ngFor="let pelicula of peliculas" class="contenedorPeliEs col-2 col-xs-6 p-2">

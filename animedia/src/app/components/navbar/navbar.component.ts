@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
   @ViewChild('nUsua') nUsua: ElementRef;
 
 
-
+  
   public imagenLogo: string = "../../../assets/imagenes/logoAnimediabb.png"
   public Lsesion = JSON.parse(localStorage.getItem('sesion'));
   public admin:any; 
@@ -55,17 +55,5 @@ export class NavbarComponent implements OnInit {
     this.usuarioService.sesion = false;
     this._router.navigate(['/home'])
   }
-  buscarPelicula(find){
-
-
-    let parametro = {busqueda:find};
-    this.peliculasService.filtrarPeli(parametro).subscribe(
-      (respuesta:any)=>
-      {
-        console.log(respuesta);
-        this.pedidoservice.peliculas = respuesta.movie;
-      }
-    );
-    this._router.navigate(['/cartelera']);
-  }
+  
 }

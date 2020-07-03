@@ -51,19 +51,19 @@
             <div class="col-12">
                 <div class="d-flex justify-content-between">
                     <div class="col-3 d-flex justify-content-center columna">
-                        <button id="{{silla}}{{columna}}" class="btn myButton btn-sm sillas"
+                        <button id="{{silla}}{{columna}}" class="btn btn-secondary btn-sm sillas"
                             (click)="puestosSeleccionados(this.silla+this.columna)"
                             *ngFor="let columna of columnas">{{silla}}{{columna}}</button>
 
                     </div>
                     <div class="col-6  d-flex justify-content-center columnaC">
-                        <button id="{{silla}}{{columna}}" class="btn myButton btn-sm sillas "
+                        <button id="{{silla}}{{columna}}" class="btn btn-secondary btn-sm sillas "
                             *ngFor="let columna of columnas2"
                             (click)="puestosSeleccionados(this.silla+this.columna)">{{silla}}{{columna}}</button>
                     </div>
 
                     <div class="col-3  d-flex justify-content-center columna">
-                        <button id="{{silla}}{{columna}}" class="btn myButton btn-sm sillas"
+                        <button id="{{silla}}{{columna}}" class="btn btn-secondary btn-sm sillas"
                             (click)="puestosSeleccionados(this.silla+this.columna)"
                             *ngFor="let columna of columnas3">{{silla}}{{columna}}</button>
 
@@ -79,7 +79,7 @@
                 <div class="col-12">
                     <div class="d-flex justify-content-center ">
 
-                        <button id="{{silla}}{{columna}}" class="btn myButton btn-sm sillas"
+                        <button id="{{silla}}{{columna}}" class="btn btn-secondary btn-sm sillas"
                             (click)="puestosSeleccionados(this.silla+this.columna)"
                             *ngFor="let columna of columnas4">{{silla}}{{columna}}</button>
 

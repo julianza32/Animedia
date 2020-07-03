@@ -38,7 +38,7 @@
         </ul>
         <!-- [style.display]="usuarioService.sesion == true ? 'flex': 'none'" si falla incluirlo en la linea 40 NO BORRAR!! --> 
         <ul class="navbar-nav usuSesion">
-            <li class="nav-item dropdown">
+            <li class="nav-item dropleft">
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" routerLink="/perfil">Perfil</a>
                     <a [style.display]="usuarioService.admin == true ? 'block':'none'" class="dropdown-item" routerLink="/adminPelis">Administracion</a>
@@ -55,11 +55,7 @@
                     
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2 buscador" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline my-2 my-sm-0 text-white" type="search" (keyup)="buscarPelicula($event.target.value)"><i
-                    class="material-icons" >search</i></button>
-        </form>
+
         <ul #botones [style.display]="usuarioService.sesion == true ? 'none': 'flex'" class="navbar-nav">
             <li class="nav-item active">
                 <a class="nav-link text-white linkLateral btnIzq" routerLink="/registroUsuario">Registro<span
