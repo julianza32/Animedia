@@ -20,7 +20,7 @@ function registerUser(req, res) {
     user.pass = parameters.pass;
     user.rol = 'usuario'; //Dato rol quemado - usuario por defecto
     user.image = null;
-    user.affiliateCard = parameters.affiliateCard;
+    user.affiliateCard = "free";
 
     //Buscar el usuario apra encontrar is tiene imagen de perfil y borrarla
     User.findOne({ email: parameters.email }, (err, userFound) => {

@@ -25,8 +25,8 @@ export class PerfilUsuarioComponent implements OnInit {
 
   constructor(private usuarioService: UsuarioService, private _router: Router) {
 
-    this.identidad = new Usuario('', '', '', 0, '', '', '', '', '');
-    this.usuarioModel = new Usuario('', '', '', 0, '', '', '', '', '');
+    this.identidad = new Usuario('', '', '', 0, '', '', '', '', '','');
+    this.usuarioModel = new Usuario('', '', '', 0, '', '', '', '', '','');
     this.url = usuarioService.url;
   }
 
@@ -145,8 +145,8 @@ export class PerfilUsuarioComponent implements OnInit {
               )
               localStorage.removeItem('sesion');
               // this.identidad = null;
-              this.identidad = new Usuario('', '', '', 0, '', '', '', '', '');
-              this.usuarioModel = new Usuario('', '', '', 0, '', '', '', '', '');
+              this.identidad = new Usuario('', '', '', 0, '', '', '', '', '','');
+              this.usuarioModel = new Usuario('', '', '', 0, '', '', '', '', '','');
               this.usuarioService.sesion = false;
               this._router.navigate(['/']);
             } else {

@@ -15,8 +15,9 @@ import { Observable } from "rxjs";
 })
 export class PeliculasService {
   public peliculaCarte: String = "";
-
+  public mostrarIntro = true;
   url = "http://localhost:3000/api/";
+  
 
 
   constructor(

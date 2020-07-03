@@ -19,13 +19,14 @@ import { PeliculasService } from '../services/peliculas.service';
 import { PagosComponent } from './pagos/pagos.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { PedidoService } from '../services/pedido.service';
+import { ReproductorComponent } from './reproductor/reproductor.component';
 
 
 
 
 
 @NgModule({
-  declarations: [HomeComponent, CarteleraComponent, BoleteriaComponent, CineCasaComponent, ConfiteriaComponent, TarjetaComponent, LoginComponent, RegistroUsuarioComponent, AdminPeliculasComponent, PerfilUsuarioComponent, PagosComponent],
+  declarations: [HomeComponent, CarteleraComponent, BoleteriaComponent, CineCasaComponent, ConfiteriaComponent, TarjetaComponent, LoginComponent, RegistroUsuarioComponent, AdminPeliculasComponent, PerfilUsuarioComponent, PagosComponent, ReproductorComponent],
   imports: [
     CommonModule,FormsModule,ReactiveFormsModule,AppRoutingModule
   ],providers:[

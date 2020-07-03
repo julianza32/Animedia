@@ -18,22 +18,24 @@ export class CarteleraComponent implements OnInit {
   @ViewChild('video') video: ElementRef;
 
 
-  public peliculas = [];
+  public peliculas=[];
   public actual;
   public url;
-
+  public sesion;
 
   constructor(private peliculaService: PeliculasService, private _router: Router, private renderer: Renderer2, public pedido: PedidoService) {
     this.peliculas;
     this.actual = new Pelicula('','','','','','',[],'','','','','','');
     this.url = peliculaService.url; 
+    this.sesion = JSON.parse(localStorage.getItem('sesion'));
   }
 
   ngOnInit(): void {
+   
   }
   ngAfterViewInit(){
     this.listarPeliculas();
-    console.log(this.peliculas);
+    console.log(this.pedido.peliculas);
     console.log(this.actual);
     this.video.nativeElement.muted = "true";
   }
@@ -72,5 +74,23 @@ export class CarteleraComponent implements OnInit {
         }
       }
     );
+  }
+/*   buscarPelicula(find){
+
+
+    let parametro = {busqueda:find};
+    this.peliculaService.filtrarPeli(parametro).subscribe(
+      (respuesta:any)=>
+      {
+        console.log(respuesta);
+        this.peliculas = respuesta.movie;
+      }
+    );
+  
+  }  */
+
+  reproducir(pelRepro){
+    localStorage.setItem('pelicula',pelRepro);
+
   }
 }
