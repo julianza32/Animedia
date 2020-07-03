@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     private _router: Router
     
   ) {
-    this.login = new Usuario('', '', '',  0, '', '', '', 'usuario', '')
+    this.login = new Usuario('', '', '',  0, '', '', '', 'usuario', '','')
    }
 
    public sesion = JSON.parse(localStorage.getItem('sesion'));
@@ -62,7 +62,8 @@ export class LoginComponent implements OnInit {
             this.login.email,
             this.login.pass,
             this.login.rol,
-            this.login.image
+            this.login.image,
+            this.login.affiliateCard
           );
 
           // Crear localStorage
@@ -102,7 +103,7 @@ export class LoginComponent implements OnInit {
             text: 'Usuario no identificado',
           })
           // alert("Usuario no identificado")
-          this.login = new Usuario('', '', '',  0, '', '','', 'usuario', '');
+          this.login = new Usuario('', '', '',  0, '', '','', 'usuario', '','');
         }
         // Cierre validación
       },error =>{
