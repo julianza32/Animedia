@@ -23,7 +23,7 @@ export class NavbarComponent implements OnInit {
   constructor(public usuarioService: UsuarioService,public pedidoservice:PedidoService,private _router:Router,public peliculasService:PeliculasService) {
     this.imagenLogo;
     usuarioService.identidad = JSON.parse(localStorage.getItem('sesion'));
-  //  usuarioService.nombreUs = this.Lsesion.names;
+   usuarioService.nombreUs = this.Lsesion.names;
     pedidoservice.producto == null ? []:pedidoservice.producto;
   }
 

@@ -19,7 +19,7 @@
                 Ver Trailer
             </button>
             <button type="button" class="btn myButton"(click)="comprarB(this.actual.title)">Comprar boletas</button>
-            <button [style.display]="sesion == true && sesion.affiliateCard == 'platino' ? 'block':'none'" type="button" class="btn myButton"(click)="reproducir(actual.movie)">Comprar boletas</button>
+            <button [style.display]="sesion.affiliateCard == 'platino' ? 'block':'none'" type="button" class="btn myButton"(click)="reproducir(actual.movie)">Ver peli</button>
 
             <!-- Modal -->
             <div class="modal fade  " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -54,7 +54,7 @@
 <div class="mx-md-5 px-md-5 mx-3 px-3">
     
     <div
-        class="contenedorCartelera   row d-flex flex-lg-row flex-md-row flex-sm-row flex-xl-row flex-wrap flex-column w-100">
+        class="contenedorCartelera row d-flex flex-lg-row flex-md-row flex-sm-row flex-xl-row flex-wrap flex-column w-100">
         <div *ngFor="let pelicula of peliculas" class="contenedorPeliEs col-2 col-xs-6 p-2">
             <div class="card peli bg-dark text-white" (click)="pasarPelicula(pelicula)">
                 <img class="card-img img-fluid" src={{pelicula.image}} alt="">

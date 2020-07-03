@@ -32,19 +32,20 @@ export class CarteleraComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   
+   console.log(this.sesion.affiliateCard);
   }
   ngAfterViewInit(){
-    if(this.pedido.peliculas.length<1){
-      this.listarPeliculas();
-    }else{
-      this.peliculas=this.pedido.peliculas;
-    }
-    
+    // if(this.pedido.peliculas.length<1){
+    //   this.listarPeliculas();
+    // }else{
+    //   this.peliculas=this.pedido.peliculas;
+    // }
+    this.listarPeliculas();
 
-    console.log(this.pedido.peliculas);
-    console.log(this.actual);
+    // console.log(this.pedido.peliculas);
+    // console.log(this.actual);
     this.video.nativeElement.muted = "true";
+
   }
   pasarPelicula(pelicula) {
 
