@@ -48,6 +48,9 @@ export class CarteleraComponent implements OnInit {
     this.video.nativeElement.src = pelicula.trailer;
     document.getElementById("conteneInfo").setAttribute("class", "conteneInfo visible");
     document.getElementById("tituloCartelera").setAttribute("class", "oculto");
+    localStorage.setItem('pelicula', pelicula.movie);
+    console.log(pelicula.movie);
+    
     // this.renderer.setStyle(this.fondo.'')    
 
     // this.renderer.setAttribute(this.imagenP,"src",pelicula.image);  // this.peliculaService.peliculaCarte = titulo;
@@ -85,10 +88,10 @@ export class CarteleraComponent implements OnInit {
         this.peliculas = respuesta.movie;
       }
     );
+  
+  } 
 
-  }
   reproducir(pelRepro) {
-    localStorage.setItem('pelicula', pelRepro);
-    console.log(pelRepro);
+    this._router.navigate(['/reproductor']);
   }
 }
