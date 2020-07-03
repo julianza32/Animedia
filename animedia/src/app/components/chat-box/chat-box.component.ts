@@ -52,7 +52,7 @@ export class ChatBoxComponent implements OnInit {
     this.renderer.setStyle(this.maxi.nativeElement,'display', 'flex');
   }
     cerrar(){
-      alert("Cerro")
+      // alert("Cerro")
   }
 
 }

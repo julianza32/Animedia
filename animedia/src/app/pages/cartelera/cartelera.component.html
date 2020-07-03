@@ -21,7 +21,7 @@
                 </button>
                 <button type="button" class="btn myButton" (click)="comprarB(this.actual.title)">Comprar
                     boletas</button>
-                <button [style.display]="sesion.affiliateCard == 'platino' ? 'block':'none'" type="button"
+                <button [style.display]="this.sesion && sesion.affiliateCard == 'platino' ? 'block':'none'" type="button"
                     class="btn myButton" (click)="reproducir(actual.movie)">Ver peli</button>
             </div>
             <!-- Modal -->

@@ -31,7 +31,7 @@ export class CarteleraComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.sesion.affiliateCard);
+    // console.log(this.sesion.affiliateCard);
   }
   ngAfterViewInit() {
 

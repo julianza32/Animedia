@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { PeliculasService } from 'src/app/services/peliculas.service';
 import { PedidoService } from 'src/app/services/pedido.service';
 
@@ -10,8 +10,8 @@ import { PedidoService } from 'src/app/services/pedido.service';
 })
 
 
-
 export class HomeComponent implements OnInit {
+  @ViewChild('intro')intro:ElementRef;
 
   public url;
   public peliculasEstreno = [];
