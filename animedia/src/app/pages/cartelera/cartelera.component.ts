@@ -75,7 +75,7 @@ export class CarteleraComponent implements OnInit {
       }
     );
   }
-  buscarPelicula(find){
+/*   buscarPelicula(find){
 
 
     let parametro = {busqueda:find};
@@ -87,7 +87,7 @@ export class CarteleraComponent implements OnInit {
       }
     );
   
-  } 
+  }  */
 
   reproducir(pelRepro){
     localStorage.setItem('pelicula',pelRepro);
