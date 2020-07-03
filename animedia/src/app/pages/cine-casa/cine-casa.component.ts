@@ -135,9 +135,11 @@ export class CineCasaComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
   ngAfterViewInit(){
     this.video.nativeElement.muted = "true";
+
   }
 
   pasarPelicula(pelicula) {
