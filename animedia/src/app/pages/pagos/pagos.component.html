@@ -18,13 +18,20 @@
                             <img class="card-img img-fluid my-2" src={{producto.imagen}}>
                         </td>
                         <td> <span>{{producto.descripcion}}</span> </td>
-                        <td><span>{{producto.valor}}</span></td>
+                        <td><span>${{producto.valor}}</span></td>
                         <td> <input class="form-control form-control-sm" type="number" [(ngModel)]="producto.cantidad"
                                 name="cantidad">
                         </td>
                         <td><span>{{descuento}} %</span></td>
-                        <td><span>{{producto.subtotal}}</span> </td>
+                        <td><span>${{producto.subtotal}}</span> </td>
 
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Total</td>
+                        <td>{{total}}</td>
                     </tr>
                 </table>
             </div>

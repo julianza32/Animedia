@@ -10,7 +10,9 @@ import Swal from 'sweetalert2';
 export class PagosComponent implements OnInit {
   public opcionSeleccionada;
   public listaProductos= this.pedido.producto;
-  public descuento= 10;
+  public descuento= 0;
+  public total;
+  public sesion=  JSON.parse(localStorage.getItem('sesion'));
 
  public datos={
    "nombre": "",
@@ -21,7 +23,7 @@ export class PagosComponent implements OnInit {
    "titular":"",
    "tipoI":"",
    "identificacion":"",
-   "correo":"",
+   "correo":""
 
  }
 
@@ -33,6 +35,11 @@ export class PagosComponent implements OnInit {
     
     this.pedido;
 
+    if (this.sesion.affiliateCard == 'platino'){
+      this.descuento=50;
+    }else if(this.sesion.affiliateCard == 'gold'){
+      this.descuento=25;
+    }
     
   }
   ngDoCheck(){
@@ -57,11 +64,22 @@ export class PagosComponent implements OnInit {
         let sub=(this.listaProductos[i].valor*this.listaProductos[i].cantidad*(1-this.descuento/100));
        /* this.listaProductos[i].subtotal=sub */
        this.listaProductos[i]["subtotal"]= sub;
-      
+       this.total=+sub;
+       console.log(sub);
       }
+      
      
     }
   }
+// calculo total
+
+/* calculoTotal(){
+  this.listaProductos.subtotal.forEach(element => {
+    
+  });
+} */
+
+
   //muestra pagos por debito o credito
   mostrar(){
     var id=this.opcionSeleccionada;
