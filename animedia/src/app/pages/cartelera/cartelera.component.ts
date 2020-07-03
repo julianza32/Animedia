@@ -24,7 +24,6 @@ export class CarteleraComponent implements OnInit {
 
 
   constructor(private peliculaService: PeliculasService, private _router: Router, private renderer: Renderer2, public pedido: PedidoService) {
-    this.pedido.peliculas;
     this.peliculas;
     this.actual = new Pelicula('','','','','','',[],'','','','','','');
     this.url = peliculaService.url; 
@@ -34,13 +33,7 @@ export class CarteleraComponent implements OnInit {
    
   }
   ngAfterViewInit(){
-    if(this.pedido.peliculas.length<1){
-      this.listarPeliculas();
-    }else{
-      this.peliculas=this.pedido.peliculas;
-    }
-    
-
+    this.listarPeliculas();
     console.log(this.pedido.peliculas);
     console.log(this.actual);
     this.video.nativeElement.muted = "true";
@@ -81,4 +74,17 @@ export class CarteleraComponent implements OnInit {
       }
     );
   }
+  buscarPelicula(find){
+
+
+    let parametro = {busqueda:find};
+    this.peliculaService.filtrarPeli(parametro).subscribe(
+      (respuesta:any)=>
+      {
+        console.log(respuesta);
+        this.peliculas = respuesta.movie;
+      }
+    );
+  
+  } 
 }

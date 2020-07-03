@@ -47,8 +47,18 @@
 
     </div>
 </div>
-<div class="mx-5">
-<h2 id="tituloCartelera" class="mx-5 my-3" >Cartelera</h2>
+<div class="mx-5 my-3 row d-flex justify-content-between">
+    <div>
+        <h2 id="tituloCartelera" class="" >Cartelera</h2>
+    </div>
+    <div >
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2 buscador" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline my-2 my-sm-0 text-white" type="search" (keyup)="buscarPelicula($event.target.value)"><i
+                    class="material-icons" >search</i></button>
+        </form>
+    </div>
+
 </div>
 <div class="mx-md-5 px-md-5 mx-3 px-3">
     
