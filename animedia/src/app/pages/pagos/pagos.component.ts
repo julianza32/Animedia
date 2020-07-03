@@ -11,7 +11,7 @@ export class PagosComponent implements OnInit {
   public opcionSeleccionada;
   public listaProductos= this.pedido.producto;
   public descuento= 0;
-  public total;
+  public total=0;
   public sesion=  JSON.parse(localStorage.getItem('sesion'));
 
  public datos={
@@ -48,9 +48,9 @@ export class PagosComponent implements OnInit {
   }
   
   calculoSubtotal(){
-    
+    let totalPre=0;
     for(var i=0;i<this.listaProductos.length;i++){
-    
+    console.log(this.listaProductos.length);
       if(this.listaProductos[i].cantidad == 0)
       {
         if(this.listaProductos.length == 0){
@@ -64,8 +64,9 @@ export class PagosComponent implements OnInit {
         let sub=(this.listaProductos[i].valor*this.listaProductos[i].cantidad*(1-this.descuento/100));
        /* this.listaProductos[i].subtotal=sub */
        this.listaProductos[i]["subtotal"]= sub;
-       this.total=+sub;
-       console.log(sub);
+       totalPre+=sub;
+       this.total=totalPre;
+       console.log(totalPre);
       }
       
      
