@@ -25,17 +25,27 @@ export class HomeComponent implements OnInit {
     document.getElementById('menu').setAttribute('class','oculto');
     document.getElementById('footer').setAttribute('class','oculto');
     
-    let interval = window.setInterval(this.videoM, 10000);
+    if(this.peliculaService.mostrarIntro)
+    {
+    let interval = window.setInterval(this.videoM, 10000);//esconde el video
     /*  clearInterval(interval); */
-    let interval2 = window.setInterval(this.visibleAnimedia, 8888);
-    let interval3 = window.setInterval(this.apearAnimedia, 9999);
+    //let interval2 = window.setInterval(this.visibleAnimedia, 8888);
+    let interval3 = window.setInterval(this.apearAnimedia, 10000);
       /* document.getElementsByTagName('video')[0].play(); */
-
+      this.peliculaService.mostrarIntro = false;
+    }else{
+      let interval = window.setInterval(this.videoM, 0);
+      let interval3 = window.setInterval(this.apearAnimedia, 0);
+    }
   }
   videoM() {
     
     /* document.getElementById('videoInicio').setAttribute('class','oculto'); */
+    if(document.getElementById('intro')!=null)
+    {
     document.getElementById('intro').style.display = 'none';
+    document.getElementById('intro').pause();
+    }
    /*  document.getElementsByTagName('video')[0].pause(); */
     document.getElementById('menu').setAttribute('class','navbar navbar-expand-lg navbar-light text-white sticky-top fondoGradient ');
     document.getElementById('footer').setAttribute('class','page-footer font-small blue footer sticky-top fixed-buttom ');
@@ -46,7 +56,10 @@ export class HomeComponent implements OnInit {
   }
   
   apearAnimedia() {
+    if(document.getElementById('animedia') != null)
+    {
     document.getElementById('animedia').setAttribute('class', 'animedia ');
+    }
     
  /*    document.getElementById('animedia').style.transition = 'width 2s, height 2s, margin 2s';
     document.getElementById('animedia').style.width = '100%';
