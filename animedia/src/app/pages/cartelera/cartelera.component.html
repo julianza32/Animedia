@@ -13,31 +13,35 @@
             <h2 #nombre>{{actual.title}}</h2> <br>
             <p #anio>{{actual.year}}</p> <br>
             <p #sinopsis>{{actual.synopsis}}</p>
-
+            <!-- <p> {{actual.movie}}</p> -->
             <!-- Button trigger modal -->
-            <button type="button" class="btn myButton" data-toggle="modal" data-target="#exampleModal">
-                Ver Trailer
-            </button>
-            <button type="button" class="btn myButton"(click)="comprarB(this.actual.title)">Comprar boletas</button>
-            <button [style.display]="sesion == true && sesion.affiliateCard == 'platino' ? 'block':'none'" type="button" class="btn myButton"(click)="reproducir(actual.movie)">Comprar boletas</button>
-
+            <div class="d-flex flew-wrap flex-row justify-content-start">
+                <button type="button" class="btn myButton" data-toggle="modal" data-target="#exampleModal">
+                    Ver Trailer
+                </button>
+                <button type="button" class="btn myButton" (click)="comprarB(this.actual.title)">Comprar
+                    boletas</button>
+                <button [style.display]="sesion.affiliateCard == 'platino' ? 'block':'none'" type="button"
+                    class="btn myButton" (click)="reproducir(actual.movie)">Ver peli</button>
+            </div>
             <!-- Modal -->
             <div class="modal fade  " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog  modal-lg modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" > Trailer- {{actual.title}} </h5>
-                            <button type="button" class="close" style="color: white;" data-dismiss="modal" aria-label="Close">
+                            <h5 class="modal-title"> Trailer- {{actual.title}} </h5>
+                            <button type="button" class="close" style="color: white;" data-dismiss="modal"
+                                aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
                             <div class="container-fluid d-flex justify-content-center">
-                            <video class="video" #video src="{{actual.trailer}}"  loop controls></video>
+                                <video class="video" #video src="{{actual.trailer}}" loop controls></video>
+                            </div>
                         </div>
-                        </div>
-<!--                         <div class="modal-footer">
+                        <!--                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">S</button>
                             <button type="button" class="btn btn-primary">Save changes</button>
                         </div> -->
@@ -63,14 +67,16 @@
 
 </div>
 <div class="mx-md-5 px-md-5 mx-3 px-3">
-    
+
     <div
-        class="contenedorCartelera   row d-flex flex-lg-row flex-md-row flex-sm-row flex-xl-row flex-wrap flex-column w-100">
+        class="contenedorCartelera row d-flex flex-lg-row flex-md-row flex-sm-row flex-xl-row flex-wrap flex-column w-100">
         <div *ngFor="let pelicula of peliculas" class="contenedorPeliEs col-2 col-xs-6 p-2">
             <div class="card peli bg-dark text-white" (click)="pasarPelicula(pelicula)">
                 <img class="card-img img-fluid" src={{pelicula.image}} alt="">
                 <div class="card-img-overlay">
                     <h5 class="card-title">{{pelicula.title}}</h5>
+                    <!-- <h5 class="card-title">{{pelicula.movie}}</h5> -->
+
                     <!-- <p class="card-text">Sinopsis: {{pelicula.sinopsis}}</p>
                     <p class="card-text">Año: {{pelicula.anio}}</p> -->
                 </div>
