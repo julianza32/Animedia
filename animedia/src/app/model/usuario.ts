@@ -8,7 +8,8 @@ export class Usuario{
         public email: String,
         public pass: String,
         public rol: String,
-        public image: String
+        public image: String,
+        public affiliateCard: String
     ){}
 }
 

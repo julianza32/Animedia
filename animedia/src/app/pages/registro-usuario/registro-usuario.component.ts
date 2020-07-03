@@ -26,7 +26,7 @@ export class RegistroUsuarioComponent implements OnInit {
   public notificacion: String;
 
   constructor(private usuarioService: UsuarioService, private _router: Router) {
-    this.usuarioModel = new Usuario('', '', '', 0, '', '', '', '', '');
+    this.usuarioModel = new Usuario('', '', '', 0, '', '', '', '', '','');
   }
 
   // @ViewChild('apellido') apellido: ElementRef;
@@ -133,7 +133,7 @@ export class RegistroUsuarioComponent implements OnInit {
             })
             this.enviarCorreo();
             //alert(`Te registraste correctamente! inicia sesion con ${usuario.email}`);
-            this.usuarioModel = new Usuario('', '', '', 0,'', '', '', '', '');
+            this.usuarioModel = new Usuario('', '', '', 0,'', '', '', '','', '');
             this._router.navigate(['/login']);
           }
         } else {

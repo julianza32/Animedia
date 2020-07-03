@@ -17,14 +17,14 @@ export class NavbarComponent implements OnInit {
   @ViewChild('find') busqueda: ElementRef;
 
 
-
+  
   public imagenLogo: string = "../../../assets/imagenes/logoAnimediabb.png"
   //public Lsesion = JSON.parse(localStorage.getItem('sesion'));
   public admin:any; 
   
   constructor(public usuarioService: UsuarioService,public pedidoservice:PedidoService,private _router:Router,public peliculasService:PeliculasService) {
     this.imagenLogo;
-    usuarioService.identidad = new Usuario('','','',0,'','','','','');
+    usuarioService.identidad = new Usuario('','','',0,'','','','','','');
     usuarioService.nombreUs = usuarioService.identidad.names;
     pedidoservice.producto == null ? []:pedidoservice.producto;
   }
@@ -58,18 +58,5 @@ export class NavbarComponent implements OnInit {
     this.usuarioService.sesion = false;
     this._router.navigate(['/home'])
   }
-  buscarPelicula(){
-
-    //console.log(this.busqueda);
-    
-    let parametro = {busqueda:this.busqueda.nativeElement.value};
-    this.peliculasService.filtrarPeli(parametro).subscribe(
-      (respuesta:any)=>
-      {
-        //console.log(respuesta);
-        this.pedidoservice.peliculas = respuesta.movie;
-      }
-    );
-    this._router.navigate(['/cartelera']);
-  }
+  
 }
