@@ -1,8 +1,9 @@
 
 .conteneVideo{
-    
-    width: 55%; 
+    width: 56%; 
     max-height: 430px;
+    max-width: 730px;
+    
     position: absolute;
     left: 44%;
     top: 70px;
