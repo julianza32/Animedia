@@ -3,6 +3,8 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 import { Router } from '@angular/router';
 import { PedidoService } from 'src/app/services/pedido.service';
 import { PeliculasService } from 'src/app/services/peliculas.service';
+import { find } from 'rxjs/operators';
+import { Usuario } from 'src/app/model/usuario';
 
 
 @Component({
@@ -12,31 +14,32 @@ import { PeliculasService } from 'src/app/services/peliculas.service';
 })
 export class NavbarComponent implements OnInit {
   @ViewChild('botones') botones: ElementRef;
-  @ViewChild('nUsua') nUsua: ElementRef;
+  @ViewChild('find') busqueda: ElementRef;
 
 
   
   public imagenLogo: string = "../../../assets/imagenes/logoAnimediabb.png"
-  public Lsesion = JSON.parse(localStorage.getItem('sesion'));
+  //public Lsesion = JSON.parse(localStorage.getItem('sesion'));
   public admin:any; 
   
   constructor(public usuarioService: UsuarioService,public pedidoservice:PedidoService,private _router:Router,public peliculasService:PeliculasService) {
     this.imagenLogo;
-    usuarioService.identidad = JSON.parse(localStorage.getItem('sesion'));
-   usuarioService.nombreUs = this.Lsesion.names;
+    usuarioService.identidad = new Usuario('','','',0,'','','','','','');
+    usuarioService.nombreUs = usuarioService.identidad.names;
     pedidoservice.producto == null ? []:pedidoservice.producto;
   }
 
   ngOnInit(): void {
-   
+    this.usuarioService.identidad = JSON.parse(localStorage.getItem('sesion'));
   }
   ngAfterViewInit() {
-    if (this.Lsesion) {
+       
+    if (this.usuarioService.identidad) {
       this.usuarioService.sesion = true;
       this.botones.nativeElement.display = 'none';
-      //this.nUsua.nativeElement.innerText = this.Lsesion.names;
+      this.usuarioService.nombreUs = this.usuarioService.identidad.names;
       //No BORRAR !!!!!! 
-       if(this.Lsesion.rol == 'administrador'||this.Lsesion.rol == 'Administrador')
+       if(this.usuarioService.identidad.rol == 'administrador'||this.usuarioService.identidad.rol == 'Administrador')
       {
         this.usuarioService.admin = true;
       }else{
