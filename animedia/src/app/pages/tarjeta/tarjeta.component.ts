@@ -30,14 +30,14 @@ export class TarjetaComponent implements OnInit {
     "nombre": "Platino",
     "imagen":this.cardMorty,
     "descripcion": `Con esta tarjeta podrás tener un 50% de descuentos en tus compras. `,
-    "valor":"300.000 COP",
+    "valor":"300000",
     "cantidad": 1
   },
   {
     "nombre": "Dorada",
     "imagen":this.cardRick,
     "descripcion": `Con esta tarjeta podrás tener un 25% de descuentos en tus compras. `,
-    "valor":"150.000 COP",
+    "valor":"150000",
     "cantidad": 1
   }
     ];
